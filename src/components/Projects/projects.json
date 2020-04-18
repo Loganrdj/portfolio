@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "name": "LIRI Bot",
+      "image": "https://github.com/Loganrdj/Liri-Bot/blob/master/HW-liriBot.gif?raw=true",
+      "description": "The LIRI bot is an application that takes command line inputs to run commands against multiple APIs that provide information. ",
+      "url": "https://github.com/Loganrdj/Liri-Bot",
+      "linktype": "Github",
+      "alt": "LIRI Bot GIF"
+    },
+    {
+      "id": 2,
+      "name": "Recipe and Restaurant Roulette",
+      "image": "https://github.com/Loganrdj/Team4/blob/master/RRRoulette.gif?raw=true",
+      "description": "This website takes in multiple ingredients and returns a recipe that contains all of them or randomly returns a restaurant from a selected cuisine. ",
+      "url": "https://loganrdj.github.io/Team4/",
+      "linktype": "Website",
+      "alt": "RRRoulette GIF"
+    },
+    {
+      "id": 3,
+      "name": "Trivia Game",
+      "image": "https://github.com/Loganrdj/TriviaGame/blob/master/TriviaGame.gif?raw=true",
+      "description": "This was designed to be a quick and simple quiz for a fun activity.",
+      "url": "https://github.com/Loganrdj/TriviaGame",
+      "linktype": "Github",
+      "alt": "Trivia Game GIF"
+    },
+    {
+      "id": 4,
+      "name": "Node mySQL",
+      "image": "https://github.com/Loganrdj/Node-MySQL/blob/master/bamazonCustomer.gif?raw=true",
+      "description": "This application utilizes node to run queries against a mySQL database.",
+      "url": "https://github.com/Loganrdj/Node-MySQL/blob/master/bamazonCustomer.gif",
+      "linktype": "Github",
+      "alt": "Node mySQL Bamazon GIF"
+    },
+    {
+      "id": 5,
+      "name": "Harry Potter RPG Game",
+      "image": "https://media.giphy.com/media/dzOxouPFjSjo65i0Oa/giphy.gif",
+      "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
+      "url": "https://github.com/K8F/project-2",
+      "linktype": "Github",
+      "alt": "Harry Potter RPG GIF"
+    }
+  ]
+  

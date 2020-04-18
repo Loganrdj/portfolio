@@ -1,0 +1,35 @@
+/* 
+font-family: 'Raleway', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif; 
+*/
+
+.card {
+    width: 20%;
+    height: 20%;
+    float: left;
+    background-color: gray;
+    border-radius: 10px;
+    margin: 2% 0% 1% 2.8%;
+    padding: 10px;    
+    border: solid 3px #333;
+}
+
+.btn {
+    display: block;
+    background-color: rgb(42, 195, 255);
+    padding: 1%;
+    margin-left: 38%;
+    margin-right: 38%;
+    border-radius: 5px;
+    border: solid 2px #333;
+    
+}
+.card-title{
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+.card-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+}
