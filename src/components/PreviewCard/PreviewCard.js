@@ -19,8 +19,6 @@ function PreviewCard(props) {
         {button}
         <a href={props.github_url} className="btn btn-primary">Github</a>
       </div>
-        
-        
     </div>
   );
 }
