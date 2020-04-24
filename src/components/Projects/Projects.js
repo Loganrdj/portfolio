@@ -18,8 +18,10 @@ class Projects extends Component {
           name = {project.name} 
           image = {project.image} 
           description = {project.description}
-          url = {project.url} 
-          linktype = {project.linktype}
+          deployed_url = {project.deployed_url} 
+          github_url = {project.github_url}
+          deployed_github = {project.deployed_github}
+          deployed_tag = {project.deployed_tag}
           alt = {project.alt}
         />
         </div>

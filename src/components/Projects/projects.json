@@ -4,8 +4,9 @@
       "name": "LIRI Bot",
       "image": "https://github.com/Loganrdj/Liri-Bot/blob/master/HW-liriBot.gif?raw=true",
       "description": "The LIRI bot is an application that takes command line inputs to run commands against multiple APIs that provide information. ",
-      "url": "https://github.com/Loganrdj/Liri-Bot",
-      "linktype": "Github",
+      "deployed_url": "",
+      "github_url": "https://github.com/Loganrdj/Liri-Bot",
+      "deployed_tag": "Github",
       "alt": "LIRI Bot GIF"
     },
     {
@@ -13,8 +14,9 @@
       "name": "Recipe and Restaurant Roulette",
       "image": "https://github.com/Loganrdj/Team4/blob/master/RRRoulette.gif?raw=true",
       "description": "This website takes in multiple ingredients and returns a recipe that contains all of them or randomly returns a restaurant from a selected cuisine. ",
-      "url": "https://loganrdj.github.io/Team4/",
-      "linktype": "Website",
+      "deployed_url": "https://loganrdj.github.io/Team4/",
+      "github_url": "https://github.com/Loganrdj/Team4",
+      "deployed_tag": "Website",
       "alt": "RRRoulette GIF"
     },
     {
@@ -22,8 +24,9 @@
       "name": "Trivia Game",
       "image": "https://github.com/Loganrdj/TriviaGame/blob/master/TriviaGame.gif?raw=true",
       "description": "This was designed to be a quick and simple quiz for a fun activity.",
-      "url": "https://github.com/Loganrdj/TriviaGame",
-      "linktype": "Github",
+      "deployed_url": "https://loganrdj.github.io/TriviaGame/",
+      "github_url": "https://github.com/Loganrdj/TriviaGame",
+      "deployed_tag": "Website",
       "alt": "Trivia Game GIF"
     },
     {
@@ -31,8 +34,9 @@
       "name": "Node mySQL",
       "image": "https://github.com/Loganrdj/Node-MySQL/blob/master/bamazonCustomer.gif?raw=true",
       "description": "This application utilizes node to run queries against a mySQL database.",
-      "url": "https://github.com/Loganrdj/Node-MySQL/blob/master/bamazonCustomer.gif",
-      "linktype": "Github",
+      "deployed_url": "",
+      "github_url": "https://github.com/Loganrdj/Node-MySQL",
+      "deployed_tag": "Github",
       "alt": "Node mySQL Bamazon GIF"
     },
     {
@@ -40,18 +44,20 @@
       "name": "Harry Potter RPG Game",
       "image": "https://media.giphy.com/media/dzOxouPFjSjo65i0Oa/giphy.gif",
       "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
-      "url": "https://github.com/K8F/project-2",
-      "linktype": "Github",
+      "deployed_url": "https://guarded-harbor-00220.herokuapp.com/",
+      "github_url": "https://github.com/K8F/project-2",
+      "deployed_tag": "Game",
       "alt": "Harry Potter RPG GIF"
     },
     {
       "id": 5,
-      "name": "Harry Potter RPG Game",
+      "name": "Rocky Maguire INC Website",
       "image": "https://media.giphy.com/media/U6SoVeKecyeZeTyN7T/giphy.gif",
-      "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
-      "url": "https://github.com/K8F/project-2",
-      "linktype": "Github",
-      "alt": "Harry Potter RPG GIF"
+      "description": "This is a website that I had created for my friend's company. It was a work in progress and was stopped before completion.",
+      "deployed_url": "https://loganrdj.github.io/RockyMaguire/",
+      "github_url": "https://github.com/Loganrdj/RockyMaguire",
+      "deployed_tag": "Website",
+      "alt": "Rocky Maguire GIF"
     }
   ]
   
