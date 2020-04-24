@@ -36,6 +36,7 @@ nav {
   color: white;
   border-bottom: 5px solid rgb(124, 124, 124); */
   border-bottom: solid 3px #808080;
+  position: fixed;
 }
 
 /* .actives{
