@@ -5,29 +5,44 @@ font-family: 'Open Sans', sans-serif;
 */
 
 .card {
-    width: 20%;
-    height: 20%;
-    float: left;
-    background-color: gray;
+    width: 100%;
+    height: 100%;
+    /* float: left; */
+    background-color: #343A40;
     border-radius: 10px;
-    margin: 2% 0% 1% 2.8%;
+    margin: 0% 0% 0% 0%;
     padding: 10px;    
-    border: solid 3px #333;
+    color: #8f8f8f;
+    font-weight: bold;
+    border: solid 6px #808080;
+}
+
+.col-md-3{
+    /* margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 1%; */
+    padding: 1% 1% 1% 2%;
+}
+
+.row{
+    width: 100%;
 }
 
 .btn {
-    display: block;
+    /* display: block;
     background-color: rgb(42, 195, 255);
     padding: 1%;
     margin-left: 38%;
     margin-right: 38%;
     border-radius: 5px;
+    */
     border: solid 2px #333;
-    
 }
 .card-title{
     font-family: 'Raleway', sans-serif;
-    font-size: 18px;
+    font-size: 200%;
+    font-weight: bold;
 }
 .card-text{
     font-family: 'Montserrat', sans-serif;

@@ -43,6 +43,15 @@
       "url": "https://github.com/K8F/project-2",
       "linktype": "Github",
       "alt": "Harry Potter RPG GIF"
+    },
+    {
+      "id": 5,
+      "name": "Harry Potter RPG Game",
+      "image": "https://media.giphy.com/media/U6SoVeKecyeZeTyN7T/giphy.gif",
+      "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
+      "url": "https://github.com/K8F/project-2",
+      "linktype": "Github",
+      "alt": "Harry Potter RPG GIF"
     }
   ]
   
