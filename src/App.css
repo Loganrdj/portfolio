@@ -7,49 +7,54 @@ font-family: 'Open Sans', sans-serif;
 .App {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+  background-color: #DCDCDC
 }
 
-ul.nav-links {
+/* ul.nav-links {
   padding: 0 0 0 0;
   margin: 0%;
-}
+} */
 
-li{
+/* li{
   padding: 23px;
   border-radius: 10px;
-}
+} */
 
-li:hover {
+/* li:hover {
   display: block;
   background-color: gray;
-}
+  border-radius: 10px;
+  opacity: 90%;
+} */
 
 nav {
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
   background: #333;
   color: white;
-  border-bottom: 5px solid rgb(124, 124, 124);
+  border-bottom: 5px solid rgb(124, 124, 124); */
+  border-bottom: solid 3px #808080;
 }
 
-.active{
+/* .actives{
   background-color: rgb(85, 85, 85);
   border-radius:10px;
-}
+} */
 
 .nav-links{
-  width: 50%;
+  /* width: 50%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  list-style: none;
+  align-items: right;
+  list-style: none; */
   font-family: 'Montserrat', sans-serif;
 }
 
 .title{
   text-decoration: none;
   font-size: 18px;
+  font-weight: bold;
   font-family: 'Raleway', sans-serif;
 }

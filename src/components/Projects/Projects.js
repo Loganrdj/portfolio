@@ -11,20 +11,20 @@ class Projects extends Component {
 
   render() {
     return(
-    <div>
-    {this.state.projects.map(project => (
-      <PreviewCard 
-        name = {project.name} 
-        image = {project.image} 
-        description = {project.description}
-        url = {project.url} 
-        linktype = {project.linktype}
-        alt = {project.alt}
-      />
-    )
-  
-    )
-}</div>
+    <div className="row">
+      {this.state.projects.map(project => (
+        <div className="col-md-3">
+        <PreviewCard 
+          name = {project.name} 
+          image = {project.image} 
+          description = {project.description}
+          url = {project.url} 
+          linktype = {project.linktype}
+          alt = {project.alt}
+        />
+        </div>
+      ))}
+    </div>
     
     )}
 }

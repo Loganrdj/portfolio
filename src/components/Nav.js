@@ -3,25 +3,21 @@ import "../App.css";
 import { Link } from 'react-router-dom';
 
 function Nav() {
-    const navStyling = {
-        color: "white",
-    }
   return (
-      <nav>
-            <Link className="title" style={navStyling} to="/">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <Link className="title nav-link" to="/">
                 <h1>Logan Moss</h1>
             </Link>
-            <ul className="nav-links">
-                {/* This won't change the active link for unknown reason after being clicked */}
+            <ul className="nav-links navbar-nav">
                 
-                <Link style={navStyling} to="/resume" className={window.location.pathname === "/resume" ? "nav-link active" : "nav-link"}>
-                    <li>Resume</li>
+                <Link to="/resume" className="nav-link">
+                    <li className="nav-item">Resume</li>
                 </Link>
-                <Link style={navStyling} to="/projects" className={window.location.pathname === "/projects" ? "nav-link active" : "nav-link"}>
-                    <li>Projects</li>
+                <Link to="/projects" className="nav-link">
+                    <li className="nav-item">Projects</li>
                 </Link>
-                <Link style={navStyling} to="/contact" className={window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}>
-                    <li>Contact</li>
+                <Link to="/contact" className="nav-link">
+                    <li className="nav-item">Contact</li>
                 </Link>
             </ul>
       </nav>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Nav from "./components/Nav"
 import Home from "./components/Home"
@@ -12,20 +12,22 @@ import {
 } from "react-router-dom";
 
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/resume" component={Resume}/>
-          <Route exact path="/projects" component={Projects}/>
-          <Route exact path="/contact" component={Contact}/>
-        </Switch>
-      </div>
-    </Router>
-  );
+class App extends Component {
+  render(){
+    return (
+      <Router>
+        <div className="App">
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/resume" component={Resume}/>
+            <Route exact path="/projects" component={Projects}/>
+            <Route exact path="/contact" component={Contact}/>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
