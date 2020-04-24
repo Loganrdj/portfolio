@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import "../../App.css"
 import PreviewCard from "../PreviewCard/PreviewCard";
-import projects from './projects.json'
+import projects from './projects.json';
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 class Projects extends Component {
 
@@ -14,16 +17,18 @@ class Projects extends Component {
     <div className="row">
       {this.state.projects.map(project => (
         <div className="col-md-3">
-        <PreviewCard 
-          name = {project.name} 
-          image = {project.image} 
-          description = {project.description}
-          deployed_url = {project.deployed_url} 
-          github_url = {project.github_url}
-          deployed_github = {project.deployed_github}
-          deployed_tag = {project.deployed_tag}
-          alt = {project.alt}
-        />
+          <ScrollAnimation delay={300} animateIn="fadeIn">
+            <PreviewCard 
+              name = {project.name} 
+              image = {project.image} 
+              description = {project.description}
+              deployed_url = {project.deployed_url} 
+              github_url = {project.github_url}
+              deployed_github = {project.deployed_github}
+              deployed_tag = {project.deployed_tag}
+              alt = {project.alt}
+            />
+          </ScrollAnimation>
         </div>
       ))}
     </div>
