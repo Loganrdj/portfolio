@@ -50,7 +50,7 @@
       "alt": "Harry Potter RPG GIF"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Rocky Maguire INC Website",
       "image": "https://media.giphy.com/media/U6SoVeKecyeZeTyN7T/giphy.gif",
       "description": "This is a website that I had created for my friend's company. It was a work in progress and was stopped before completion.",
@@ -58,6 +58,16 @@
       "github_url": "https://github.com/Loganrdj/RockyMaguire",
       "deployed_tag": "Website",
       "alt": "Rocky Maguire GIF"
+    },
+    {
+      "id": 7,
+      "name": "GifTastic",
+      "image": "https://github.com/Loganrdj/GifTastic/blob/master/GifTasticGif.gif?raw=true",
+      "description": "This is a front-end web application with the purpose to educate based on Ajax as well as to create a Gif Finder.",
+      "deployed_url": "https://loganrdj.github.io/GifTastic/",
+      "github_url": "https://github.com/Loganrdj/GifTastic",
+      "deployed_tag": "Website",
+      "alt": "GifTastic GIF (lol)"
     }
   ]
   
