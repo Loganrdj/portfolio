@@ -6,7 +6,7 @@ font-family: 'Open Sans', sans-serif;
 
 .card {
     width: 100%;
-    height: 100%;
+    height: 615px;
     /* float: left; */
     background-color: #343A40;
     border-radius: 10px;
@@ -22,6 +22,7 @@ font-family: 'Open Sans', sans-serif;
     margin-left: 2%;
     margin-right: 2%;
     margin-bottom: 1%; */
+    /* height: 100%; */
     padding: 1% 1% 1% 2%;
 }
 
