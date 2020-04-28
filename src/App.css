@@ -10,46 +10,21 @@ font-family: 'Open Sans', sans-serif;
   background-color: #DCDCDC
 }
 
-/* ul.nav-links {
-  padding: 0 0 0 0;
-  margin: 0%;
-} */
+.animatedIndividual{
+  animation-duration: 1s;
+  opacity: 1s;
+}
 
-/* li{
-  padding: 23px;
-  border-radius: 10px;
-} */
-
-/* li:hover {
-  display: block;
-  background-color: gray;
-  border-radius: 10px;
-  opacity: 90%;
-} */
+html,body{
+  height:100%;
+}
 
 nav {
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: #333;
-  color: white;
-  border-bottom: 5px solid rgb(124, 124, 124); */
   border-bottom: solid 3px #808080;
   position: fixed;
 }
 
-/* .actives{
-  background-color: rgb(85, 85, 85);
-  border-radius:10px;
-} */
-
 .nav-links{
-  /* width: 50%;
-  display: flex;
-  justify-content: space-around;
-  align-items: right;
-  list-style: none; */
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -58,4 +33,42 @@ nav {
   font-size: 18px;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
+}
+
+.card {
+  width: 100%;
+  height: 615px;
+  background-color: #343A40;
+  border-radius: 10px;
+  margin: 0% 0% 0% 0%;
+  padding: 10px;    
+  color: #8f8f8f;
+  font-weight: bold;
+  border: solid 6px #808080;
+}
+
+.col-md-3{
+  padding: 1% 1% 1% 2%;
+}
+
+.row{
+  width: 100%;
+}
+
+.btn {
+  border: solid 3px #333;
+}
+.card-title{
+  font-family: 'Raleway', sans-serif;
+  font-size: 200%;
+  font-weight: bold;
+}
+.card-text{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+}
+
+.wrapper{
+  bottom: 0;
+  background-color: #DCDCDC
 }
