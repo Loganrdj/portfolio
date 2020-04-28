@@ -5,12 +5,13 @@ import projects from './projects.json';
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 
-
 class Projects extends Component {
 
   state = {
     projects
   }
+
+
 
   render() {
     return(

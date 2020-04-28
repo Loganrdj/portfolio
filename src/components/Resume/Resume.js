@@ -1,34 +1,51 @@
 import React, { Component } from 'react';
 import "../../App.css";
-import { Document, Page } from "react-pdf";
-import { pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import { Document, Page, pdfjs } from "react-pdf";
+// const PDFImage = require("pdf-image").PDFImage;
+// import PDFViewer from "pdf-viewer-reactjs"
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-class Resume extends Component {
+const Resume = () => {
 
-  state = {
-    numPages: null,
-    pageNumber: 1,
-  }
+  return (
+    <div></div>
+    // <PDFViewer
+    //     document={{
+    //         url: '',
+    //     }}
+    // />
+)
+  // var pdfImage = new PDFImage("/LoganResumeMarch2020.pdf")
+  //   return(
+  //     <div>
+  //       <Document file={pdfImage}></Document>
+  //     </div>
+  //   )
 
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages });
-  }
+  
+  // state = {
+  //   numPages: null,
+  //   pageNumber: 1,
+  // }
 
-  render(){
-    const { pageNumber, numPages } = this.state;
+  // onDocumentLoadSuccess = ({ numPages }) => {
+  //   this.setState({ numPages });
+  // }
 
-    return (
-      <div>
-        <Document 
-          file="/Users/lrmoss/Desktop/react-portfolio/portfolio/public/LoganResumeMarch2020.pdf"
-          onLoadSuccess={this.onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>Page {pageNumber} of {numPages}</p>
-      </div>
-    );
-  }
+  // render(){
+  //   const { pageNumber, numPages } = this.state;
+
+  //   return (
+  //     <div>
+  //       <Document 
+  //         file="/Users/lrmoss/Desktop/react-portfolio/portfolio/public/LoganResumeMarch2020.pdf"
+  //         onLoadSuccess={this.onDocumentLoadSuccess}>
+  //         <Page pageNumber={pageNumber} />
+  //       </Document>
+  //       <p>Page {pageNumber} of {numPages}</p>
+  //     </div>
+  //   );
+  // }
   
 }
 

@@ -1,10 +1,13 @@
 import React from 'react';
-import "../../App.css"
+import ContactCard from './ContactCard';
 
 function Contact() {
   return (
-    <h2>Contact Page</h2>
-  );
+    <div className="wrapper">
+      <h1>Contact Page</h1>
+    </div>
+    
+  )
 }
 
 export default Contact;
