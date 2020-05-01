@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Logan M Site",
+  "name": "Logan Moss Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "https://secure.img1-fg.wfcdn.com/im/71066008/compr-r85/4307/43074606/sitting-sleepy-bulldog-puppy-statue.jpg",
+      "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
