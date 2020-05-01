@@ -30,6 +30,16 @@
       "alt": "Node mySQL Bamazon GIF"
     },
     {
+      "id": 9,
+      "name": "Pokemon Clicky Game",
+      "image": "https://github.com/Loganrdj/ClickyGame/blob/master/clickygamegif.gif?raw=true",
+      "description": "This is a reactJS front-end application that is a fun memory game.",
+      "deployed_url": "https://loganrdj.github.io/ClickyGame/",
+      "github_url": "https://github.com/Loganrdj/ClickyGame",
+      "deployed_tag": "Game",
+      "alt": "Harry Potter RPG GIF"
+    },
+    {
       "id": 8,
       "name": "FriendFinder",
       "image": "https://github.com/Loganrdj/FriendFinder/blob/master/Friendfinder.gif?raw=true",
