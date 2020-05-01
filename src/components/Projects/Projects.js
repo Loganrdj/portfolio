@@ -11,8 +11,6 @@ class Projects extends Component {
     projects
   }
 
-
-
   render() {
     return(
     <div className="row">
