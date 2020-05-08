@@ -41,11 +41,9 @@ html,body{
 
 
 nav {
-  
   border-bottom: solid 4px #808080;
   /* position: sticky; */
   opacity: 80%;
-
 }
 
 .nav-links{
