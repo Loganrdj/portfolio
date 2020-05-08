@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link className="title nav-link" to="/">
-                <h1>Logan Moss</h1>
+      <nav className="navAnimation navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <Link className="title flash" to="/">
+                <h1 class="textWhiteAnimate">Logan Moss</h1>
             </Link>
             <ul className="nav-links navbar-nav">
                 
@@ -19,6 +19,9 @@ function Nav() {
                 <Link to="/contact" className="nav-link">
                     <li className="nav-item">Contact</li>
                 </Link>
+                <a href="https://github.com/Loganrdj" className="nav-link">
+                    <li className="nav-item">Github</li>
+                </a>
             </ul>
       </nav>
   );

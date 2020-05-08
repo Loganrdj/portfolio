@@ -15,7 +15,7 @@ class Projects extends Component {
     return(
     <div className="row">
       {this.state.projects.map(project => (
-        <div className="col-md-3">
+        <div className="col-md-3 col-sm-3 col-lg-3 col-xl-3">
           <ScrollAnimation delay={300} animateIn="fadeIn">
             <PreviewCard 
               name = {project.name} 
