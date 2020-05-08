@@ -6,7 +6,7 @@ function Nav() {
   return (
       <nav className="navAnimation navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <Link className="title flash" to="/">
-                <h1 class="textWhiteAnimate">Logan Moss</h1>
+                <h1 class="">Logan Moss</h1>
             </Link>
             <ul className="nav-links navbar-nav">
                 

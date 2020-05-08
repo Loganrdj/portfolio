@@ -8,7 +8,7 @@ class Home extends Component{
   render(){
     return (
         <div className="jumbotron">
-          <FadeIn delay={1500} transitionDuration={4000}>
+          <FadeIn delay={700} transitionDuration={4000}>
             <h1 class="display-4 textAnimate">Hello.</h1>
           {/* </FadeIn>
           <FadeIn delay={2000} transitionDuration={4000}> */}
