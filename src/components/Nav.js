@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-      <nav className="navAnimation navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <nav className="navAnimation navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className="title flash" to="/">
                 <h1 class="">Logan Moss</h1>
             </Link>
