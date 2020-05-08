@@ -10,7 +10,7 @@ function ContactCard(props) {
         <p className="card-text">{props.description}</p>
       </div>
       <div>
-        <a href={props.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary">{props.name}</a>
+        <a href={props.url} target="_blank" rel="noopener noreferrer" className="buttonClass">{props.name}</a>
       </div>
     </div>
   );
