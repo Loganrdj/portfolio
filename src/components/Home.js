@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../App.css";
 import FadeIn from 'react-fade-in';
+import { Link } from 'react-router-dom'
 
 class Home extends Component{
 
@@ -16,13 +17,19 @@ class Home extends Component{
             <hr className="my-4"></hr>
             <div className="row">
               <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
-                <button className="buttonClass buttonAnimation">Resume</button>
+                <Link to="/resume" className="nav-link">
+                  <button className="buttonClass buttonAnimation">Resume</button>
+                </Link>
               </div>
               <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+              <Link to="/projects" className="nav-link">
                 <button className="buttonClass buttonAnimation">Portfolio</button>
+              </Link>
               </div>
               <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+              <Link to="/contact" className="nav-link">
                 <button className="buttonClass buttonAnimation">Contact</button>
+              </Link>
               </div>
               <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
                 <button className="buttonClass buttonAnimation">Github</button>
