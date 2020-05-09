@@ -39,7 +39,6 @@ html,body{
   opacity: .3;
 }
 
-
 nav {
   border-bottom: solid 4px #808080;
   /* position: sticky; */
@@ -92,30 +91,23 @@ nav {
 .btn{
   margin: 5px;
 }
+.buttonAnimation, .nav-animation, .textAnimate, .cardAnimate {
+  animation-fill-mode: forwards;
+  animation-duration: 180s;
+  animation-delay: 4s;
+}
 
 .buttonAnimation {
-  animation-fill-mode: forwards;
   animation-name: darkAnimate;
-  animation-duration: 180s;
-  animation-delay: 4s;
 }
-.navAnimation{
-  animation-fill-mode: forwards;
-  animation-name: navAnimate;
-  animation-duration: 180s;
-  animation-delay: 4s;
+.nav-animation{
+  animation-name: nav-animate;
 }
 .textAnimate {
-  animation-fill-mode: forwards;
   animation-name: colorfulText;
-  animation-duration: 180s;
-  animation-delay: 4s;
 }
 .cardAnimate {
-  animation-fill-mode: forwards;
   animation-name: cardAnimate;
-  animation-duration: 180s;
-  animation-delay: 4s;
 }
 
 .card-title{
@@ -149,9 +141,9 @@ nav {
     background-color: #2377A4;
   }
 }
-@keyframes navAnimate{
+@keyframes nav-animate{
   0% {
-    background-color: 343a40;
+    background-color: #343a40;
     border-bottom: solid 4px #808080;
   }
   100% {
