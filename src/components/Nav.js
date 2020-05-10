@@ -4,25 +4,27 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-      <nav className="nav-animation navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <nav className="navAnimation customNav">
+              
             <Link className="title flash" to="/">
-                <h1 class="">Logan Moss</h1>
+                <h1 >Logan Moss</h1>
             </Link>
-            <ul className="nav-links navbar-nav">
+            <ul className="customNavLinks">
                 
-                <Link to="/resume" className="nav-link">
-                    <li className="nav-item">Resume</li>
+                <Link to="/resume" className="customNavLink">
+                    <li className="customNavLink">Resume</li>
                 </Link>
-                <Link to="/projects" className="nav-link">
-                    <li className="nav-item">Projects</li>
+                <Link to="/projects" className="customNavLink ">
+                    <li className="customNavLink">Projects</li>
                 </Link>
-                <Link to="/contact" className="nav-link">
-                    <li className="nav-item">Contact</li>
+                <Link to="/contact" className="customNavLink ">
+                    <li className="customNavLink">Contact</li>
                 </Link>
-                <a href="https://github.com/Loganrdj" className="nav-link">
-                    <li className="nav-item">Github</li>
+                <a href="https://github.com/Loganrdj" className="customNavLink">
+                    <li className="customNavLink">Github</li>
                 </a>
             </ul>
+
       </nav>
   );
 }

@@ -14,6 +14,85 @@ html,body{
   height:100%;
   
 }
+/* NAV */
+.title:hover{
+  /* transition: 1s; */
+  animation-iteration-count: infinite;
+  text-decoration: none;
+  color: white;
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-direction: alternate;
+}
+.title{
+  opacity: 1;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  margin-right: 40px;
+  /* float: left; */
+}
+.title > h1{
+  float: left;
+  margin-left: 3%;
+  text-shadow: 2px 2px gray;
+  margin-bottom: 0%;
+}
+
+.customNav {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  opacity: .8;
+  transition-duration: .45s;
+  /* position: sticky;
+  top: 0;
+  z-index: 1020;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  display: flex; */
+  /* padding: .5rem 1rem; */
+  padding-bottom: 1.5%;
+  padding-top: 1.3%;
+  border-bottom: solid 4px #808080;
+  background-color: #343a40;
+  box-shadow:5px 0px 5px 3px rgb(148, 148, 148);
+}
+
+.customNav:hover{
+  /* background: url("https://www.toptal.com/designers/subtlepatterns/patterns/oriental-tiles.png"), .3; */
+  box-shadow:5px 0px 5px 3px rgb(83, 83, 83);
+  opacity: 1;
+  
+}
+
+.customNavLink {
+  /* color: white; */
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  float: left;
+  margin-left: 10%;
+  padding-top: 6px;
+}
+.customNavLinks {
+  list-style-type: none;
+  /* overflow: hidden; */
+  float: left;
+  width: 50%;
+  margin-bottom: 0%;
+}
+nav {
+  border-bottom: solid 4px #808080;
+  /* position: sticky; */
+  /* opacity: 80%; */
+}
+
+.nav-links{
+  font-family: 'Raleway', sans-serif;
+}
 
 .buttonClass {
   color: #fff;
@@ -39,34 +118,6 @@ html,body{
   opacity: .3;
 }
 
-nav {
-  border-bottom: solid 4px #808080;
-  /* position: sticky; */
-  opacity: 80%;
-}
-
-.nav-links{
-  font-family: 'Raleway', sans-serif;
-}
-
-.title{
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  font-family: 'Raleway', sans-serif;
-  text-decoration: none;
-  margin-right: 40px;
-}
-.title:hover{
-  /* transition: 1s; */
-  animation-iteration-count: infinite;
-  text-decoration: none;
-  color: white;
-  animation-name: flash;
-  animation-duration: 5s;
-  animation-direction: alternate;
-}
 
 .card {
   width: 100%;
@@ -78,6 +129,7 @@ nav {
   color: #8f8f8f;
   font-weight: bold;
   border: solid 6px #808080;
+  box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
 }
 
 .col-md-3{
@@ -91,7 +143,7 @@ nav {
 .btn{
   margin: 5px;
 }
-.buttonAnimation, .nav-animation, .textAnimate, .cardAnimate {
+.buttonAnimation, .navAnimation, .textAnimate, .cardAnimate {
   animation-fill-mode: forwards;
   animation-duration: 180s;
   animation-delay: 4s;
@@ -100,8 +152,8 @@ nav {
 .buttonAnimation {
   animation-name: darkAnimate;
 }
-.nav-animation{
-  animation-name: nav-animate;
+.navAnimation{
+  animation-name: nav-animate;  
 }
 .textAnimate {
   animation-name: colorfulText;
@@ -127,10 +179,10 @@ nav {
 
 @keyframes flash{
   from {
-    color: white;
+    opacity: 1
   } 
   to {
-    color: #c4c4c4;
+    opacity: .5
   }
 }
 @keyframes darkAnimate{
