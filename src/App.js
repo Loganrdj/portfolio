@@ -16,8 +16,8 @@ class App extends Component {
   render(){
     return (
       <Router basename={process.env.PUBLIC_URL}>
+        <Nav />
         <div className="App">
-          <Nav />
           <Switch>
             {/* <Route path="/portfolio" component={Home}/> */}
             <Route exact path="/" component={Home}/>
