@@ -6,7 +6,7 @@ function Nav() {
   return (
       <nav className="navAnimation customNav">
               
-            <Link className="title flash" to="/">
+            <Link className="title" to="/">
                 <h1 >Logan Moss</h1>
             </Link>
             <ul className="customNavLinks">
