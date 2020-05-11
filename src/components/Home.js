@@ -15,30 +15,34 @@ class Home extends Component{
           <FadeIn delay={2000} transitionDuration={4000}> */}
             <h2 className="textAnimate">My name is Logan Moss and I am a Fullstack Developer</h2>
             <hr className="my-4"></hr>
-            <div className="row">
-              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+            <div className="container-fluid">
+              <div className="row">  
+              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3 col-xs-3">
                 <Link to="/resume" className="nav-link">
                   <button className="buttonClass buttonAnimation">Resume</button>
                 </Link>
               </div>
-              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3 col-xs-3">
               <Link to="/projects" className="nav-link">
                 <button className="buttonClass buttonAnimation">Projects</button>
               </Link>
               </div>
-              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3 col-xs-3">
               <Link to="/contact" className="nav-link">
                 <button className="buttonClass buttonAnimation">Contact</button>
               </Link>
               </div>
-              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3 col-xs-3">
+              <div className="nav-link">
                 <button className="buttonClass buttonAnimation">Github</button>
               </div>
+              </div>
+            </div>
             </div>
             <hr className="my-4"></hr>
             <h2 className="textAnimate">My skills include:</h2>
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-4 col-lg-4 col-sm-12 col-xs-12">
                   <div className="containe textAnimate">
                   <FadeIn>
                     <h4>Python (2.7 and 3)</h4>
@@ -50,7 +54,7 @@ class Home extends Component{
                   </FadeIn>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-lg-4 col-sm-12 col-xs-12">
                   <div className="container textAnimate">
                   <FadeIn>
                     <h4>MySQL</h4>
@@ -63,7 +67,7 @@ class Home extends Component{
                   </FadeIn>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-lg-4 col-sm-12 col-xs-12">
                   <div className="container textAnimate">
                   <FadeIn>
                     <h4>jQuery</h4>
