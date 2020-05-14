@@ -3,6 +3,12 @@ font-family: 'Raleway', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; 
 */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+}
 
 .App {
   text-align: center;
