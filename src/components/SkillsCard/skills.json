@@ -1,0 +1,40 @@
+[
+    {
+      "id": 1,
+      "icon": "far fa-file-code fa-5x",
+      "category": "Languages",
+      "skills": [
+        "Python (2.7 and 3)",
+        "Java",
+        "JavaScript",
+        "JavaScript (ES6)",
+        "C",
+        "Node"
+      ]
+    },
+    {
+      "id": 2,
+      "icon": "fas fa-server fa-5x",
+      "category": "Backend Infrastructure",
+      "skills": [
+        "MySQL",
+        "MongoDB",
+        "Firebase",
+        "Express",
+        "Git"
+      ]
+    },
+    {
+      "id": 3,
+      "icon": "fas fa-laptop-code fa-5x",
+      "category": "Web Development",
+      "skills": [
+        "jQuery",
+        "HTML5",
+        "ReactJS",
+        "CSS",
+        "Web Scraping (CheerioJS)",
+        "Bootstrap"
+      ]
+    }
+]
