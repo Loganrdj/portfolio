@@ -12,8 +12,17 @@ font-family: 'Open Sans', sans-serif;
 
 html,body{
   height:100%;
-  
+  background-color: #e9ecef;
+  /* overflow: hidden; */
 }
+
+/* BootStrap */
+.jumboSpacing {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+/* end BootStrap */
+
 /* NAV */
 .title:hover{
   /* transition: 1s; */
@@ -43,6 +52,8 @@ html,body{
 }
 
 .customNav {
+  /* background-color: (#343a40, .25); */
+  background-position: 100% 0%;
   position: sticky;
   top: 0;
   z-index: 1020;
@@ -57,14 +68,18 @@ html,body{
   /* padding: .5rem 1rem; */
   padding-bottom: 1.5%;
   padding-top: 1.3%;
-  border-bottom: solid 4px #808080;
+  /* border-bottom: solid 4px #808080; */
   background-color: #343a40;
-  box-shadow:5px 0px 5px 3px rgb(148, 148, 148);
+  box-shadow:5px 0px 5px 5px rgb(148, 148, 148);
 }
+/* .customNav::after{
+  background-image: url('../src/low_contrast_linen.png');
+  opacity:.5;
+  z-index: -1;
+} */
 
 .customNav:hover{
-  /* background: url("https://www.toptal.com/designers/subtlepatterns/patterns/oriental-tiles.png"), .3; */
-  box-shadow:5px 0px 5px 3px rgb(83, 83, 83);
+  box-shadow:5px 0px 5px 5px rgb(83, 83, 83);
   opacity: 1;
   
 }
@@ -73,8 +88,8 @@ html,body{
   /* color: white; */
   color: white;
   font-family: 'Raleway', sans-serif;
-  float: left;
-  margin-left: 10%;
+  float: right;
+  margin-right: 10%;
   padding-top: 6px;
 }
 .customNavLink:hover{
@@ -88,18 +103,24 @@ html,body{
 .customNavLinks {
   list-style-type: none;
   /* overflow: hidden; */
-  float: left;
+  float: right;
   width: 50%;
   margin-bottom: 0%;
 }
 nav {
-  border-bottom: solid 4px #808080;
+  /* border-bottom: solid 4px #808080; */
   /* position: sticky; */
   /* opacity: 80%; */
 }
 
 .nav-links{
   font-family: 'Raleway', sans-serif;
+}
+
+/* end Nav */
+
+.titleStyling{
+  font-weight: bold;
 }
 
 .buttonClass {
@@ -127,8 +148,7 @@ nav {
   box-shadow: 0px 0px 4px 4px rgb(148, 148, 148);
 }
 
-
-.card {
+.projectCard {
   width: 100%;
   height: 615px;
   background-color: #343A40;
@@ -137,6 +157,25 @@ nav {
   padding: 10px;    
   color: #8f8f8f;
   font-weight: bold;
+  border: solid 6px #808080;
+  box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
+}
+
+.headerSpacing{
+  margin-bottom: 15px;
+}
+
+.stStyling {
+  font-size: 20px !important;
+  font-weight: bold;
+}
+.skillsCard {
+  background-color: white;
+  height: 415px;
+  border-radius: 10px;
+  margin: 0% 0% 0% 3%;
+  padding: 10px;    
+  /* font-weight: bold; */
   border: solid 6px #808080;
   box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
 }
@@ -152,12 +191,18 @@ nav {
 .btn{
   margin: 5px;
 }
-.buttonAnimation, .navAnimation, .textAnimate, .cardAnimate {
+.buttonAnimation, .navAnimation, .textAnimate, .cardAnimate, .skillsAnimate {
   animation-fill-mode: forwards;
   animation-duration: 180s;
   animation-delay: 4s;
 }
 
+
+/* Animation */
+
+.skillsAnimate {
+  animation-name: skillsAnimate;
+}
 .buttonAnimation {
   animation-name: darkAnimate;
 }
@@ -194,6 +239,14 @@ nav {
     opacity: .5
   }
 }
+@keyframes skillsAnimate{
+  0% {
+    border: solid 6px #808080;
+  }
+  100% {
+    border: solid 6px #2377A4;
+  }
+}
 @keyframes darkAnimate{
   0% {
     background-color: black;
@@ -205,11 +258,11 @@ nav {
 @keyframes nav-animate{
   0% {
     background-color: #343a40;
-    border-bottom: solid 4px #808080;
+    /* border-bottom: solid 4px #808080; */
   }
   100% {
     background-color: #2377A4;
-    border-bottom: solid 4px #185170;
+    /* border-bottom: solid 4px #185170; */
   }
 }
 @keyframes cardAnimate{
