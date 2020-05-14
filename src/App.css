@@ -184,6 +184,7 @@ nav {
 .stStyling {
   font-size: 20px !important;
   font-weight: bold;
+  margin-bottom: 32px;
 }
 .skillsCard {
   background-color: white;
@@ -212,7 +213,8 @@ nav {
 .contactCard {
   border-radius: 10px;
   box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
-  height: 200px
+  height: 200px;
+  border: solid 6px #808080;
 }
 
 .contactImage {
