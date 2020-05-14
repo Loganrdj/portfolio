@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
       <nav className="navAnimation customNav">
-              
             <Link className="title" to="/">
                 <h1 >Logan Moss</h1>
             </Link>
@@ -21,6 +20,9 @@ function Nav() {
                 </Link>
                 <Link to="/projects" className="customNavLink">
                     <li className="customNavLink">Projects</li>
+                </Link>
+                <Link to="/" className="customNavLink">
+                    <li className="customNavLink">Home</li>
                 </Link>
             </ul>
       </nav>

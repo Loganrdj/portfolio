@@ -107,6 +107,9 @@ html,body{
   animation-duration: 2.5s;
   animation-direction: alternate;
 }
+.active {
+  border-bottom: white 1px solid;
+}
 .customNavLinks {
   list-style-type: none;
   /* overflow: hidden; */
