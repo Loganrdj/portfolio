@@ -51,11 +51,11 @@ html,body{
   margin-bottom: 0%;
 }
 
-.card-body {
+.projectCardBody {
   height: 275px;
 }
-.card-title {
-  height: 75px;
+.projectCardTitle {
+  height: 75px !important;
 }
 
 .customNav {
