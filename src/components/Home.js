@@ -15,7 +15,7 @@ class Home extends Component{
     return (
         <div className="jumbotron jumboSpacing">   
           <div className="backgroundImg">       
-          <FadeIn delay={700} transitionDuration={4000}>
+          <FadeIn delay={400} transitionDuration={4000}>
             <div className="row">
               <div className="col-md-12">
                 <h1 className="display-4 textAnimate titleStyling">Hello.</h1>
