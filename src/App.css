@@ -51,6 +51,13 @@ html,body{
   margin-bottom: 0%;
 }
 
+.card-body {
+  height: 275px;
+}
+.card-title {
+  height: 75px;
+}
+
 .customNav {
   /* background-color: (#343a40, .25); */
   background-position: 100% 0%;
