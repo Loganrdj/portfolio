@@ -15,7 +15,7 @@ function PreviewCard(props) {
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">{props.description}</p>
       </div>
-      <div>
+      <div className="cardButtons">
         {button}
         <a href={props.github_url} target="_blank" rel="noopener noreferrer" className="buttonClass buttonAnimation">Github</a>
       </div>
