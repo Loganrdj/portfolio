@@ -211,10 +211,16 @@ nav {
 
 /* Contact Page */
 .contactCard {
+  position: relative;
   border-radius: 10px;
-  box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
+  transition-duration: .5s;
   height: 200px;
   border: solid 6px #808080;
+}
+.contactCard:hover {
+  box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
+  right: +5px;
+  bottom: +5px;
 }
 
 .contactImage {
