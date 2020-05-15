@@ -5,7 +5,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 // import PDFViewer from "pdf-viewer-reactjs"
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const Resume = () => {
+function Resume() {
  
 
   return (
