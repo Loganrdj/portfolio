@@ -216,8 +216,9 @@ nav {
   transition-duration: .5s;
   height: 200px;
   border: solid 6px #808080;
+  transition-timing-function: ease;
 }
-.contactCard:hover {
+.contactCard:hover, .resumeItem:hover {
   box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
   right: +5px;
   bottom: +5px;
@@ -241,6 +242,31 @@ nav {
   animation-fill-mode: forwards;
   animation-duration: 180s;
   animation-delay: 4s;
+}
+
+.resumeContainer{
+  display: flex;
+  flex-direction: column;
+
+}
+.resumeItem {
+  background-color: white;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  margin-top: 2%;
+  position: relative;
+  border-radius: 10px;
+  transition-duration: .5s;
+  border: solid 6px #808080;
+  transition-timing-function: ease;
+}
+.resumeFlexBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 
