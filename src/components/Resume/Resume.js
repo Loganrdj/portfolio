@@ -8,7 +8,9 @@ import { Document, Page, pdfjs } from "react-pdf";
 const Resume = () => {
 
   return (
-    <div></div>
+    <div className="container">
+      
+    </div>
     // <PDFViewer
     //     document={{
     //         url: '',
