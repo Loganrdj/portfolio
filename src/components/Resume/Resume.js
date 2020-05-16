@@ -22,7 +22,7 @@ class Resume extends Component {
             </div>
         </div>
         <div className="skillsAnimate resumeItem">
-            <img src={"https://lh3.googleusercontent.com/proxy/UdmYXhtwI5B0v1ntmC6sJ5QBg7ZAmy_dK_y7T3qCHew1mXMbg5zaFlFDycRHJc7SkZe8MKvJLHgUh_hN5_55hmRUoMWPorsuV7ZMLwIdD05PiFfZBHFq8q3jqQ"} width={"30%"} alt="UCB logo"></img>
+            <img src={"https://davidmitroff.com/wp-content/uploads/2015/11/UC-Berkeley-Extension.png"} width={"30%"} alt="UCB logo"></img>
             <div className="resumeFlexBody">
               <h5>FullStack Development Bootcamp</h5>
               <h5><strong>Graduation Date:</strong> May 2020</h5>
