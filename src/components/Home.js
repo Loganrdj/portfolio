@@ -67,6 +67,7 @@ class Home extends Component{
                         <p className="card-text textAnimate">Firebase</p>
                         <p className="card-text textAnimate">Express</p>
                         <p className="card-text textAnimate">Git</p>
+                        <p className="card-text textAnimate">AJAX</p>
                       </div>
                     </div>
                   </FadeIn>
