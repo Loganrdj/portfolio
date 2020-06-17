@@ -46,7 +46,7 @@ function Contact() {
               <div className="col-md-2">
                 <FadeIn delay={500} transitionDuration={4000}>
                   <div className="card contactCard skillsAnimate">
-                    <img className="contactImage card-img-top" src='https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/53915137_2288704274786334_5273878054580518912_o.jpg?_nc_cat=100&_nc_sid=7aed08&_nc_ohc=VxRK2h99eyEAX_aePe5&_nc_ht=scontent-sjc3-1.xx&oh=3bcd2785ef04d53d77578c208f208a40&oe=5EE106CF' alt="linkedin"></img>
+                    <img className="contactImage card-img-top" src='https://ya-webdesign.com/transparent250_/linkedin-png-icon-4.png' alt="linkedin"></img>
                     <h5 className="card-title">
                       LinkedIn
                     </h5>
