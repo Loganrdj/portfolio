@@ -14,9 +14,9 @@ class Projects extends Component {
 
   render() {
     return(
-    <div className="row">
+    <div className="row projectRow">
       {this.state.projects.map(project => (
-        <div className="col-md-3 col-sm-3 col-lg-3 col-xl-3">
+        <div className="col-md-4 col-sm-4 col-lg-4 col-xl-3 col-12 cardCSS">
           <ScrollAnimation delay={300} animateIn="fadeIn">
             <PreviewCard 
               name = {project.name} 
