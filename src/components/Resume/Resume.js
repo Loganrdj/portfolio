@@ -12,13 +12,13 @@ class Resume extends Component {
       <div className="container resumeContainer">
         <FadeIn delay={300} transitionDuration={1000}>
         <div className="skillsAnimate resumeItem">
-            <img src={"https://myusf.usfca.edu/sites/default/files/images/OMC/usf_f_h2_2c_rgb_360.png"} width={"30%"} alt="usf logo"></img>
+            <img src={"https://www.insidehighered.com/sites/default/server_files/styles/large-copy/public/media/trilogy-logo-2016-horizontal-for-light-bg_0.png?itok=M6IdyMFS"} width={"30%"} alt="UCB logo"></img>
             <div className="resumeFlexBody">
               <div>
-                <h5><strong>Major:</strong> Advertising</h5>
-                <h5><strong>Minor:</strong> Computer Science</h5>
+                <h5>Full Stack Flex TA</h5>
+                <h5>Data Analytics TA</h5>
               </div>
-              <h5><strong>Graduation Date:</strong> May 2019</h5>
+              <h5>July 2020 - Present</h5>
             </div>
         </div>
         <div className="skillsAnimate resumeItem">
@@ -26,6 +26,16 @@ class Resume extends Component {
             <div className="resumeFlexBody">
               <h5>FullStack Development Bootcamp</h5>
               <h5><strong>Graduation Date:</strong> May 2020</h5>
+            </div>
+        </div>
+        <div className="skillsAnimate resumeItem">
+            <img src={"https://myusf.usfca.edu/sites/default/files/images/OMC/usf_f_h2_2c_rgb_360.png"} width={"30%"} alt="usf logo"></img>
+            <div className="resumeFlexBody">
+              <div>
+                <h5><strong>Major:</strong> Advertising</h5>
+                <h5><strong>Minor:</strong> Computer Science</h5>
+              </div>
+              <h5><strong>Graduation Date:</strong> May 2019</h5>
             </div>
         </div>
         <div className="skillsAnimate resumeItem">
