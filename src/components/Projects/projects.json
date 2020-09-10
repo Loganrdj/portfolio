@@ -11,9 +11,9 @@
     },
     {
       "id": 2,
-      "name": "Recipe and Restaurant Roulette",
+      "name": "R & R Roulette",
       "image": "https://github.com/Loganrdj/Team4/blob/master/RRRoulette.gif?raw=true",
-      "description": "This website takes in multiple ingredients and returns a recipe that contains all of them or randomly returns a restaurant from a selected cuisine. ",
+      "description": "This website takes in multiple ingredients and returns a recipe that contains them or randomly returns a restaurant from a selected cuisine. ",
       "deployed_url": "https://loganrdj.github.io/Team4/",
       "github_url": "https://github.com/Loganrdj/Team4",
       "deployed_tag": "Website",
