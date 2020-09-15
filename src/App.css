@@ -123,11 +123,6 @@ html,body{
   width: 50%;
   margin-bottom: 0%;
 }
-nav {
-  /* border-bottom: solid 4px #808080; */
-  /* position: sticky; */
-  /* opacity: 80%; */
-}
 
 .nav-links{
   font-family: 'Raleway', sans-serif;
@@ -360,7 +355,7 @@ nav {
   }
   100% {
     border: solid 6px #185170;
-    color: #2377A4;
+    color: white;
     background-color: #50a3c6;
   }
 }
