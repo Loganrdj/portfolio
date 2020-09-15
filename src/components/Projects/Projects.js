@@ -4,7 +4,6 @@ import PreviewCard from "../PreviewCard/PreviewCard";
 import projects from './projects.json';
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
-import FadeIn from 'react-fade-in';
 
 class Projects extends Component {
 
