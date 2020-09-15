@@ -41,7 +41,7 @@
     },
     {
       "id": 5,
-      "name": "Popular Opinion Web Scrape",
+      "name": "Popular Opinion",
       "image": "https://github.com/Loganrdj/popularopinion/blob/master/scrapeGIF.gif?raw=true",
       "description": "A small CLI script that utilizes Tweepy and Vader Sentiment Analyzer.",
       "deployed_url": "",
