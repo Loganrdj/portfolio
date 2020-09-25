@@ -4,8 +4,12 @@ import '../../App.css';
 function PreviewCard(props) {
 
   let button;
-  if(props.deployed_url !== ""){
+  if(props.deployed_url !== undefined){
     button = <a href={props.deployed_url} target="_blank" rel="noopener noreferrer" className="buttonClass buttonAnimation ">{props.deployed_tag}</a>
+  }
+  let githubButton;
+  if(props.github_url !== undefined){
+    githubButton = <a href={props.github_url} target="_blank" rel="noopener noreferrer" className="buttonClass buttonAnimation ">Github</a>
   }
 
   return (
@@ -17,7 +21,7 @@ function PreviewCard(props) {
       </div>
       <div className="cardButtons">
         {button}
-        <a href={props.github_url} target="_blank" rel="noopener noreferrer" className="buttonClass buttonAnimation">Github</a>
+        {githubButton}
       </div>
     </div>
   );
