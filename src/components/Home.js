@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "../App.css";
 import FadeIn from 'react-fade-in';
 import { Link } from 'react-router-dom';
-import SkillsCard from './SkillsCard/SkillsCard';
+// import SkillsCard from './SkillsCard/SkillsCard';
 import skills from './SkillsCard/skills.json'
 
 class Home extends Component{
