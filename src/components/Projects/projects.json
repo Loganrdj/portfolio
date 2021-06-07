@@ -1,6 +1,16 @@
 [
     {
       "id": 1,
+      "name": "OUR-Group",
+      "image": "https://media.giphy.com/media/3QdQ9qf8oAvgHpcLWN/giphy.gif",
+      "description": "GatsbyJS Freelance website WIP, paused in production due to COVID.",
+      "deployed_url": "https://inspiring-shockley-734c3a.netlify.app/",
+      "github_url": "https://github.com/Loganrdj/OURGroup",
+      "deployed_tag": "Website",
+      "alt": "OURGroup GIF"
+    },
+    {
+      "id": 2,
       "name": "FridgeBook",
       "image": "https://media.giphy.com/media/dBCwpDTayTDRRj6ndl/giphy.gif",
       "description": "This application was made to save money in the kitchen with groceries and inventory!",
@@ -10,7 +20,7 @@
       "alt": "FridgeBook GIF"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "R & R Roulette",
       "image": "https://github.com/Loganrdj/Team4/blob/master/RRRoulette.gif?raw=true",
       "description": "This website takes in multiple ingredients and returns a recipe that contains them or randomly returns a restaurant from a selected cuisine. ",
@@ -20,7 +30,7 @@
       "alt": "RRRoulette GIF"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Cuts by Brian",
       "image": "https://i.imgur.com/OG3NvK5.jpg",
       "description": "A web page designed with Squarespace and Custom CSS.",
@@ -29,7 +39,7 @@
       "alt": "Cuts By B Img"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Harry Potter RPG Game",
       "image": "https://media.giphy.com/media/dzOxouPFjSjo65i0Oa/giphy.gif",
       "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
@@ -39,7 +49,7 @@
       "alt": "Harry Potter RPG GIF"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Node mySQL",
       "image": "https://github.com/Loganrdj/Node-MySQL/blob/master/bamazonCustomer.gif?raw=true",
       "description": "This application utilizes node to run queries against a mySQL database.",
@@ -48,7 +58,7 @@
       "alt": "Node mySQL Bamazon GIF"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Popular Opinion",
       "image": "https://github.com/Loganrdj/popularopinion/blob/master/scrapeGIF.gif?raw=true",
       "description": "A small CLI script that utilizes Tweepy and Vader Sentiment Analyzer.",
@@ -57,7 +67,7 @@
       "alt": "Popular Opinion GIF"
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "Pokemon Clicky Game",
       "image": "https://github.com/Loganrdj/ClickyGame/blob/master/clickygamegif.gif?raw=true",
       "description": "This is a reactJS front-end application that is a fun memory game.",
@@ -67,7 +77,7 @@
       "alt": "Pokemon Clicky Game GIF"
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "FriendFinder",
       "image": "https://github.com/Loganrdj/FriendFinder/blob/master/Friendfinder.gif?raw=true",
       "description": "This is a Node and Express application that utilizes routes to communicate to both front-end and back-end.",
@@ -77,7 +87,7 @@
       "alt": "FriendFinder"
     },
     {
-      "id": 9,
+      "id": 10,
       "name": "LIRI Bot",
       "image": "https://github.com/Loganrdj/Liri-Bot/blob/master/HW-liriBot.gif?raw=true",
       "description": "The LIRI bot is an application that takes command line inputs to run commands against multiple APIs that provide information. ",
@@ -86,7 +96,7 @@
       "alt": "LIRI Bot GIF"
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Rocky Maguire INC Website",
       "image": "https://media.giphy.com/media/U6SoVeKecyeZeTyN7T/giphy.gif",
       "description": "This is a website that I had created for my friend's company. It was a work in progress and was stopped before completion.",
@@ -96,7 +106,7 @@
       "alt": "Rocky Maguire GIF"
     },
     {
-      "id": 11,
+      "id": 12,
       "name": "GifTastic",
       "image": "https://github.com/Loganrdj/GifTastic/blob/master/GifTasticGif.gif?raw=true",
       "description": "This is a front-end web application with the purpose to educate based on Ajax as well as to create a Gif Finder.",
@@ -106,7 +116,7 @@
       "alt": "GifTastic GIF (lol)"
     },
     {
-      "id": 12,
+      "id": 13,
       "name": "Trivia Game",
       "image": "https://github.com/Loganrdj/TriviaGame/blob/master/TriviaGame.gif?raw=true",
       "description": "This was designed to be a quick and simple quiz for a fun activity.",
