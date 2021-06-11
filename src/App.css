@@ -31,7 +31,6 @@ html,body{
 
 /* NAV */
 .title:hover{
-  /* transition: 1s; */
   animation-iteration-count: infinite;
   text-decoration: none;
   color: white;
@@ -48,7 +47,6 @@ html,body{
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
   margin-right: 40px;
-  /* float: left; */
 }
 .title > h1{
   float: left;
@@ -65,7 +63,6 @@ html,body{
 }
 
 .customNav {
-  /* background-color: (#343a40, .25); */
   display: flex;
   justify-content: space-around;
   background-position: 100% 0%;
@@ -74,24 +71,13 @@ html,body{
   z-index: 1020;
   opacity: .8;
   transition-duration: .45s;
-  /* position: sticky;
-  top: 0;
-  z-index: 1020;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  display: flex; */
   padding: .5rem 1rem;
   padding-bottom: 1.5%;
   padding-top: 1.3%;
-  /* border-bottom: solid 4px #808080; */
   background-color: #343a40;
   box-shadow:5px 0px 5px 5px rgb(148, 148, 148);
 }
-/* .customNav::after{
-  background-image: url('../src/low_contrast_linen.png');
-  opacity:.5;
-  z-index: -1;
-} */
+
 
 .customNav:hover{
   box-shadow:5px 0px 5px 5px rgb(83, 83, 83);
@@ -203,7 +189,6 @@ html,body{
   border-radius: 10px;
   margin: 0% 0% 0% 3%;
   padding: 10px;    
-  /* font-weight: bold; */
   border: solid 6px #808080;
   box-shadow:5px 3px 5px 1px rgb(77, 77, 77);
 }
