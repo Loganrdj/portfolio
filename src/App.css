@@ -124,7 +124,7 @@ html,body{
   display: flex;
   flex-flow: row-reverse wrap;
   width: 100%;
-  justify-content: space-around;
+  justify-content: flex-start;
   list-style-type: none;
   /* overflow: hidden; */
   float: right;
