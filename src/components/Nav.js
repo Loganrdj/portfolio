@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
       <nav className="navAnimation customNav">
+          {/* Yes I know it's not responsive, I'm developing a new, better portfolio. */}
             <Link className="title" to="/">
                 <h1 >Logan Moss</h1>
             </Link>
