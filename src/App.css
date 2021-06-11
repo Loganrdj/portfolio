@@ -66,6 +66,8 @@ html,body{
 
 .customNav {
   /* background-color: (#343a40, .25); */
+  display: flex;
+  justify-content: space-around;
   background-position: 100% 0%;
   position: sticky;
   top: 0;
@@ -78,7 +80,7 @@ html,body{
   flex-flow: row nowrap;
   justify-content: flex-start;
   display: flex; */
-  /* padding: .5rem 1rem; */
+  padding: .5rem 1rem;
   padding-bottom: 1.5%;
   padding-top: 1.3%;
   /* border-bottom: solid 4px #808080; */
@@ -96,14 +98,16 @@ html,body{
   opacity: 1;
   
 }
+.customNav .title {
+  width: 30%;
+}
 
 .customNavLink {
-  /* color: white; */
   color: white;
   font-family: 'Raleway', sans-serif;
-  float: right;
   margin-right: 10%;
-  padding-top: 6px;
+  /* padding-top: 6px; */
+
 }
 .customNavLink:hover{
   animation-name: flash;
@@ -117,11 +121,16 @@ html,body{
   border-bottom: white 1px solid;
 }
 .customNavLinks {
+  display: flex;
+  flex-flow: row-reverse wrap;
+  width: 100%;
+  justify-content: space-around;
   list-style-type: none;
   /* overflow: hidden; */
   float: right;
-  width: 50%;
+  /* width: 50%; */
   margin-bottom: 0%;
+  align-items: center;
 }
 
 .nav-links{
@@ -160,11 +169,6 @@ html,body{
 }
 .projectRow {
   padding-top: 25px;
-}
-@media only screen and (max-width: 600px){
-  .projectRow{
-    padding-top: 0;
-  }
 }
 
 .cardCSS {
@@ -368,4 +372,33 @@ html,body{
   100%{
     color: #187bcd;
   }
+}
+
+/* Media Queries */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .projectRow{
+    padding-top: 0;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
 }
