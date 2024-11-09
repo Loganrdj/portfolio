@@ -13,8 +13,7 @@
       "id": 2,
       "name": "FridgeBook",
       "image": "https://media.giphy.com/media/dBCwpDTayTDRRj6ndl/giphy.gif",
-      "description": "This application was made to save money in the kitchen with groceries and inventory!",
-      "deployed_url": "https://fridgebook.herokuapp.com/",
+      "description": "This application was made to save money in the kitchen with groceries and inventory.",
       "github_url": "https://github.com/Loganrdj/FridgeBook",
       "deployed_tag": "Website",
       "alt": "FridgeBook GIF"
