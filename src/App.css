@@ -573,12 +573,12 @@ html,body{
 
 /* Floating experience label on Resume page */
 .experience-box {
-  position: fixed;
-  top: 5rem; /* space below navigation */
+  position: absolute; /* overlay without affecting layout */
+  top: 1rem;
   left: 1rem;
   background: rgba(255, 255, 255, 0.9);
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  z-index: 1100;
+  z-index: 2;
   overflow-y: auto;
 }
