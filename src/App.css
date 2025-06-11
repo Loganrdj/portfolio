@@ -662,3 +662,19 @@ html,body{
   z-index: 0; /* sit on the same layer as the timeline */
   pointer-events: none; /* avoid blocking timeline interactions */
 }
+
+/* Toggle buttons on Resume page */
+.resume-toggle {
+  text-align: center;
+  margin-top: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.resume-toggle span {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.resume-toggle span.active {
+  text-decoration: underline;
+}
