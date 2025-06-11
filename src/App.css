@@ -273,6 +273,25 @@ html,body{
   padding: 25px 0;
 }
 
+.projects-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cardCSS {
   padding: 15px;
 }
