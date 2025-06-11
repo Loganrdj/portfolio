@@ -4,6 +4,12 @@ import React, { useMemo, useEffect, useState } from "react";
 import "../../App.css";
 import ExperienceModal from "./ExperienceModal";
 import placeholderLogo from "../../low_contrast_linen.png";
+import autodeskLogo from "../../logos/AutodeskLogo.png";
+import trilogyLogo from "../../logos/TrilogyLogo.webp";
+import usflogo from "../../logos/USFLogo.png";
+import freelancelogo from "../../logos/globelogo.png";
+import bungalowlogo from "../../logos/BungalowLogo.png";
+import twitchLogo from "../../logos/TwitchLogo.png";
 
 const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
@@ -13,55 +19,67 @@ const experiences = [
     start: "2016-02-01",
     end: "2019-10-01",
     title: "Field Support / Level 2 Ops / Help Desk",
-    company: "Confidential",
-    logo: placeholderLogo,
+    company: "University of San Francisco",
+    logo: usflogo,
     dateLabel: "Feb 2016 – Oct 2019",
     description: lorem,
+    backgroundcolor: '#01543c',
+    fontColor: 'white'
   },
   {
     start: "2019-09-01",
     end: "2019-12-01",
     title: "Data Associate (Contract)",
     company: "Bungalow Living",
-    logo: placeholderLogo,
+    logo: bungalowlogo,
     dateLabel: "Sept 2019 – Dec 2019",
     description: lorem,
+    backgroundcolor: '#f98d77',
+    fontColor: 'black'
   },
   {
     start: "2020-07-01",
     end: "2021-10-01",
     title: "Full Stack & Data Analytics TA/Tutor",
     company: "Trilogy Ed.",
-    logo: placeholderLogo,
+    logo: trilogyLogo,
     dateLabel: "July 2020 – Oct 2021",
     description: lorem,
+    backgroundcolor: '#ffffff',
+    fontColor: 'black'
   },
   {
     start: "2021-01-01",
     end: "2021-05-01",
     title: "Web Developer (Contract)",
-    company: "OUR Group",
-    logo: placeholderLogo,
+    company: "Freelance",
+    logo: freelancelogo,
     dateLabel: "Jan 2021 – May 2021",
     description: lorem,
+    backgroundcolor: '#ffffff',
+    fontColor: 'black'
   },
   {
     start: "2021-03-01",
     end: "2023-09-01",
     title: "Demand Generation – Marketing Automation & Ops",
     company: "Autodesk",
-    logo: placeholderLogo,
+    logo: autodeskLogo,
     dateLabel: "Mar 2021 – Sept 2023",
     description: lorem,
+    backgroundcolor: 'lightgray',
+    fontColor: 'black'
   },
   {
     start: "2023-09-01",
     end: null,
     title: "Streamer & Content Manager",
     company: "LoganRDJ LLC",
-    logo: placeholderLogo,
+    logo: twitchLogo,
     dateLabel: "Sept 2023 – Present",
     description: lorem,
+    backgroundcolor: '#CBC3E3',
+    fontColor: 'black'
   },
 ];
 
@@ -218,7 +236,7 @@ export default function Resume() {
               }}
               onClick={() => setSelected(exp)}
             >
-              <div className="card">
+              <div className="card" style={{ backgroundColor: exp.backgroundcolor, color: exp.fontColor }}>
                 <img src={exp.logo} alt={`${exp.company} logo`} className="exp-logo" />
                 <h3>{exp.title}</h3>
                 <p className="company">{exp.company}</p>
