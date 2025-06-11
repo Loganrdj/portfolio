@@ -114,11 +114,6 @@ class Home extends Component{
                   <button className="buttonClass buttonAnimation">Contact</button>
                 </Link>
               </div>
-              <div className="col-md-3 col-lg-3 col-sm-3 col-xl-3 col-xs-3">
-                <div className="nav-link">
-                  <button className="buttonClass buttonAnimation">Github</button>
-                </div>
-              </div>
             </div>
           </div>
           <hr className="my-4"></hr>
