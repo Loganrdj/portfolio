@@ -5,13 +5,40 @@ import { Link } from 'react-router-dom';
 // import SkillsCard from './SkillsCard/SkillsCard';
 import skills from './SkillsCard/skills.json'
 
+const rotatingSkillList = [
+  'JavaScript',
+  'Python',
+  'Ruby',
+  'Go',
+  'Java',
+  'C++'
+];
+
 class Home extends Component{
 
   state = {
-    skills
+    skills,
+    rotatingSkills: [],
+    currentSkillIndex: 0
+  }
+
+  componentDidMount() {
+    const shuffled = [...rotatingSkillList].sort(() => Math.random() - 0.5);
+    this.setState({ rotatingSkills: shuffled });
+    this.interval = setInterval(() => {
+      this.setState(prev => ({
+        currentSkillIndex: (prev.currentSkillIndex + 1) % shuffled.length
+      }));
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render(){
+    const { rotatingSkills, currentSkillIndex } = this.state;
+    const currentSkill = rotatingSkills[currentSkillIndex];
     return (
         <div className="jumbotron jumbotron-fluid jumboSpacing">
           <div className="backgroundImg snap-section">
@@ -21,6 +48,11 @@ class Home extends Component{
                 <p className="lastName">Moss</p>
               </div>
             </div>
+            <div className="skill-flash-container">
+              <div className="skill-flash-text">{currentSkill}</div>
+              <a href="#bg-bottom" className="see-more-link">See more</a>
+            </div>
+            <a id="bg-bottom"></a>
           </div>
           <div className="homeContent snap-section">
           <FadeIn delay={400} transitionDuration={4000}>
