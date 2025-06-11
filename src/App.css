@@ -299,6 +299,110 @@ html,body{
   background-color: #DDDFDF
 }
 
+/* ─── Timeline Container ───────────────────────────── */
+.timeline {
+  position: relative;
+  margin-top: 5rem;
+  height: 180vh;      /* adjust scroll length */
+  width: 100%;
+  background: #e9ecef;
+  overflow-x: hidden;
+}
+
+/* ─── Central Spine + Ticks ───────────────────────── */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #444;
+  transform: translateX(-50%);
+}
+.timeline-tick {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline-tick.year   { width: 30px; border-top: 2px solid #444; }
+.timeline-tick.year span {
+  position: absolute; top: -1rem; left: 100%; margin-left: .25rem;
+  font-size: .8rem; white-space: nowrap;
+}
+.timeline-tick.month  { width: 15px; border-top: 1px solid #888; }
+
+/* ─── Duration Bar (optional) ─────────────────────── */
+.timeline-duration {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: #0ea5e9;
+  z-index: 0;
+}
+
+/* ─── Cards & Connectors ───────────────────────────── */
+/* container for each event */
+.timeline-item {
+  position: absolute;        /* top & left set inline */
+  transform: translateY(-50%);
+  transition: transform .2s ease-out;
+  z-index: 1;
+}
+
+/* the “card” itself */
+.timeline-item .card {
+  background: #1f2937;
+  color: #f3f4f6;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 280px;
+  box-sizing: border-box;
+}
+
+/* the connector bar */
+.timeline-item .connector {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: #0ea5e9;
+  z-index: 0;
+}
+
+/* connectors on left‐side events extend rightwards */
+.timeline-item.left .connector {
+  left: 100%;
+}
+/* connectors on right‐side events extend leftwards */
+.timeline-item.right .connector {
+  right: 100%;
+}
+
+/* hide any older pseudo‐dots */
+.timeline-item::after {
+  display: none;
+}
+
+/* ─── Mobile Fallback ─────────────────────────────── */
+@media (max-width: 640px) {
+  .timeline::before,
+  .timeline-tick,
+  .timeline-duration,
+  .timeline-item .connector {
+    display: none;
+  }
+  .timeline-item {
+    left: 50% !important;
+    transform: translate(-50%, 0) !important;
+  }
+}
+
+
+
+
+
+
 @keyframes flash{
   from {
     opacity: 1
