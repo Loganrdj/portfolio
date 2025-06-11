@@ -81,7 +81,7 @@ html,body{
   display: flex;
   justify-content: space-around;
   background-position: 100% 0%;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
