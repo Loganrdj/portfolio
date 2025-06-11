@@ -1,37 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../App.css";
 import { Link, useLocation } from 'react-router-dom';
 
 function Nav() {
-    const location = useLocation();
-  return (
-      <nav className="navAnimation customNav">
-            <Link
-              className="title"
-              to="/"
-              style={{ visibility: location.pathname === "/" ? "hidden" : "visible" }}
-            >
-                <h1>Logan Moss</h1>
-            </Link>
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-            <ul className="customNavLinks">
-                <a href="https://github.com/Loganrdj" className="customNavLink">
-                    <li className="customNavLink">Github</li>
-                </a>
-                <Link to="/resume" className="customNavLink">
-                    <li className="customNavLink">Resume</li>
-                </Link>
-                {/* <Link to="/contact" className="customNavLink ">
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
+  return (
+    <nav className="navAnimation customNav">
+      <Link
+        className="title"
+        to="/"
+        onClick={closeMenu}
+        style={{ visibility: location.pathname === "/" ? "hidden" : "visible" }}
+      >
+        <h1>Logan Moss</h1>
+      </Link>
+
+      <button className="mobileMenuButton" onClick={toggleMenu} aria-label="Toggle navigation">
+        {menuOpen ? "✖" : "☰"}
+      </button>
+
+      <ul className={`customNavLinks ${menuOpen ? "showMobileMenu" : ""}`}>
+        <a href="https://github.com/Loganrdj" className="customNavLink" onClick={closeMenu}>
+          <li className="customNavLink">Github</li>
+        </a>
+        <Link to="/resume" className="customNavLink" onClick={closeMenu}>
+          <li className="customNavLink">Resume</li>
+        </Link>
+        {/* <Link to="/contact" className="customNavLink ">
                     <li className="customNavLink">Contact</li>
                 </Link> */}
-                <Link to="/projects" className="customNavLink">
-                    <li className="customNavLink">Projects</li>
-                </Link>
-                <Link to="/" className="customNavLink">
-                    <li className="customNavLink">Home</li>
-                </Link>
-            </ul>
-      </nav>
+        <Link to="/projects" className="customNavLink" onClick={closeMenu}>
+          <li className="customNavLink">Projects</li>
+        </Link>
+        <Link to="/" className="customNavLink" onClick={closeMenu}>
+          <li className="customNavLink">Home</li>
+        </Link>
+      </ul>
+    </nav>
   );
 }
 export default Nav;
