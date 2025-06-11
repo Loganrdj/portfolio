@@ -44,18 +44,24 @@ export default function Resume() {
     return arr;
   }, [minT, maxT]);
 
-  // 5) Magnify cards on scroll
+  // 5) Magnify cards on scroll and adjust connector lengths
   useEffect(() => {
     const items = document.querySelectorAll(".timeline-item");
+    const cardWidth = 280;
     const fn = () => {
       const mid = window.innerHeight / 2;
       items.forEach((el) => {
-        const r     = el.getBoundingClientRect();
-        const c     = r.top + r.height / 2;
-        const dist  = Math.abs(c - mid);
-        const ratio = Math.max(0, 1 - dist / (mid + r.height));
-        const scale = 0.8 + ratio * 0.4;
-        el.style.transform = `translateY(-50%) scale(${scale})`;
+        const card      = el.querySelector(".card");
+        const connector = el.querySelector(".connector");
+        const base      = parseFloat(el.dataset.baseconnector);
+        const r         = el.getBoundingClientRect();
+        const c         = r.top + r.height / 2;
+        const dist      = Math.abs(c - mid);
+        const ratio     = Math.max(0, 1 - dist / (mid + r.height));
+        const scale     = 0.8 + ratio * 0.4;
+        card.style.transform = `translateY(-50%) scale(${scale})`;
+        const dynamic = base + cardWidth * (1 - scale);
+        connector.style.width = `${dynamic}px`;
       });
     };
     fn();
@@ -87,7 +93,7 @@ export default function Resume() {
       {sorted.map((exp, i) => {
         const side     = i % 2 ? "left" : "right";
         const startPct = toPct(Date.parse(exp.start));
-        const nudged   = startPct + i * 3;  // vertical bump to avoid exact overlap
+        const nudged   = startPct;  // place card at its actual start position
 
         // Count how many prior overlaps on same side
         const overlapIndex = sorted.slice(0, i).filter((o, j) => {
@@ -99,16 +105,15 @@ export default function Resume() {
                  s2 <= Date.parse(exp.start);
         }).length;
 
-        // Compute horizontal offset:
-        // half the card width + base connector length + per-overlap bump
-        const halfCard      = 280 / 2;
+        // Compute horizontal offset and connector base length
+        const cardWidth     = 280;
         const baseConnector = 60;
         const bump          = 40;
         const connectorLen  = baseConnector + bump * overlapIndex;
-        const offsetX       = halfCard + connectorLen;
+        const offsetX       = cardWidth + connectorLen + 16; // include bracket cap
 
         // inline styles:
-        const barStyle = {
+        const bracketStyle = {
           position: "absolute",
           top: `${nudged}%`,
           left: "50%",
@@ -116,21 +121,19 @@ export default function Resume() {
           height: exp.end
             ? `${toPct(Date.parse(exp.end)) - startPct}%`
             : "5%",
-          width: "4px",
-          background: "#0ea5e9",
-          zIndex: 0,
         };
 
         const cardLeft = side === "left"
           ? `calc(50% - ${offsetX}px)`
-          : `calc(50% + ${connectorLen}px)`;
+          : `calc(50% + ${connectorLen + 16}px)`;
 
         return (
           <React.Fragment key={i}>
-            <div className="timeline-duration" style={barStyle} />
+            <div className={`duration-bracket ${side}`} style={bracketStyle} />
 
             <div
               className={`timeline-item ${side}`}
+              data-baseconnector={connectorLen}
               style={{
                 top: `${nudged}%`,
                 left: cardLeft,
