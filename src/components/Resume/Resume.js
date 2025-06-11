@@ -133,6 +133,16 @@ const experiences = [
 export default function Resume() {
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("career");
+  const [fading, setFading] = useState(false);
+
+  const handleToggle = (newView) => {
+    if (newView === view) return;
+    setFading(true);
+    setTimeout(() => {
+      setView(newView);
+      setFading(false);
+    }, 300);
+  };
 
   const expArray = view === "career" ? experiences : educationexp;
 
@@ -208,19 +218,19 @@ export default function Resume() {
       <div className="resume-toggle">
         <span
           className={view === "career" ? "active" : ""}
-          onClick={() => setView("career")}
+          onClick={() => handleToggle("career")}
         >
           Career
         </span>
         <span> | </span>
         <span
           className={view === "education" ? "active" : ""}
-          onClick={() => setView("education")}
+          onClick={() => handleToggle("education")}
         >
           Education
         </span>
       </div>
-      <div className="timeline">
+      <div className={`timeline ${fading ? "fading" : ""}`}>
       {/* Spine */}
       <div className="spine" />
 
