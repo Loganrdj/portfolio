@@ -87,35 +87,30 @@ html,body{
   left: 0;
 
   /* size it to exactly the top-left quarter */
-  width: 50%;
+  width: 40%;
   height: 50%;
   font-family: 'Playfair Display', serif;
   /* flexbox centering */
   display: flex;
+  flex-direction: column;
   align-items: center;      /* vertical center */
   justify-content: center;  /* horizontal center */
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(4rem, 10vw, 7rem);
   color: black;
   text-align: center;
 }
-.secondcenterTextDiv {
-  position: absolute;   /* pull it out of the normal flow */
-  /* position below the first name */
-  top: 50%;
-  /* nudge to the right slightly */
-  left: 10px;
-
-  /* size it to exactly the top-left quarter */
-  width: 50%;
-  height: 50%;
-  font-family: 'Digitag', sans-serif;
-  /* flexbox centering */
-  display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
-  font-size: clamp(1rem, 5vw, 3rem);
-  color: black;
-  text-align: center;
+.firstName {
+  top: 1rem;             /* ↗ keep “Moss” up at the top */
+  right: 1rem;
+}
+.lastName {
+  /* font-family: 'Digitag', sans-serif; */
+  font-family: 'Urban Starblues', cursive;
+  font-size: clamp(4rem, 10vw, 7rem);
+  position: absolute;
+  bottom: 0rem;   /* ← 1rem up from the bottom edge */
+  left: 50%;
+  transform: translateX(-3%);
 }
 
 /* end BootStrap */
