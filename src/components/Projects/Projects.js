@@ -13,12 +13,11 @@ class Projects extends Component {
 
   render() {
     return(
-    <div className="container" style={{ marginTop: 10 }}>
     <div className="row projectRow">
       {this.state.projects.map(project => (
         <div className="col-md-4 col-sm-6 col-lg-4 col-xl-3 col-12 cardCSS">
           <ScrollAnimation delay={300} animateIn="fadeIn">
-            <PreviewCard
+            <PreviewCard 
               name = {project.name} 
               image = {project.image} 
               description = {project.description}
@@ -32,8 +31,7 @@ class Projects extends Component {
         </div>
       ))}
     </div>
-    </div>
-
+    
     )}
 }
 
