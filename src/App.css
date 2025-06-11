@@ -500,7 +500,8 @@ html,body{
 .timeline-item .connector {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scaleX(1);
+  transform-origin: left;
   height: 2px;
   background: #0ea5e9;
   z-index: -1;
@@ -509,10 +510,12 @@ html,body{
 /* connectors on left‐side events extend rightwards */
 .timeline-item.left .connector {
   left: 100%;
+  transform-origin: right;
 }
 /* connectors on right‐side events extend leftwards */
 .timeline-item.right .connector {
   right: 100%;
+  transform-origin: left;
 }
 
 /* hide any older pseudo‐dots */
