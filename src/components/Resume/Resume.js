@@ -83,12 +83,42 @@ const experiences = [
   },
 ];
 
+// Education timeline data
+const educationexp = [
+  {
+    start: "2014-08-01",
+    end: "2018-05-01",
+    title: "B.S. Studies",
+    company: "University of San Francisco",
+    logo: usflogo,
+    dateLabel: "Aug 2014 – May 2018",
+    description: lorem,
+    backgroundcolor: "#01543c",
+    fontColor: "white",
+  },
+  {
+    start: "2019-01-01",
+    end: "2019-06-01",
+    title: "Full Stack Bootcamp",
+    company: "Trilogy Education",
+    logo: trilogyLogo,
+    dateLabel: "Jan 2019 – Jun 2019",
+    description: lorem,
+    backgroundcolor: "#ffffff",
+    fontColor: "black",
+  },
+];
+
 export default function Resume() {
   const [selected, setSelected] = useState(null);
+  const [activeTab, setActiveTab] = useState("career");
+
+  const data = activeTab === "education" ? educationexp : experiences;
+
   // 1) Chronologically sort
   const sorted = useMemo(
-    () => experiences.slice().sort((a, b) => Date.parse(a.start) - Date.parse(b.start)),
-    []
+    () => data.slice().sort((a, b) => Date.parse(a.start) - Date.parse(b.start)),
+    [data]
   );
 
   // 2) Compute timeline bounds with one year buffer
@@ -153,6 +183,21 @@ export default function Resume() {
 
   return (
     <>
+    <div className="exp-toggle">
+      <span
+        className={activeTab === "career" ? "active" : ""}
+        onClick={() => setActiveTab("career")}
+      >
+        Career
+      </span>
+      <span className="separator"> | </span>
+      <span
+        className={activeTab === "education" ? "active" : ""}
+        onClick={() => setActiveTab("education")}
+      >
+        Education
+      </span>
+    </div>
     <div className="timeline">
       {/* Spine */}
       <div className="spine" />
