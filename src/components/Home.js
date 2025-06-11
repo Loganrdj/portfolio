@@ -14,13 +14,15 @@ class Home extends Component{
   render(){
     return (
         <div className="jumbotron jumbotron-fluid jumboSpacing">
-          <div className="backgroundImg">
+          <div className="backgroundImg snap-section">
             <div className="introHeader">
               <div className="centerTextDiv">
                 <p className="firstName">Logan</p>
                 <p className="lastName">Moss</p>
               </div>
             </div>
+          </div>
+          <div className="homeContent snap-section">
           <FadeIn delay={400} transitionDuration={4000}>
             <div className="row">
               <div className="col-md-12">
