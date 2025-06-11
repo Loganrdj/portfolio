@@ -29,7 +29,7 @@ class Home extends Component{
       this.setState(prev => ({
         currentSkillIndex: (prev.currentSkillIndex + 1) % shuffled.length
       }));
-    }, 1000);
+    }, 3000);
   }
 
   componentWillUnmount() {
