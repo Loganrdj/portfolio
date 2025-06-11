@@ -19,10 +19,16 @@ export default function Resume() {
     []
   );
 
-  // 2) Compute timeline bounds
+  // 2) Compute timeline bounds with one year buffer
   const [minT, maxT] = useMemo(() => {
-    const stamps = sorted.map((e) => Date.parse(e.start));
-    return [Math.min(...stamps), Math.max(...stamps, Date.now())];
+    const startTimes = sorted.map((e) => Date.parse(e.start));
+    const endTimes   = sorted.map((e) =>
+      e.end ? Date.parse(e.end) : Date.now()
+    );
+    const buffer = 365 * 24 * 60 * 60 * 1000; // one year
+    const min = Math.min(...startTimes) - buffer;
+    const max = Math.max(...endTimes) + buffer;
+    return [min, max];
   }, [sorted]);
 
   // 3) Helper: timestamp → % down timeline
@@ -44,18 +50,24 @@ export default function Resume() {
     return arr;
   }, [minT, maxT]);
 
-  // 5) Magnify cards on scroll
+  // 5) Magnify cards on scroll and adjust connector lengths
   useEffect(() => {
     const items = document.querySelectorAll(".timeline-item");
+    const cardWidth = 280;
     const fn = () => {
       const mid = window.innerHeight / 2;
       items.forEach((el) => {
-        const r     = el.getBoundingClientRect();
-        const c     = r.top + r.height / 2;
-        const dist  = Math.abs(c - mid);
-        const ratio = Math.max(0, 1 - dist / (mid + r.height));
-        const scale = 0.8 + ratio * 0.4;
-        el.style.transform = `translateY(-50%) scale(${scale})`;
+        const card      = el.querySelector(".card");
+        const connector = el.querySelector(".connector");
+        const base      = parseFloat(el.dataset.baseconnector);
+        const r         = el.getBoundingClientRect();
+        const c         = r.top + r.height / 2;
+        const dist      = Math.abs(c - mid);
+        const ratio     = Math.max(0, 1 - dist / (mid + r.height));
+        const scale     = 0.8 + ratio * 0.4;
+        card.style.transform = `translateY(-50%) scale(${scale})`;
+        const dynamic = base + (cardWidth * (1 - scale)) / 2;
+        connector.style.width = `${dynamic}px`;
       });
     };
     fn();
@@ -84,53 +96,53 @@ export default function Resume() {
       ))}
 
       {/* Events */}
-      {sorted.map((exp, i) => {
-        const side     = i % 2 ? "left" : "right";
-        const startPct = toPct(Date.parse(exp.start));
-        const nudged   = startPct + i * 3;  // vertical bump to avoid exact overlap
+      {(() => {
+        const lanes = { left: [], right: [] };
+        return sorted.map((exp, i) => {
+          const side  = i % 2 ? "left" : "right";
+          const start = Date.parse(exp.start);
+          const end   = exp.end ? Date.parse(exp.end) : maxT;
 
-        // Count how many prior overlaps on same side
-        const overlapIndex = sorted.slice(0, i).filter((o, j) => {
-          const s2    = Date.parse(o.start),
-                e2    = o.end ? Date.parse(o.end) : maxT,
-                side2 = j % 2 ? "left" : "right";
-          return side2 === side &&
-                 Date.parse(exp.start) <= e2 &&
-                 s2 <= Date.parse(exp.start);
-        }).length;
+          // assign to the first lane that is free by this start time
+          const laneEnds = lanes[side];
+          let laneIndex = laneEnds.findIndex((t) => t <= start);
+          if (laneIndex === -1) {
+            laneIndex = laneEnds.length;
+            laneEnds.push(end);
+          } else {
+            laneEnds[laneIndex] = end;
+          }
 
-        // Compute horizontal offset:
-        // half the card width + base connector length + per-overlap bump
-        const halfCard      = 280 / 2;
-        const baseConnector = 60;
-        const bump          = 40;
-        const connectorLen  = baseConnector + bump * overlapIndex;
-        const offsetX       = halfCard + connectorLen;
+          const startPct = toPct(start);
+          const nudged   = startPct; // keep event anchored to its true date
 
-        // inline styles:
-        const barStyle = {
-          position: "absolute",
-          top: `${nudged}%`,
-          left: "50%",
-          transform: "translateX(-50%)",
-          height: exp.end
-            ? `${toPct(Date.parse(exp.end)) - startPct}%`
-            : "5%",
-          width: "4px",
-          background: "#0ea5e9",
-          zIndex: 0,
-        };
+          const cardWidth     = 280;
+          const laneGap       = 16;
+          const baseConnector = 60;
+          const connectorLen  = baseConnector + laneIndex * (cardWidth + laneGap);
 
-        const cardLeft = side === "left"
-          ? `calc(50% - ${offsetX}px)`
-          : `calc(50% + ${connectorLen}px)`;
+          // inline styles
+          const bracketStyle = {
+            position: "absolute",
+            top: `${nudged}%`,
+            left: side === "left" ? "calc(50% - 2%)" : "calc(50% + 2%)",
+            transform: "translateX(-50%)",
+            height: exp.end
+              ? `${toPct(Date.parse(exp.end)) - startPct}%`
+              : "5%",
+          };
 
-        return (
-          <React.Fragment key={i}>
-            <div className="timeline-duration" style={barStyle} />
+          const cardLeft = side === "left"
+            ? `calc(50% - 2% - ${connectorLen + cardWidth}px)`
+            : `calc(50% + 2% + ${connectorLen}px)`;
+
+          return (
+            <React.Fragment key={i}>
+              <div className={`duration-bracket ${side}`} style={bracketStyle} />
 
             <div
               className={`timeline-item ${side}`}
+              data-baseconnector={connectorLen}
               style={{
                 top: `${nudged}%`,
                 left: cardLeft,
@@ -148,7 +160,8 @@ export default function Resume() {
             </div>
           </React.Fragment>
         );
-      })}
+        });
+      })()}
     </div>
   );
 }
