@@ -349,19 +349,19 @@ html,body{
   background: #0ea5e9;
 }
 .duration-bracket.left::before {
-  left: -16px;
+  right: -16px;
   top: 0;
 }
 .duration-bracket.left::after {
-  left: -16px;
+  right: -16px;
   bottom: 0;
 }
 .duration-bracket.right::before {
-  right: -16px;
+  left: -16px;
   top: 0;
 }
 .duration-bracket.right::after {
-  right: -16px;
+  left: -16px;
   bottom: 0;
 }
 
