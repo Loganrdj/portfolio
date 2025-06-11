@@ -662,3 +662,17 @@ html,body{
   z-index: 0; /* sit on the same layer as the timeline */
   pointer-events: none; /* avoid blocking timeline interactions */
 }
+
+/* Toggle buttons on resume page */
+.exp-toggle {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.exp-toggle span {
+  cursor: pointer;
+  margin: 0 0.25rem;
+}
+.exp-toggle .active {
+  text-decoration: underline;
+}
