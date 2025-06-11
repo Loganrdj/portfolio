@@ -204,22 +204,23 @@ export default function Resume() {
 
   return (
     <>
-    <div className="resume-toggle">
-      <span
-        className={view === "career" ? "active" : ""}
-        onClick={() => setView("career")}
-      >
-        Career
-      </span>
-      <span> | </span>
-      <span
-        className={view === "education" ? "active" : ""}
-        onClick={() => setView("education")}
-      >
-        Education
-      </span>
-    </div>
-    <div className="timeline">
+    <div className="timeline-wrapper">
+      <div className="resume-toggle">
+        <span
+          className={view === "career" ? "active" : ""}
+          onClick={() => setView("career")}
+        >
+          Career
+        </span>
+        <span> | </span>
+        <span
+          className={view === "education" ? "active" : ""}
+          onClick={() => setView("education")}
+        >
+          Education
+        </span>
+      </div>
+      <div className="timeline">
       {/* Spine */}
       <div className="spine" />
 
@@ -318,6 +319,7 @@ export default function Resume() {
         );
         });
       })()}
+      </div>
     </div>
     <ExperienceModal exp={selected} onClose={() => setSelected(null)} />
     </>
