@@ -1,9 +1,11 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import "../../App.css";
 
 export default function ExperienceModal({ exp, onClose }) {
   if (!exp) return null;
-  return (
+
+  const modalContent = (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-close" onClick={onClose}>&times;</div>
@@ -14,4 +16,6 @@ export default function ExperienceModal({ exp, onClose }) {
       </div>
     </div>
   );
+
+  return ReactDOM.createPortal(modalContent, document.body);
 }
