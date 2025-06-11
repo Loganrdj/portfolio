@@ -1,14 +1,17 @@
 import React from 'react';
 import "../App.css";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Nav() {
+    const location = useLocation();
   return (
       <nav className="navAnimation customNav">
-          {/* Yes I know it's not responsive, I'm developing a new, better portfolio. */}
-            <Link className="title" to="/">
-                <h1 >Logan Moss</h1>
-            </Link>
+            {location.pathname !== "/" && (
+                <Link className="title" to="/">
+                <h1>Logan Moss</h1>
+                </Link>
+            )}
+
             <ul className="customNavLinks">
                 <a href="https://github.com/Loganrdj" className="customNavLink">
                     <li className="customNavLink">Github</li>
@@ -16,9 +19,9 @@ function Nav() {
                 <Link to="/resume" className="customNavLink">
                     <li className="customNavLink">Resume</li>
                 </Link>
-                <Link to="/contact" className="customNavLink ">
+                {/* <Link to="/contact" className="customNavLink ">
                     <li className="customNavLink">Contact</li>
-                </Link>
+                </Link> */}
                 <Link to="/projects" className="customNavLink">
                     <li className="customNavLink">Projects</li>
                 </Link>
