@@ -6,11 +6,13 @@ function Nav() {
     const location = useLocation();
   return (
       <nav className="navAnimation customNav">
-            {location.pathname !== "/" && (
-                <Link className="title" to="/">
+            <Link
+              className="title"
+              to="/"
+              style={{ visibility: location.pathname === "/" ? "hidden" : "visible" }}
+            >
                 <h1>Logan Moss</h1>
-                </Link>
-            )}
+            </Link>
 
             <ul className="customNavLinks">
                 <a href="https://github.com/Loganrdj" className="customNavLink">
