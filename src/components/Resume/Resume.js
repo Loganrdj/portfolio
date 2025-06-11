@@ -132,10 +132,14 @@ const experiences = [
 
 export default function Resume() {
   const [selected, setSelected] = useState(null);
+  const [view, setView] = useState("career");
+
+  const expArray = view === "career" ? experiences : educationexp;
+
   // 1) Chronologically sort
   const sorted = useMemo(
-    () => experiences.slice().sort((a, b) => Date.parse(a.start) - Date.parse(b.start)),
-    []
+    () => expArray.slice().sort((a, b) => Date.parse(a.start) - Date.parse(b.start)),
+    [expArray]
   );
 
   // 2) Compute timeline bounds with one year buffer
@@ -196,10 +200,25 @@ export default function Resume() {
       window.removeEventListener("scroll", fn);
       window.removeEventListener("resize", fn);
     };
-  }, []);
+  }, [sorted]);
 
   return (
     <>
+    <div className="resume-toggle">
+      <span
+        className={view === "career" ? "active" : ""}
+        onClick={() => setView("career")}
+      >
+        Career
+      </span>
+      <span> | </span>
+      <span
+        className={view === "education" ? "active" : ""}
+        onClick={() => setView("education")}
+      >
+        Education
+      </span>
+    </div>
     <div className="timeline">
       {/* Spine */}
       <div className="spine" />
