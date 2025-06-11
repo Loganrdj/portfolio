@@ -134,7 +134,7 @@ export default function Resume() {
   }, []);
 
   return (
-    <div className="container" style={{ marginTop: 10 }}>
+    <>
     <div className="experience-box">Experience</div>
     <div className="timeline">
       {/* Spine */}
@@ -236,7 +236,7 @@ export default function Resume() {
       })()}
     </div>
     <ExperienceModal exp={selected} onClose={() => setSelected(null)} />
-    </div>
+    </>
   );
 }
 
