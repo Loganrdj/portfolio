@@ -463,7 +463,7 @@ html,body{
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
-  background: #0ea5e9;
+  background: black;
   z-index: 0;
 }
 .duration-bracket::before,
@@ -472,7 +472,7 @@ html,body{
   position: absolute;
   width: 16px;
   height: 4px;
-  background: #0ea5e9;
+  background: black;
 }
 .duration-bracket.left::before {
   right: -16px;
@@ -531,7 +531,7 @@ html,body{
   transform: translateY(-50%) scaleX(1);
   transform-origin: left;
   height: 2px;
-  background: #0ea5e9;
+  background: black;
   z-index: -1;
 }
 
