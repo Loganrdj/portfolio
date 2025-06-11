@@ -14,7 +14,10 @@ class Home extends Component{
   render(){
     return (
         <div className="jumbotron jumbotron-fluid jumboSpacing">
-          <div className="backgroundImg">       
+          <div className="backgroundImg">
+            <div className="introHeader">
+              <div className="centerTextDiv">Header Placeholder</div>
+            </div>
           <FadeIn delay={400} transitionDuration={4000}>
             <div className="row">
               <div className="col-md-12">
