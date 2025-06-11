@@ -570,3 +570,15 @@ html,body{
   cursor: pointer;
   font-size: 1.2rem;
 }
+
+/* Floating experience label on Resume page */
+.experience-box {
+  position: fixed;
+  top: 5rem; /* space below navigation */
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  z-index: 1100;
+  overflow-y: auto;
+}
