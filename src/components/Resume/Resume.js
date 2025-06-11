@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useLayoutEffect } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import "../../App.css";
 import ExperienceModal from "./ExperienceModal";
 import placeholderLogo from "../../low_contrast_linen.png";
@@ -185,7 +185,7 @@ export default function Resume() {
   }, [minT, maxT]);
 
   // 5) Magnify cards on scroll and adjust connector lengths
-  useLayoutEffect(() => {
+  useEffect(() => {
     const items = document.querySelectorAll(".timeline-item");
     const cardWidth = 280;
     const fn = () => {
@@ -197,7 +197,7 @@ export default function Resume() {
         const r         = el.getBoundingClientRect();
         const c         = r.top + r.height / 2;
         const dist      = Math.abs(c - mid);
-        const ratio     = Math.max(0, 1 - dist / mid);
+        const ratio     = Math.max(0, 1 - dist / (mid + r.height));
         const scale     = 0.8 + ratio * 0.4;
         card.style.transform = `scale(${scale})`;
         const dynamic  = base + (cardWidth * (1 - scale)) / 2;
