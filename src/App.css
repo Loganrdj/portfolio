@@ -18,7 +18,9 @@ body {
 
 html,body{
   height:100%;
-  background-color: #e9ecef;
+  /* Set a fixed background image that covers the page. Replace the URL with your own photo */
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+  background-size: cover;
   /* overflow: hidden; */
 }
 
@@ -27,11 +29,12 @@ html,body{
   padding-top: 20px;
   padding-bottom: 0px;
 }
+.jumbotron {
+  background-color: transparent;
+}
 .backgroundImg {
-  background-image: url('https://via.placeholder.com/1920x1080');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Allow the page background to show through */
+  background: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
