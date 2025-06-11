@@ -25,9 +25,6 @@ function Nav() {
       </button>
 
       <ul className={`customNavLinks ${menuOpen ? "showMobileMenu" : ""}`}>
-        <a href="https://github.com/Loganrdj" className="customNavLink" onClick={closeMenu}>
-          <li className="customNavLink">Github</li>
-        </a>
         <Link to="/resume" className="customNavLink" onClick={closeMenu}>
           <li className="customNavLink">Resume</li>
         </Link>
