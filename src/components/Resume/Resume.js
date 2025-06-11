@@ -140,6 +140,7 @@ export default function Resume() {
             <React.Fragment key={i}>
               <div className={`duration-bracket ${side}`} style={bracketStyle} />
 
+
             <div
               className={`timeline-item ${side}`}
               data-baseconnector={connectorLen}
