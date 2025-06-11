@@ -3,6 +3,36 @@ font-family: 'Raleway', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; 
 */
+
+/* 1. Digitag */
+@font-face {
+  font-family: 'Digitag';
+  src: url('../public/assets/fonts/Digitag.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Playfair Display (variable font weight) */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../public/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+  /* if it’s a variable font, you can allow a weight range */
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Urban Starblues */
+@font-face {
+  font-family: 'Urban Starblues';
+  src: url('../public/assets/fonts/Urban\ Starblues\ Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -32,7 +62,7 @@ html,body{
 .backgroundImg {
   background-image: url('../public/backgroundimagewpaint.png');
   /* Ensure the full width of the image is visible */
-  background-size: 100% auto;
+  background-size: 110% auto;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -52,8 +82,38 @@ html,body{
 }
 
 .centerTextDiv {
+  position: absolute;   /* pull it out of the normal flow */
+  top: 0;
+  left: 0;
+
+  /* size it to exactly the top-left quarter */
+  width: 50%;
+  height: 50%;
+  font-family: 'Playfair Display', serif;
+  /* flexbox centering */
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  font-size: clamp(1rem, 5vw, 3rem);
+  color: black;
   text-align: center;
-  width: 100%;
+}
+.secondcenterTextDiv {
+  position: absolute;   /* pull it out of the normal flow */
+  top: 0;
+  left: 0;
+
+  /* size it to exactly the top-left quarter */
+  width: 50%;
+  height: 50%;
+  font-family: 'Digitag', sans-serif;
+  /* flexbox centering */
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  font-size: clamp(1rem, 5vw, 3rem);
+  color: black;
+  text-align: center;
 }
 
 /* end BootStrap */

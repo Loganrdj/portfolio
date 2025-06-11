@@ -16,7 +16,8 @@ class Home extends Component{
         <div className="jumbotron jumbotron-fluid jumboSpacing">
           <div className="backgroundImg">
             <div className="introHeader">
-              <div className="centerTextDiv">Header Placeholder</div>
+              <div className="centerTextDiv">Logan</div>
+              <div className="secondcenterTextDiv">Moss</div>
             </div>
           <FadeIn delay={400} transitionDuration={4000}>
             <div className="row">
