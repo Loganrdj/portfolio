@@ -97,35 +97,47 @@ export default function Resume() {
 
       {/* Events */}
       {(() => {
+        // track end time and mid point for each lane so cards never overlap
         const lanes = { left: [], right: [] };
         return sorted.map((exp, i) => {
           const side  = i % 2 ? "left" : "right";
           const start = Date.parse(exp.start);
           const end   = exp.end ? Date.parse(exp.end) : maxT;
 
-          // assign to the first lane that is free by this start time
-          const laneEnds = lanes[side];
-          let laneIndex = laneEnds.findIndex((t) => t <= start);
+          const startPct = toPct(start);
+          const endPct   = exp.end ? toPct(Date.parse(exp.end)) : toPct(maxT);
+          const midPct   = startPct + (endPct - startPct) / 2;
+
+          // assign to the first lane that is free and spaced out
+          const minGap = 5; // % between event centers
+          const laneData = lanes[side];
+          let laneIndex = laneData.findIndex(({ endTime, mid }) => {
+            return endTime <= start && Math.abs(midPct - mid) >= minGap;
+          });
           if (laneIndex === -1) {
-            laneIndex = laneEnds.length;
-            laneEnds.push(end);
+            laneIndex = laneData.length;
+            laneData.push({ endTime: end, mid: midPct });
           } else {
-            laneEnds[laneIndex] = end;
+            laneData[laneIndex] = { endTime: end, mid: midPct };
           }
 
-          const startPct = toPct(start);
-          const nudged   = startPct; // keep event anchored to its true date
+          const nudged   = midPct; // center card on the duration
 
           const cardWidth     = 280;
           const laneGap       = 16;
           const baseConnector = 60;
+          const bracketSpacing = 8;
           const connectorLen  = baseConnector + laneIndex * (cardWidth + laneGap);
 
           // inline styles
+          const bracketLeft = side === "left"
+            ? `calc(50% - 2% - ${laneIndex * bracketSpacing}px)`
+            : `calc(50% + 2% + ${laneIndex * bracketSpacing}px)`;
+
           const bracketStyle = {
             position: "absolute",
-            top: `${nudged}%`,
-            left: side === "left" ? "calc(50% - 2%)" : "calc(50% + 2%)",
+            top: `${startPct}%`,
+            left: bracketLeft,
             transform: "translateX(-50%)",
             height: exp.end
               ? `${toPct(Date.parse(exp.end)) - startPct}%`
@@ -133,8 +145,8 @@ export default function Resume() {
           };
 
           const cardLeft = side === "left"
-            ? `calc(50% - 2% - ${connectorLen + cardWidth}px)`
-            : `calc(50% + 2% + ${connectorLen}px)`;
+            ? `calc(50% - 2% - ${laneIndex * bracketSpacing}px - ${connectorLen + cardWidth}px)`
+            : `calc(50% + 2% + ${laneIndex * bracketSpacing}px + ${connectorLen}px)`;
 
           return (
             <React.Fragment key={i}>
