@@ -183,7 +183,8 @@ export default function Resume() {
           const midPct   = startPct + (endPct - startPct) / 2;
 
           // assign to the first lane that is free and spaced out
-          const minGap = 5; // % between event centers
+          // increased from 5 to 15 so larger cards don't overlap
+          const minGap = 15; // % between event centers
           const laneData = lanes[side];
           let laneIndex = laneData.findIndex(({ endTime, mid }) => {
             return endTime <= start && Math.abs(midPct - mid) >= minGap;
