@@ -119,13 +119,18 @@ export default function Resume() {
           const cardWidth     = 280;
           const laneGap       = 16;
           const baseConnector = 60;
+          const bracketSpacing = 8;
           const connectorLen  = baseConnector + laneIndex * (cardWidth + laneGap);
 
           // inline styles
+          const bracketLeft = side === "left"
+            ? `calc(50% - 2% - ${laneIndex * bracketSpacing}px)`
+            : `calc(50% + 2% + ${laneIndex * bracketSpacing}px)`;
+
           const bracketStyle = {
             position: "absolute",
             top: `${nudged}%`,
-            left: side === "left" ? "calc(50% - 2%)" : "calc(50% + 2%)",
+            left: bracketLeft,
             transform: "translateX(-50%)",
             height: exp.end
               ? `${toPct(Date.parse(exp.end)) - startPct}%`
@@ -133,8 +138,8 @@ export default function Resume() {
           };
 
           const cardLeft = side === "left"
-            ? `calc(50% - 2% - ${connectorLen + cardWidth}px)`
-            : `calc(50% + 2% + ${connectorLen}px)`;
+            ? `calc(50% - 2% - ${laneIndex * bracketSpacing}px - ${connectorLen + cardWidth}px)`
+            : `calc(50% + 2% + ${laneIndex * bracketSpacing}px + ${connectorLen}px)`;
 
           return (
             <React.Fragment key={i}>
