@@ -7,7 +7,7 @@ export default function ExperienceModal({ exp, onClose }) {
 
   const modalContent = (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
+      <div className="experience-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-close" onClick={onClose}>&times;</div>
         <h3>{exp.title}</h3>
         <p className="company">{exp.company}</p>
