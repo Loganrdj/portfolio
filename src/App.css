@@ -282,12 +282,15 @@ html,body{
 .projects-container {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 1fr;
   gap: 1.5rem;
   width: 100%;
   padding: 8%;
