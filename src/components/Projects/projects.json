@@ -33,7 +33,6 @@
       "name": "Harry Potter RPG Game",
       "image": "https://media.giphy.com/media/dzOxouPFjSjo65i0Oa/giphy.gif",
       "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
-      "deployed_url": "https://guarded-harbor-00220.herokuapp.com/",
       "github_url": "https://github.com/K8F/project-2",
       "deployed_tag": "Game",
       "alt": "Harry Potter RPG GIF"
@@ -71,7 +70,6 @@
       "name": "FriendFinder",
       "image": "https://github.com/Loganrdj/FriendFinder/blob/master/Friendfinder.gif?raw=true",
       "description": "This is a Node and Express application that utilizes routes to communicate to both front-end and back-end.",
-      "deployed_url": "https://hw-friendfinder-logan.herokuapp.com/",
       "github_url": "https://github.com/Loganrdj/FriendFinder",
       "deployed_tag": "Website",
       "alt": "FriendFinder"
