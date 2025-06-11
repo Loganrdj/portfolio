@@ -19,10 +19,16 @@ export default function Resume() {
     []
   );
 
-  // 2) Compute timeline bounds
+  // 2) Compute timeline bounds with one year buffer
   const [minT, maxT] = useMemo(() => {
-    const stamps = sorted.map((e) => Date.parse(e.start));
-    return [Math.min(...stamps), Math.max(...stamps, Date.now())];
+    const startTimes = sorted.map((e) => Date.parse(e.start));
+    const endTimes   = sorted.map((e) =>
+      e.end ? Date.parse(e.end) : Date.now()
+    );
+    const buffer = 365 * 24 * 60 * 60 * 1000; // one year
+    const min = Math.min(...startTimes) - buffer;
+    const max = Math.max(...endTimes) + buffer;
+    return [min, max];
   }, [sorted]);
 
   // 3) Helper: timestamp → % down timeline
@@ -111,29 +117,29 @@ export default function Resume() {
           const nudged   = startPct; // keep event anchored to its true date
 
           const cardWidth     = 280;
+          const laneGap       = 16;
           const baseConnector = 60;
-          const bump          = 40;
-          const connectorLen  = baseConnector + bump * laneIndex;
-          const offsetX       = cardWidth * (laneIndex + 1) + connectorLen + 16;
+          const connectorLen  = baseConnector + laneIndex * (cardWidth + laneGap);
 
-        // inline styles:
-        const bracketStyle = {
-          position: "absolute",
-          top: `${nudged}%`,
-          left: "50%",
-          transform: "translateX(-50%)",
-          height: exp.end
-            ? `${toPct(Date.parse(exp.end)) - startPct}%`
-            : "5%",
-        };
+          // inline styles
+          const bracketStyle = {
+            position: "absolute",
+            top: `${nudged}%`,
+            left: side === "left" ? "calc(50% - 2%)" : "calc(50% + 2%)",
+            transform: "translateX(-50%)",
+            height: exp.end
+              ? `${toPct(Date.parse(exp.end)) - startPct}%`
+              : "5%",
+          };
 
-        const cardLeft = side === "left"
-          ? `calc(50% - ${offsetX}px)`
-          : `calc(50% + ${cardWidth * laneIndex + connectorLen + 16}px)`;
+          const cardLeft = side === "left"
+            ? `calc(50% - 2% - ${connectorLen + cardWidth}px)`
+            : `calc(50% + 2% + ${connectorLen}px)`;
 
-        return (
-          <React.Fragment key={i}>
-            <div className={`duration-bracket ${side}`} style={bracketStyle} />
+          return (
+            <React.Fragment key={i}>
+              <div className={`duration-bracket ${side}`} style={bracketStyle} />
+
 
             <div
               className={`timeline-item ${side}`}
