@@ -265,6 +265,20 @@ html,body{
   margin-right: 5%;
 }
 
+.resumeToggle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.resumeTab {
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.resumeTab.active {
+  font-weight: bold;
+}
+
 
 /* Animation */
 
