@@ -332,13 +332,37 @@ html,body{
 .timeline-tick.month  { width: 15px; border-top: 1px solid #888; }
 
 /* ─── Duration Bar (optional) ─────────────────────── */
-.timeline-duration {
+.duration-bracket {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
   background: #0ea5e9;
   z-index: 0;
+}
+.duration-bracket::before,
+.duration-bracket::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 4px;
+  background: #0ea5e9;
+}
+.duration-bracket.left::before {
+  left: -16px;
+  top: 0;
+}
+.duration-bracket.left::after {
+  left: -16px;
+  bottom: 0;
+}
+.duration-bracket.right::before {
+  right: -16px;
+  top: 0;
+}
+.duration-bracket.right::after {
+  right: -16px;
+  bottom: 0;
 }
 
 /* ─── Cards & Connectors ───────────────────────────── */
@@ -388,7 +412,7 @@ html,body{
 @media (max-width: 640px) {
   .timeline::before,
   .timeline-tick,
-  .timeline-duration,
+  .duration-bracket,
   .timeline-item .connector {
     display: none;
   }
