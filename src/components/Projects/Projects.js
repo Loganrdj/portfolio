@@ -1,38 +1,32 @@
-import React, { Component } from 'react';
-import "../../App.css"
-import PreviewCard from "../PreviewCard/PreviewCard";
+import React, { useState } from 'react';
+import "../../App.css";
 import projects from './projects.json';
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
+import ProjectModal from './ProjectModal';
 
-class Projects extends Component {
+export default function Projects() {
+  const [selected, setSelected] = useState(null);
 
-  state = {
-    projects
-  }
-
-  render() {
-    return(
+  return (
+    <>
     <div className="row projectRow">
-      {this.state.projects.map(project => (
-        <div className="col-md-4 col-sm-6 col-lg-4 col-xl-3 col-12 cardCSS">
+      {projects.map(project => (
+        <div key={project.id} className="col-md-4 col-sm-6 col-lg-4 col-xl-3 col-12 cardCSS">
           <ScrollAnimation delay={300} animateIn="fadeIn">
-            <PreviewCard 
-              name = {project.name} 
-              image = {project.image} 
-              description = {project.description}
-              deployed_url = {project.deployed_url} 
-              github_url = {project.github_url}
-              deployed_github = {project.deployed_github}
-              deployed_tag = {project.deployed_tag}
-              alt = {project.alt}
+            <img
+              src={project.image}
+              alt={project.alt}
+              className="project-thumb paused"
+              onClick={() => setSelected(project)}
+              onMouseEnter={e => e.currentTarget.classList.remove('paused')}
+              onMouseLeave={e => e.currentTarget.classList.add('paused')}
             />
           </ScrollAnimation>
         </div>
       ))}
     </div>
-    
-    )}
+    <ProjectModal project={selected} onClose={() => setSelected(null)} />
+    </>
+  );
 }
-
-export default Projects;
