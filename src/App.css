@@ -51,7 +51,9 @@ body {
 html,body{
   height:100%;
   background-color: #e9ecef;
-  /* overflow: hidden; */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 /* BootStrap */
@@ -776,4 +778,18 @@ html,body{
 
 .floating-button:hover {
   opacity: 0.8;
+}
+
+/* scroll snapping sections */
+.snap-section {
+  scroll-snap-align: start;
+}
+
+.homeContent {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
