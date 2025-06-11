@@ -465,7 +465,7 @@ html,body{
 .timeline {
   position: relative;
   margin-top: 0;
-  height: 300vh;      /* adjust scroll length */
+  height: 180vh;      /* adjust scroll length */
   width: 100%;
   background: #e9ecef;
   overflow-x: hidden;
@@ -551,9 +551,6 @@ html,body{
   padding: 1rem;
   width: 280px;
   box-sizing: border-box;
-  transform-origin: center;
-  transition: transform .2s ease-out;
-  transform: scale(0.8);
 }
 .exp-logo {
   display: block;           /* make img a block so auto margins work */
