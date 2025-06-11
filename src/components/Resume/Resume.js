@@ -196,7 +196,7 @@ export default function Resume() {
         const r         = el.getBoundingClientRect();
         const c         = r.top + r.height / 2;
         const dist      = Math.abs(c - mid);
-        const ratio     = Math.max(0, 1 - dist / (mid + r.height));
+        const ratio     = Math.max(0, 1 - dist / mid);
         const scale     = 0.8 + ratio * 0.4;
         el.style.transform = `translateY(-50%) scale(${scale})`;
         const dynamic  = base + (cardWidth * (1 - scale)) / 2;
