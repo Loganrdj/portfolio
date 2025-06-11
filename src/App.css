@@ -400,6 +400,11 @@ html,body{
   width: 100%;
   background: #e9ecef;
   overflow-x: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.timeline.fading {
+  opacity: 0;
 }
 
 /* ─── Central Spine + Ticks ───────────────────────── */
