@@ -76,46 +76,30 @@ html,body{
 .introHeader {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
 .centerTextDiv {
-  position: absolute;   /* pull it out of the normal flow */
-  top: 0;
-  left: 0;
-
-  /* size it to exactly the top-left quarter */
-  width: 50%;
-  height: 50%;
   font-family: 'Playfair Display', serif;
-  /* flexbox centering */
   display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
+  align-items: center;
+  justify-content: center;
   font-size: clamp(1rem, 5vw, 3rem);
   color: black;
   text-align: center;
 }
 .secondcenterTextDiv {
-  position: absolute;   /* pull it out of the normal flow */
-  /* position below the first name */
-  top: 50%;
-  /* nudge to the right slightly */
-  left: 10px;
-
-  /* size it to exactly the top-left quarter */
-  width: 50%;
-  height: 50%;
   font-family: 'Digitag', sans-serif;
-  /* flexbox centering */
   display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
+  align-items: center;
+  justify-content: center;
   font-size: clamp(1rem, 5vw, 3rem);
   color: black;
   text-align: center;
+  margin-top: 3px;
 }
 
 /* end BootStrap */
