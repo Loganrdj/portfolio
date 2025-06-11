@@ -5,8 +5,8 @@ import FadeIn from "react-fade-in";
 function Contact() {
   return (
 
-      <div className="jumbotron">
-        <div className="container">
+      <div className="container" style={{ marginTop: 10 }}>
+        <div className="jumbotron">
           <div className="row">
             <div className="col-md-12">
               <FadeIn delay={300} transitionDuration={4000}>
@@ -60,7 +60,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    
+
   )
 }
 
