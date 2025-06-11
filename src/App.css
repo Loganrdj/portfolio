@@ -27,6 +27,18 @@ html,body{
   padding-top: 20px;
   padding-bottom: 0px;
 }
+.backgroundImg {
+  background-image: url('https://via.placeholder.com/1920x1080');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* end BootStrap */
 
 /* NAV */
