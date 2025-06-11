@@ -100,8 +100,10 @@ html,body{
 }
 .secondcenterTextDiv {
   position: absolute;   /* pull it out of the normal flow */
-  top: 0;
-  left: 0;
+  /* position below the first name */
+  top: 50%;
+  /* nudge to the right slightly */
+  left: 10px;
 
   /* size it to exactly the top-left quarter */
   width: 50%;
