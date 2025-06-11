@@ -135,6 +135,7 @@ export default function Resume() {
 
   return (
     <>
+    <div className="experience-box">Experience</div>
     <div className="timeline">
       {/* Spine */}
       <div className="spine" />
