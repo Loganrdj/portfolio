@@ -14,6 +14,8 @@ body {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   /* background-color: #DDDFDF; */
+  margin-top: -80px;
+  padding-top: 80px;
 }
 
 html,body{
@@ -81,6 +83,8 @@ html,body{
   background-position: 100% 0%;
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1020;
   opacity: .8;
   transition-duration: .45s;
