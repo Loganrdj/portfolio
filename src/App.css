@@ -28,10 +28,11 @@ html,body{
   padding-bottom: 0px;
 }
 .backgroundImg {
-  background-image: url('https://via.placeholder.com/1920x1080');
+  background-image: url('./low_contrast_linen.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
