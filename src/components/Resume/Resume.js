@@ -65,7 +65,7 @@ export default function Resume() {
         const dist      = Math.abs(c - mid);
         const ratio     = Math.max(0, 1 - dist / (mid + r.height));
         const scale     = 0.8 + ratio * 0.4;
-        card.style.transform = `translateY(-50%) scale(${scale})`;
+        card.style.transform = `scale(${scale})`;
         const dynamic = base + (cardWidth * (1 - scale)) / 2;
         connector.style.width = `${dynamic}px`;
       });
