@@ -1,18 +1,72 @@
 "use client";
 
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import "../../App.css";
+import ExperienceModal from "./ExperienceModal";
+import placeholderLogo from "../../low_contrast_linen.png";
+
+const lorem =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
 const experiences = [
-  { start: "2016-02-01", end: "2019-10-01", title: "Field Support / Level 2 Ops / Help Desk",          dateLabel: "Feb 2016 – Oct 2019" },
-  { start: "2019-09-01", end: "2019-12-01", title: "Data Associate (Contract), Bungalow Living",   dateLabel: "Sept 2019 – Dec 2019" },
-  { start: "2020-07-01", end: "2021-10-01", title: "Full Stack & Data Analytics TA/Tutor, Trilogy Ed.", dateLabel: "July 2020 – Oct 2021" },
-  { start: "2021-01-01", end: "2021-05-01", title: "Web Developer (Contract), OUR Group",            dateLabel: "Jan 2021 – May 2021" },
-  { start: "2021-03-01", end: "2023-09-01", title: "Demand Generation – Marketing Automation & Ops, Autodesk", dateLabel: "Mar 2021 – Sept 2023" },
-  { start: "2023-09-01", end: null,         title: "Streamer & Content Manager, LoganRDJ LLC",      dateLabel: "Sept 2023 – Present" },
+  {
+    start: "2016-02-01",
+    end: "2019-10-01",
+    title: "Field Support / Level 2 Ops / Help Desk",
+    company: "Confidential",
+    logo: placeholderLogo,
+    dateLabel: "Feb 2016 – Oct 2019",
+    description: lorem,
+  },
+  {
+    start: "2019-09-01",
+    end: "2019-12-01",
+    title: "Data Associate (Contract)",
+    company: "Bungalow Living",
+    logo: placeholderLogo,
+    dateLabel: "Sept 2019 – Dec 2019",
+    description: lorem,
+  },
+  {
+    start: "2020-07-01",
+    end: "2021-10-01",
+    title: "Full Stack & Data Analytics TA/Tutor",
+    company: "Trilogy Ed.",
+    logo: placeholderLogo,
+    dateLabel: "July 2020 – Oct 2021",
+    description: lorem,
+  },
+  {
+    start: "2021-01-01",
+    end: "2021-05-01",
+    title: "Web Developer (Contract)",
+    company: "OUR Group",
+    logo: placeholderLogo,
+    dateLabel: "Jan 2021 – May 2021",
+    description: lorem,
+  },
+  {
+    start: "2021-03-01",
+    end: "2023-09-01",
+    title: "Demand Generation – Marketing Automation & Ops",
+    company: "Autodesk",
+    logo: placeholderLogo,
+    dateLabel: "Mar 2021 – Sept 2023",
+    description: lorem,
+  },
+  {
+    start: "2023-09-01",
+    end: null,
+    title: "Streamer & Content Manager",
+    company: "LoganRDJ LLC",
+    logo: placeholderLogo,
+    dateLabel: "Sept 2023 – Present",
+    description: lorem,
+  },
 ];
 
 export default function Resume() {
+  const [selected, setSelected] = useState(null);
   // 1) Chronologically sort
   const sorted = useMemo(
     () => experiences.slice().sort((a, b) => Date.parse(a.start) - Date.parse(b.start)),
@@ -80,6 +134,7 @@ export default function Resume() {
   }, []);
 
   return (
+    <>
     <div className="timeline">
       {/* Spine */}
       <div className="spine" />
@@ -152,17 +207,20 @@ export default function Resume() {
             <React.Fragment key={i}>
               <div className={`duration-bracket ${side}`} style={bracketStyle} />
 
-
             <div
               className={`timeline-item ${side}`}
               data-baseconnector={connectorLen}
               style={{
                 top: `${nudged}%`,
                 left: cardLeft,
+                cursor: "pointer",
               }}
+              onClick={() => setSelected(exp)}
             >
               <div className="card">
+                <img src={exp.logo} alt={`${exp.company} logo`} className="exp-logo" />
                 <h3>{exp.title}</h3>
+                <p className="company">{exp.company}</p>
                 <em>{exp.dateLabel}</em>
               </div>
 
@@ -176,5 +234,8 @@ export default function Resume() {
         });
       })()}
     </div>
+    <ExperienceModal exp={selected} onClose={() => setSelected(null)} />
+    </>
   );
 }
+
