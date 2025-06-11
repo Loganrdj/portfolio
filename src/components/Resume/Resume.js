@@ -191,7 +191,6 @@ export default function Resume() {
     const fn = () => {
       const mid = window.innerHeight / 2;
       items.forEach((el) => {
-        const card      = el.querySelector(".card");
         const connector = el.querySelector(".connector");
         const base      = parseFloat(el.dataset.baseconnector);
         const r         = el.getBoundingClientRect();
@@ -199,7 +198,7 @@ export default function Resume() {
         const dist      = Math.abs(c - mid);
         const ratio     = Math.max(0, 1 - dist / (mid + r.height));
         const scale     = 0.8 + ratio * 0.4;
-        card.style.transform = `scale(${scale})`;
+        el.style.transform = `translateY(-50%) scale(${scale})`;
         const dynamic  = base + (cardWidth * (1 - scale)) / 2;
         const factor   = dynamic / base;
         connector.style.transform = `translateY(-50%) scaleX(${factor})`;
