@@ -87,7 +87,7 @@ export default function Resume() {
       {sorted.map((exp, i) => {
         const side     = i % 2 ? "left" : "right";
         const startPct = toPct(Date.parse(exp.start));
-        const nudged   = startPct + i * 3;  // vertical bump to avoid exact overlap
+        const nudged   = startPct;  // place card at its actual start position
 
         // Count how many prior overlaps on same side
         const overlapIndex = sorted.slice(0, i).filter((o, j) => {
@@ -101,11 +101,11 @@ export default function Resume() {
 
         // Compute horizontal offset:
         // half the card width + base connector length + per-overlap bump
-        const halfCard      = 280 / 2;
+        const cardWidth     = 280;
         const baseConnector = 60;
         const bump          = 40;
         const connectorLen  = baseConnector + bump * overlapIndex;
-        const offsetX       = halfCard + connectorLen;
+        const offsetX       = cardWidth + connectorLen;
 
         // inline styles:
         const barStyle = {
