@@ -388,9 +388,14 @@ html,body{
 }
 
 /* ─── Timeline Container ───────────────────────────── */
-.timeline {
+.timeline-wrapper {
   position: relative;
   margin-top: 5rem;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 0;
   height: 180vh;      /* adjust scroll length */
   width: 100%;
   background: #e9ecef;
@@ -666,7 +671,11 @@ html,body{
 /* Toggle buttons on Resume page */
 .resume-toggle {
   text-align: center;
-  margin-top: 1rem;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px; /* roughly 20px gap above the timeline */
   font-family: 'Montserrat', sans-serif;
 }
 
