@@ -639,12 +639,16 @@ html,body{
   max-width: 500px;
   width: 90%;
   color: #1f2937;
+  position: relative;
 }
 
 .modal-close {
-  float: right;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
 /* Floating experience label on Resume page */
