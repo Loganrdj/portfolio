@@ -101,7 +101,7 @@ html,body{
   align-items: center;      /* vertical center */
   justify-content: center;  /* horizontal center */
   font-size: clamp(4rem, 10vw, 7rem);
-  color: black;
+  color: #00F0EF;
   text-align: center;
 }
 .firstName {
@@ -290,6 +290,7 @@ html,body{
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   width: 100%;
+  padding: 8%;
 }
 
 @media (max-width: 768px) {
@@ -803,6 +804,7 @@ html,body{
   animation: fadeSkill 3s ease-in-out infinite;
   font-family: 'Urban Starblues', serif;
   font-size: 5rem;
+  color: #00ECEC;
 }
 
 .see-more-link {
