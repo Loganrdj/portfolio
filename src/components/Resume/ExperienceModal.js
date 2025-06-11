@@ -17,5 +17,6 @@ export default function ExperienceModal({ exp, onClose }) {
     </div>
   );
 
-  return ReactDOM.createPortal(modalContent, document.body);
+  const modalRoot = document.getElementById("modal-root");
+  return modalRoot ? ReactDOM.createPortal(modalContent, modalRoot) : null;
 }
