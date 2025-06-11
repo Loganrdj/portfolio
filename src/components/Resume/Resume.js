@@ -10,21 +10,22 @@ import usflogo from "../../logos/USFLogo.png";
 import freelancelogo from "../../logos/globelogo.png";
 import bungalowlogo from "../../logos/BungalowLogo.png";
 import twitchLogo from "../../logos/TwitchLogo.png";
+import berkeleyLogo from "../../logos/BerkeleyLogo.png";
 
 const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
 const educationexp = [
   {
-    start: "2016-02-01",
-    end: "2016-08-01",
-    title: "Fullstack Development Bootcamp",
+    start: "2020-02-01",
+    end: "2021-08-01",
+    title: "Fullstack Development Coding Bootcamp",
     company: "University of California, Berkeley",
-    logo: usflogo,
-    dateLabel: "Feb 2016 – Oct 2019",
+    logo: berkeleyLogo,
+    dateLabel: "Feb 2020 – Oct 2021",
     description: lorem,
-    backgroundcolor: '#01543c',
-    fontColor: 'white'
+    backgroundcolor: 'white',
+    fontColor: 'black'
   },
   {
     start: "2015-08-01",

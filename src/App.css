@@ -503,7 +503,7 @@ html,body{
   transform: translateY(-50%);
   height: 2px;
   background: #0ea5e9;
-  z-index: 0;
+  z-index: -1;
 }
 
 /* connectors on left‐side events extend rightwards */
