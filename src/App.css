@@ -84,11 +84,10 @@ html,body{
 }
 
 .centerTextDiv {
-  /* Keep the name fixed so it stays in place while scrolling */
-  position: fixed;
+  /* Pull the hero text out of the normal flow but let it scroll */
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
 
   /* size it to exactly the top-left quarter */
   width: 40%;
@@ -106,6 +105,7 @@ html,body{
 .firstName {
   top: 1rem;             /* ↗ keep “Moss” up at the top */
   right: 1rem;
+  font-size: clamp(4rem, 10vw, 7rem);
 }
 .lastName {
   /* font-family: 'Digitag', sans-serif; */
