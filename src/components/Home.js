@@ -13,7 +13,7 @@ class Home extends Component{
 
   render(){
     return (
-        <div className="jumbotron jumboSpacing">   
+        <div className="jumbotron jumbotron-fluid jumboSpacing">
           <div className="backgroundImg">       
           <FadeIn delay={400} transitionDuration={4000}>
             <div className="row">
@@ -24,13 +24,11 @@ class Home extends Component{
           {/* </FadeIn>
           <FadeIn delay={2000} transitionDuration={4000}> */}
           <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4">
+            <div className="col-md-12 text-center">
               <h3 className="textAnimate">My name is Logan Moss,</h3>
               <h3 className="textAnimate">and I am a Fullstack Developer </h3>
               <h3 className="textAnimate">based in San Francisco.</h3>
             </div>
-            <div className="col-md-4"></div>
           </div>
             
             <hr className="my-4"></hr>
