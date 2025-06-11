@@ -9,15 +9,15 @@
     "@testing-library/user-event": "^7.2.1",
     "animate.css": "^3.7.2",
     "pdf-image": "^2.0.0",
-    "pdf-viewer-reactjs": "^2.0.6",
+    "pdf-viewer-reactjs": "^1.0.5",
     "react": "^16.13.1",
     "react-animate-on-scroll": "^2.1.5",
     "react-animation": "^1.2.2",
     "react-dom": "^16.13.1",
     "react-fade-in": "^1.0.0",
-    "react-pdf": "^4.1.0",
+    "react-pdf": "^9.2.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,6 +43,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^6.3.0"
   }
 }
