@@ -692,3 +692,14 @@ html,body{
 .resume-toggle span.active {
   text-decoration: underline;
 }
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+}
+.project-thumb.paused {
+  filter: grayscale(80%);
+}
+
