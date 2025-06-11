@@ -60,7 +60,7 @@ export default function Resume() {
         const ratio     = Math.max(0, 1 - dist / (mid + r.height));
         const scale     = 0.8 + ratio * 0.4;
         card.style.transform = `translateY(-50%) scale(${scale})`;
-        const dynamic = base + cardWidth * (1 - scale);
+        const dynamic = base + (cardWidth * (1 - scale)) / 2;
         connector.style.width = `${dynamic}px`;
       });
     };
@@ -90,27 +90,31 @@ export default function Resume() {
       ))}
 
       {/* Events */}
-      {sorted.map((exp, i) => {
-        const side     = i % 2 ? "left" : "right";
-        const startPct = toPct(Date.parse(exp.start));
-        const nudged   = startPct;  // place card at its actual start position
+      {(() => {
+        const lanes = { left: [], right: [] };
+        return sorted.map((exp, i) => {
+          const side  = i % 2 ? "left" : "right";
+          const start = Date.parse(exp.start);
+          const end   = exp.end ? Date.parse(exp.end) : maxT;
 
-        // Count how many prior overlaps on same side
-        const overlapIndex = sorted.slice(0, i).filter((o, j) => {
-          const s2    = Date.parse(o.start),
-                e2    = o.end ? Date.parse(o.end) : maxT,
-                side2 = j % 2 ? "left" : "right";
-          return side2 === side &&
-                 Date.parse(exp.start) <= e2 &&
-                 s2 <= Date.parse(exp.start);
-        }).length;
+          // assign to the first lane that is free by this start time
+          const laneEnds = lanes[side];
+          let laneIndex = laneEnds.findIndex((t) => t <= start);
+          if (laneIndex === -1) {
+            laneIndex = laneEnds.length;
+            laneEnds.push(end);
+          } else {
+            laneEnds[laneIndex] = end;
+          }
 
-        // Compute horizontal offset and connector base length
-        const cardWidth     = 280;
-        const baseConnector = 60;
-        const bump          = 40;
-        const connectorLen  = baseConnector + bump * overlapIndex;
-        const offsetX       = cardWidth + connectorLen + 16; // include bracket cap
+          const startPct = toPct(start);
+          const nudged   = startPct; // keep event anchored to its true date
+
+          const cardWidth     = 280;
+          const baseConnector = 60;
+          const bump          = 40;
+          const connectorLen  = baseConnector + bump * laneIndex;
+          const offsetX       = cardWidth * (laneIndex + 1) + connectorLen + 16;
 
         // inline styles:
         const bracketStyle = {
@@ -125,7 +129,7 @@ export default function Resume() {
 
         const cardLeft = side === "left"
           ? `calc(50% - ${offsetX}px)`
-          : `calc(50% + ${connectorLen + 16}px)`;
+          : `calc(50% + ${cardWidth * laneIndex + connectorLen + 16}px)`;
 
         return (
           <React.Fragment key={i}>
@@ -151,7 +155,8 @@ export default function Resume() {
             </div>
           </React.Fragment>
         );
-      })}
+        });
+      })()}
     </div>
   );
 }
