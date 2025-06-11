@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import Contact from "./components/Contact/Contact"
 import Projects from "./components/Projects/Projects"
 import Resume from "./components/Resume/Resume"
+import FloatingLinks from "./components/FloatingLinks"
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/projects" component={Projects}/>
             <Route path="/contact" component={Contact}/>
           </Switch>
+          <FloatingLinks />
         </div>
       </Router>
     );
