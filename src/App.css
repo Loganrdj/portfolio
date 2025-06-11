@@ -14,8 +14,8 @@ body {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   /* background-color: #DDDFDF; */
-  margin-top: -80px;
-  padding-top: 80px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 html,body{
