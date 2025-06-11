@@ -783,6 +783,37 @@ html,body{
   opacity: 0.8;
 }
 
+/* Rotating skill text on home page */
+.skill-flash-container {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1050;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.skill-flash-text {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 4px 8px;
+  border-radius: 4px;
+  animation: fadeSkill 1s ease-in-out infinite;
+}
+
+.see-more-link {
+  margin-top: 4px;
+  color: black;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeSkill {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
 /* scroll snapping sections */
 .snap-section {
   scroll-snap-align: start;
