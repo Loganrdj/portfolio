@@ -63,8 +63,8 @@ html,body{
 }
 .backgroundImg {
   background-image: url('../public/backgroundimagewpaint.png');
-  /* Ensure the full width of the image is visible */
-  background-size: 110% auto;
+  /* Scale with the viewport while keeping the same ratio */
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -84,9 +84,11 @@ html,body{
 }
 
 .centerTextDiv {
-  position: absolute;   /* pull it out of the normal flow */
+  /* Keep the name fixed so it stays in place while scrolling */
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
 
   /* size it to exactly the top-left quarter */
   width: 40%;
