@@ -14,11 +14,58 @@ import twitchLogo from "../../logos/TwitchLogo.png";
 const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
+const educationexp = [
+  {
+    start: "2016-02-01",
+    end: "2016-08-01",
+    title: "Fullstack Development Bootcamp",
+    company: "University of California, Berkeley",
+    logo: usflogo,
+    dateLabel: "Feb 2016 – Oct 2019",
+    description: lorem,
+    backgroundcolor: '#01543c',
+    fontColor: 'white'
+  },
+  {
+    start: "2015-08-01",
+    end: "2019-05-01",
+    title: "Major: Advertising, Minor: Computer Science",
+    company: "University of San Francisco",
+    logo: usflogo,
+    dateLabel: "Aug 2015 – May 2019",
+    description: lorem,
+    backgroundcolor: '#01543c',
+    fontColor: 'white'
+  },
+]
+
 const experiences = [
   {
     start: "2016-02-01",
+    end: "2016-08-01",
+    title: "ITS Help Desk",
+    company: "University of San Francisco",
+    logo: usflogo,
+    dateLabel: "Feb 2016 – Oct 2019",
+    description: lorem,
+    backgroundcolor: '#01543c',
+    fontColor: 'white'
+  },
+  {
+    start: "2016-08-01",
+    end: "2018-10-01",
+    title: "ITS System Administrator",
+    company: "University of San Francisco",
+    logo: usflogo,
+    dateLabel: "Feb 2016 – Oct 2019",
+    description: lorem,
+    backgroundcolor: '#01543c',
+    fontColor: 'white'
+  },
+  {
+    start: "2018-10-01",
     end: "2019-10-01",
-    title: "Field Support / Level 2 Ops / Help Desk",
+    title: "Field Support / Level 2 Operations",
     company: "University of San Francisco",
     logo: usflogo,
     dateLabel: "Feb 2016 – Oct 2019",
@@ -72,11 +119,11 @@ const experiences = [
   },
   {
     start: "2023-09-01",
-    end: null,
+    end: "2025-01-01",
     title: "Streamer & Content Manager",
     company: "LoganRDJ LLC",
     logo: twitchLogo,
-    dateLabel: "Sept 2023 – Present",
+    dateLabel: "Sept 2023 – Jan 2025",
     description: lorem,
     backgroundcolor: '#CBC3E3',
     fontColor: 'black'
