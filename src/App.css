@@ -779,12 +779,15 @@ html,body{
   z-index: 1000;
 }
 
-.resume-toggle span {
+.resume-toggle button {
   cursor: pointer;
   font-weight: bold;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
-.resume-toggle span.active {
+.resume-toggle button.active {
   text-decoration: underline;
 }
 .project-thumb {

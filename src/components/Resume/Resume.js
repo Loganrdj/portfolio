@@ -224,19 +224,21 @@ export default function Resume() {
     <>
     <div className="timeline-wrapper">
       <div className="resume-toggle">
-        <span
+        <button
+          type="button"
           className={view === "career" ? "active" : ""}
           onClick={() => handleToggle("career")}
         >
           Career
-        </span>
+        </button>
         <span> | </span>
-        <span
+        <button
+          type="button"
           className={view === "education" ? "active" : ""}
           onClick={() => handleToggle("education")}
         >
           Education
-        </span>
+        </button>
       </div>
       <div className={`timeline ${fading ? "fading" : ""}`}>
       {/* Spine */}
