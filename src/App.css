@@ -770,11 +770,10 @@ html,body{
 /* Toggle buttons on Resume page */
 .resume-toggle {
   text-align: center;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 20px; /* roughly 20px gap above the timeline */
+  position: fixed;
+  top: 5rem; /* space below navigation */
+  left: 1rem;
+  transform: none;
   font-family: 'Montserrat', sans-serif;
   z-index: 1000;
 }
