@@ -626,6 +626,12 @@ html,body{
     height: 24px;
     margin-right: 0.5rem;
   }
+
+  .resume-toggle {
+    position: static;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 
@@ -770,8 +776,9 @@ html,body{
 /* Toggle buttons on Resume page */
 .resume-toggle {
   text-align: center;
-  position: absolute; 
-  right: 10%;
+  position: absolute;
+  top: 0;
+  right: 0;
   transform: none;
   font-family: 'Montserrat', sans-serif;
   z-index: 1000;
