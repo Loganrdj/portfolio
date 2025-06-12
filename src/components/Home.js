@@ -8,10 +8,14 @@ import skills from './SkillsCard/skills.json'
 const rotatingSkillList = [
   'JavaScript',
   'Python',
-  'Ruby',
-  'Go',
   'Java',
-  'C++'
+  'Airtable',
+  'Unity',
+  'C',
+  'Marketo',
+  'Airtable',
+  'Zapier',
+  'Slack'
 ];
 
 class Home extends Component{
