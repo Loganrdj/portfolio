@@ -19,8 +19,8 @@ const educationexp = [
   {
     start: "2020-02-01",
     end: "2021-08-01",
-    title: "Fullstack Development Coding Bootcamp",
-    company: "University of California, Berkeley",
+    title: "University of California, Berkeley",
+    company: "Fullstack Development Coding Bootcamp",
     logo: berkeleyLogo,
     dateLabel: "Feb 2020 – Oct 2021",
     description: lorem,
@@ -30,8 +30,8 @@ const educationexp = [
   {
     start: "2015-08-01",
     end: "2019-05-01",
-    title: "Major: Advertising, Minor: Computer Science",
-    company: "University of San Francisco",
+    title: "University of San Francisco",
+    company: "Advertising, Computer Science",
     logo: usflogo,
     dateLabel: "Aug 2015 – May 2019",
     description: lorem,
