@@ -187,6 +187,7 @@ export default function Resume() {
   // 5) Magnify cards on scroll and adjust connector lengths
   useLayoutEffect(() => {
     const cardWidth = 280;
+    let rafId;
 
     const update = () => {
       const items = document.querySelectorAll(".timeline-item");
@@ -206,17 +207,14 @@ export default function Resume() {
         const factor   = dynamic / base;
         connector.style.transform = `translateY(-50%) scaleX(${factor})`;
       });
+      rafId = requestAnimationFrame(update);
     };
 
-    const handle = () => requestAnimationFrame(update);
-
-    update();
-    const target = window;
-    target.addEventListener("scroll", handle, { passive: true });
-    window.addEventListener("resize", handle);
+    rafId = requestAnimationFrame(update);
+    window.addEventListener("resize", update);
     return () => {
-      target.removeEventListener("scroll", handle);
-      window.removeEventListener("resize", handle);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", update);
     };
   }, [sorted]);
 
