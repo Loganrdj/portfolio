@@ -612,15 +612,15 @@ html,body{
     transform: none;
   }
 
-  /* Hide duration brackets but keep connectors visible */
+  /* Show duration brackets on mobile */
   .duration-bracket {
-    display: none;
+    display: block;
   }
 
-  /* Ensure connector lines are visible and appropriately sized */
+  /* Ensure connector lines remain visible but slightly shorter */
   .timeline-item .connector {
     display: block;
-    width: 2rem !important;
+    width: 1rem !important;
   }
 
   /* Force left items to use right-side connector positioning */
@@ -638,8 +638,8 @@ html,body{
   }
 
   .timeline-item .card {
-    width: calc(100% - 2rem);
-    margin: 0 1rem;
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem;
     padding: 0.25rem 0.5rem;
     font-size: clamp(0.65rem, 3vw, 0.9rem);
     max-height: 8rem;
@@ -647,7 +647,6 @@ html,body{
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transform: none !important;
   }
 
   .timeline-item .card h3 {
