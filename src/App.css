@@ -782,14 +782,22 @@ html,body{
 .resume-toggle button {
   cursor: pointer;
   font-weight: bold;
-  background: none;
-  border: none;
-  padding: 0.5rem 1rem;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1.2rem;
   font-size: 1rem;
+  border-radius: 4px;
+  margin: 0 0.25rem;
+}
+
+.resume-toggle span {
+  margin: 0 0.25rem;
 }
 
 .resume-toggle button.active {
   text-decoration: underline;
+  background: #333;
+  color: white;
 }
 .project-thumb {
   width: 100%;
