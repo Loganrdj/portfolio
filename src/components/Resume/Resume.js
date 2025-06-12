@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useLayoutEffect } from "react";
+import React, { useMemo, useState, useLayoutEffect, useEffect } from "react";
 import "../../App.css";
 import ExperienceModal from "./ExperienceModal";
 import placeholderLogo from "../../low_contrast_linen.png";
@@ -135,6 +135,15 @@ export default function Resume() {
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("career");
   const [fading, setFading] = useState(false);
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setAtTop(window.scrollY < 50);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleToggle = (newView) => {
     if (newView === view) return;
@@ -223,7 +232,7 @@ export default function Resume() {
   return (
     <>
     <div className="timeline-wrapper">
-      <div className="resume-toggle">
+      <div className={`resume-toggle ${atTop ? "" : "slide-out"}`}>
         <button
           type="button"
           className={view === "career" ? "active" : ""}
