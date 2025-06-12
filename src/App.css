@@ -202,15 +202,13 @@ html,body{
 }
 .customNavLinks {
   display: flex;
-  flex-flow: row-reverse wrap;
-  width: 100%;
+  flex-direction: column;
+  width: auto;
   justify-content: flex-start;
   list-style-type: none;
-  /* overflow: hidden; */
   float: right;
-  /* width: 50%; */
   margin-bottom: 0%;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .mobileMenuButton {
