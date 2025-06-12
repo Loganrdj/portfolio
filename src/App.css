@@ -593,17 +593,52 @@ html,body{
   display: none;
 }
 
-/* ─── Mobile Fallback ─────────────────────────────── */
+/* ─── Mobile Layout ─────────────────────────────── */
 @media (max-width: 640px) {
-  .timeline::before,
-  .timeline-tick,
+  .timeline {
+    position: relative;
+  }
+
+  /* Move spine to the left */
+  .timeline::before {
+    display: block;
+    left: 0.75rem;
+    transform: none;
+  }
+
+  /* Ticks align with left spine */
+  .timeline-tick {
+    left: 0.75rem;
+    transform: none;
+  }
+
+  /* Hide connectors and duration brackets */
   .duration-bracket,
   .timeline-item .connector {
     display: none;
   }
+
+  /* Position items to the right of the timeline */
   .timeline-item {
-    left: 50% !important;
-    transform: translate(-50%, 0) !important;
+    left: 2rem !important;
+    width: calc(100% - 2rem) !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .timeline-item .card {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: none !important;
+  }
+
+  .exp-logo {
+    width: 24px;
+    height: 24px;
+    margin: 0;
   }
 }
 
