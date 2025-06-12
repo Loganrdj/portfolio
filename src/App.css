@@ -156,7 +156,7 @@ html,body{
 
 .customNav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-position: 100% 0%;
   position: fixed;
   top: 0;
