@@ -779,9 +779,15 @@ html,body{
   position: absolute;
   top: 0;
   right: 0;
+  margin-right: 1rem;
   transform: none;
+  transition: transform 0.3s ease-in-out;
   font-family: 'Montserrat', sans-serif;
   z-index: 1000;
+}
+
+.resume-toggle.slide-out {
+  transform: translateX(120%);
 }
 
 .resume-toggle button {
