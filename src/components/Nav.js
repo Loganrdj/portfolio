@@ -25,17 +25,47 @@ function Nav() {
       </button>
 
       <ul className={`customNavLinks ${menuOpen ? "showMobileMenu" : ""}`}>
-        <Link to="/resume" className="customNavLink" onClick={closeMenu}>
-          <li className="customNavLink">Resume</li>
+        <Link
+          to="/resume"
+          className="customNavLink"
+          onClick={closeMenu}
+          style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+        >
+          <li
+            className="customNavLink"
+            style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+          >
+            Resume
+          </li>
         </Link>
         {/* <Link to="/contact" className="customNavLink ">
                     <li className="customNavLink">Contact</li>
                 </Link> */}
-        <Link to="/projects" className="customNavLink" onClick={closeMenu}>
-          <li className="customNavLink">Projects</li>
+        <Link
+          to="/projects"
+          className="customNavLink"
+          onClick={closeMenu}
+          style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+        >
+          <li
+            className="customNavLink"
+            style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+          >
+            Projects
+          </li>
         </Link>
-        <Link to="/" className="customNavLink" onClick={closeMenu}>
-          <li className="customNavLink">Home</li>
+        <Link
+          to="/"
+          className="customNavLink"
+          onClick={closeMenu}
+          style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+        >
+          <li
+            className="customNavLink"
+            style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+          >
+            Home
+          </li>
         </Link>
       </ul>
     </nav>
