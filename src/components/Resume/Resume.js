@@ -211,10 +211,11 @@ export default function Resume() {
     const handle = () => requestAnimationFrame(update);
 
     update();
-    window.addEventListener("scroll", handle, { passive: true });
+    const target = document.scrollingElement || document.documentElement;
+    target.addEventListener("scroll", handle, { passive: true });
     window.addEventListener("resize", handle);
     return () => {
-      window.removeEventListener("scroll", handle);
+      target.removeEventListener("scroll", handle);
       window.removeEventListener("resize", handle);
     };
   }, [sorted]);
