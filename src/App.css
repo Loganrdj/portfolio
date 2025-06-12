@@ -620,15 +620,17 @@ html,body{
 
   /* Position items to the right of the timeline */
   .timeline-item {
-    left: 2rem !important;
-    width: calc(100% - 2rem) !important;
+    left: 3rem !important; /* extra gap so dates remain visible */
+    width: calc(100% - 3rem) !important;
     transform: translateY(-50%) !important;
   }
 
   .timeline-item .card {
     width: 100%;
     padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: clamp(0.65rem, 3vw, 0.9rem);
+    max-height: 8rem;
+    overflow-y: auto;
     display: flex;
     align-items: center;
     gap: 0.5rem;
