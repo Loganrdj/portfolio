@@ -9,7 +9,6 @@ const rotatingSkillList = [
   'JavaScript',
   'Python',
   'Java',
-  'Airtable',
   'Unity',
   'C',
   'Marketo',
