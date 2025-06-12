@@ -211,7 +211,7 @@ export default function Resume() {
     const handle = () => requestAnimationFrame(update);
 
     update();
-    const target = document.scrollingElement || document.documentElement;
+    const target = window;
     target.addEventListener("scroll", handle, { passive: true });
     window.addEventListener("resize", handle);
     return () => {
