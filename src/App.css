@@ -612,10 +612,22 @@ html,body{
     transform: none;
   }
 
-  /* Hide connectors and duration brackets */
-  .duration-bracket,
-  .timeline-item .connector {
+  /* Hide duration brackets but keep connectors visible */
+  .duration-bracket {
     display: none;
+  }
+
+  /* Ensure connector lines are visible and appropriately sized */
+  .timeline-item .connector {
+    display: block;
+    width: 2rem !important;
+  }
+
+  /* Force left items to use right-side connector positioning */
+  .timeline-item.left .connector {
+    left: auto;
+    right: 100%;
+    transform-origin: left;
   }
 
   /* Position items to the right of the timeline */
@@ -636,6 +648,11 @@ html,body{
     align-items: center;
     gap: 0.5rem;
     transform: none !important;
+  }
+
+  .timeline-item .card h3 {
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    margin: 0.25rem 0;
   }
 
   .exp-logo {
