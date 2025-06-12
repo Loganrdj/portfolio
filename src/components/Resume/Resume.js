@@ -186,14 +186,15 @@ export default function Resume() {
 
   // 5) Magnify cards on scroll and adjust connector lengths
   useLayoutEffect(() => {
-    const items = document.querySelectorAll(".timeline-item");
     const cardWidth = 280;
 
-    const fn = () => {
+    const update = () => {
+      const items = document.querySelectorAll(".timeline-item");
       const mid = window.innerHeight / 2;
       items.forEach((el) => {
         const card      = el.querySelector(".card");
         const connector = el.querySelector(".connector");
+        if (!card || !connector) return;
         const base      = parseFloat(el.dataset.baseconnector);
         const r         = el.getBoundingClientRect();
         const c         = r.top + r.height / 2;
@@ -207,9 +208,9 @@ export default function Resume() {
       });
     };
 
-    const handle = () => requestAnimationFrame(fn);
+    const handle = () => requestAnimationFrame(update);
 
-    fn();
+    update();
     window.addEventListener("scroll", handle, { passive: true });
     window.addEventListener("resize", handle);
     return () => {
