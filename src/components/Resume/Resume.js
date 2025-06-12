@@ -186,6 +186,8 @@ export default function Resume() {
 
   // 5) Magnify cards on scroll and adjust connector lengths
   useLayoutEffect(() => {
+    if (window.innerWidth <= 640) return;
+
     const cardWidth = 280;
     let rafId;
 
