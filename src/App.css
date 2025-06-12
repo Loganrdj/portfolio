@@ -597,67 +597,34 @@ html,body{
 @media (max-width: 640px) {
   .timeline {
     position: relative;
+    height: auto;
   }
 
-  /* Move spine to the left */
-  .timeline::before {
-    display: block;
-    left: 0.75rem;
-    transform: none;
-  }
-
-  /* Ticks align with left spine */
-  .timeline-tick {
-    left: 0.75rem;
-    transform: none;
-  }
-
-  /* Show duration brackets on mobile */
-  .duration-bracket {
-    display: block;
-  }
-
-  /* Ensure connector lines remain visible but slightly shorter */
+  /* Hide timeline visuals */
+  .timeline::before,
+  .timeline-tick,
+  .duration-bracket,
   .timeline-item .connector {
-    display: block;
-    width: 1rem !important;
+    display: none;
   }
 
-  /* Force left items to use right-side connector positioning */
-  .timeline-item.left .connector {
-    left: auto;
-    right: 100%;
-    transform-origin: left;
-  }
-
-  /* Position items to the right of the timeline */
+  /* Stack events vertically with margin */
   .timeline-item {
-    left: 3rem !important; /* extra gap so dates remain visible */
-    width: calc(100% - 3rem) !important;
-    transform: translateY(-50%) !important;
+    position: static;
+    width: auto;
+    transform: none;
+    margin: 1rem;
   }
 
   .timeline-item .card {
-    width: calc(100% - 3rem);
-    margin: 0 1.5rem;
-    padding: 0.25rem 0.5rem;
-    font-size: clamp(0.65rem, 3vw, 0.9rem);
-    max-height: 8rem;
-    overflow-y: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .timeline-item .card h3 {
-    font-size: clamp(0.8rem, 4vw, 1.1rem);
-    margin: 0.25rem 0;
+    width: 100%;
+    margin: 0;
   }
 
   .exp-logo {
     width: 24px;
     height: 24px;
-    margin: 0;
+    margin-right: 0.5rem;
   }
 }
 
