@@ -139,9 +139,15 @@ export default function Resume() {
 
   useEffect(() => {
     const onScroll = () => {
-      setAtTop(window.scrollY < 50);
+      const scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      setAtTop(scrollTop < 50);
     };
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
