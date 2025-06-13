@@ -62,7 +62,7 @@ html,body{
   padding-bottom: 0;
 }
 .backgroundImg {
-  background-image: url('../public/backgroundimagewpaint.png');
+  background-image: url('../public/loganbackgroundwpaint2.png');
   /* Scale with the viewport while keeping the same ratio */
   background-size: cover;
   background-position: top center;
