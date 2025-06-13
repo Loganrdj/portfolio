@@ -50,10 +50,15 @@ body {
 
 html,body{
   height:100%;
-  background-color: #e9ecef;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  /* Use the hero image for the entire page background */
+  background-image: url('../public/loganbackgroundwpaint2.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* BootStrap */
