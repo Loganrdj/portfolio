@@ -72,7 +72,7 @@ html,body{
   background-repeat: no-repeat;
   background-attachment: scroll;
   /* Keep original layout */
-  min-height: 100vh;
+  min-height: 200vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -80,20 +80,7 @@ html,body{
   align-items: center;
 }
 
-/* Extend the background behind the next section without shifting content */
-.backgroundImg::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 100vh;
-  background-image: url('../public/loganbackgroundwpaint2.png');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
+
 
 .introHeader {
   min-height: 100vh;
