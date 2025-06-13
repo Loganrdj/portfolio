@@ -60,6 +60,9 @@ html,body{
 .jumboSpacing {
   padding-top: 0;
   padding-bottom: 0;
+  /* Override Bootstrap jumbotron background so extended hero image is visible */
+  background-color: transparent;
+  position: relative;
 }
 .backgroundImg {
   background-image: url('../public/loganbackgroundwpaint2.png');
