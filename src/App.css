@@ -68,7 +68,8 @@ html,body{
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  min-height: 100vh;
+  /* Extend the hero background across two screen heights */
+  min-height: 200vh;
   position: relative;
   display: flex;
   flex-direction: column;
