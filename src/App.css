@@ -867,7 +867,7 @@ html,body{
 /* Rotating skill text on home page */
 .skill-flash-container {
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
   right: 10%;
   display: flex;
   flex-direction: column;
