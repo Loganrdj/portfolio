@@ -50,7 +50,7 @@ class Home extends Component{
                 <a href="#bg-bottom" className="see-more-link">See more</a>
               </div>
             </div>
-            <a id="bg-bottom"></a>
+            <a id="bg-bottom">Test for scroll feature</a>
           </div>
           
         </div>
