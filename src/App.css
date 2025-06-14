@@ -195,16 +195,16 @@ html,body{
   display: block;
   background-color: black;
   padding: 0.25rem 0.75rem;
-  transition: transform 0.3s, margin-right 0.3s;
+  transition: transform 0.3s;
 }
-.customNavLink:hover{
+.customNavLink:hover {
   animation-name: flash;
   animation-iteration-count: infinite;
   text-decoration: none;
   animation-duration: 2.5s;
   animation-direction: alternate;
-  transform: translateX(-10px);
-  margin-right: -10px;
+  transform-origin: right;
+  transform: scaleX(1.1);
 }
 .active {
   border-bottom: black 1px solid;
