@@ -39,8 +39,8 @@ class Home extends Component{
     const currentSkill = rotatingSkills[currentSkillIndex];
     return (
         <div className="jumbotron jumbotron-fluid jumboSpacing">
-          <div className="backgroundImg snap-section">
-            <div className="introHeader">
+          <div className="backgroundImg">
+            <div className="introHeader snap-section">
               <div className="centerTextDiv">
                 <p className="firstName">Logan</p>
                 <p className="lastName">Moss</p>
@@ -50,8 +50,8 @@ class Home extends Component{
                 <a href="#bg-bottom" className="see-more-link">See more</a>
               </div>
             </div>
+            <div id="bg-bottom" className="homeContent snap-section"></div>
           </div>
-          <div id="bg-bottom" className="homeContent snap-section"></div>
 
         </div>
     );
