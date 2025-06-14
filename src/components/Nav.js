@@ -54,19 +54,6 @@ function Nav() {
             Projects
           </li>
         </Link>
-        <Link
-          to={{ pathname: "/", hash: "#bg-bottom" }}
-          className="customNavLink"
-          onClick={closeMenu}
-          style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
-        >
-          <li
-            className="customNavLink"
-            style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
-          >
-            Home
-          </li>
-        </Link>
       </ul>
     </nav>
   );
