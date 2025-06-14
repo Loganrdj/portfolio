@@ -50,9 +50,9 @@ class Home extends Component{
                 <a href="#bg-bottom" className="see-more-link">See more</a>
               </div>
             </div>
-            <a id="bg-bottom">Test for scroll feature</a>
           </div>
-          
+          <div id="bg-bottom" className="homeContent snap-section"></div>
+
         </div>
     );
   } 
