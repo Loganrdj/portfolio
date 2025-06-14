@@ -200,7 +200,7 @@ html,body{
   display: block;
   background-color: black;
   padding: 0.25rem 0.75rem;
-  transition: transform 0.3s;
+  transition: transform 0.3s, padding-left 0.3s, margin-right 0.3s;
 }
 .customNavLink:hover {
   animation-name: flash;
@@ -210,6 +210,8 @@ html,body{
   animation-direction: alternate;
   transform-origin: right;
   transform: translateX(-8px);
+  margin-right: -8px;
+  padding-left: 1.25rem;
 }
 .active {
   border-bottom: black 1px solid;
