@@ -6,7 +6,10 @@ function ScrollToTop({ location }) {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        // Use instant scrolling so CSS scroll-snap can immediately
+        // position the section without leaving the user stuck waiting
+        // for a smooth scroll animation to finish.
+        el.scrollIntoView({ behavior: 'auto', block: 'start' });
       }
     } else {
       // Jump instantly to the top when navigating between pages so the user
