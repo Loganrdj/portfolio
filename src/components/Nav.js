@@ -29,11 +29,11 @@ function Nav() {
           to="/resume"
           className="customNavLink"
           onClick={closeMenu}
-          style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+          style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
         >
           <li
             className="customNavLink"
-            style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+            style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
           >
             Resume
           </li>
@@ -45,24 +45,24 @@ function Nav() {
           to="/projects"
           className="customNavLink"
           onClick={closeMenu}
-          style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+          style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
         >
           <li
             className="customNavLink"
-            style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+            style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
           >
             Projects
           </li>
         </Link>
         <Link
-          to="/"
+          to="/#bg-bottom"
           className="customNavLink"
           onClick={closeMenu}
-          style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+          style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
         >
           <li
             className="customNavLink"
-            style={{ color: location.pathname === "/" ? "#00f0ed" : "black" }}
+            style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
           >
             Home
           </li>
