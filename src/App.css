@@ -79,7 +79,6 @@ html,body{
   /* Keep original layout */
   min-height: 200vh;
   position: relative;
-  scroll-snap-type: y mandatory;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -868,7 +867,7 @@ html,body{
 /* Rotating skill text on home page */
 .skill-flash-container {
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   right: 10%;
   display: flex;
   flex-direction: column;
