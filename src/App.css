@@ -191,17 +191,19 @@ html,body{
   color: black;
   font-family: 'Raleway', sans-serif;
   margin-right: 4%;
-  /* padding-top: 6px; */
   font-weight: bold;
-
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0.75rem;
+  transition: transform 0.3s;
 }
 .customNavLink:hover{
   animation-name: flash;
   animation-iteration-count: infinite;
   text-decoration: none;
-  /* color: white; */
   animation-duration: 2.5s;
   animation-direction: alternate;
+  transform: translateX(-10px);
 }
 .active {
   border-bottom: black 1px solid;
