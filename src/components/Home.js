@@ -45,10 +45,10 @@ class Home extends Component{
                 <p className="firstName">Logan</p>
                 <p className="lastName">Moss</p>
               </div>
-            </div>
-            <div className="skill-flash-container">
-              <div className="skill-flash-text">{currentSkill}</div>
-              <a href="#bg-bottom" className="see-more-link">See more</a>
+              <div className="skill-flash-container">
+                <div className="skill-flash-text">{currentSkill}</div>
+                <a href="#bg-bottom" className="see-more-link">See more</a>
+              </div>
             </div>
             <a id="bg-bottom"></a>
           </div>
