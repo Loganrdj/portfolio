@@ -6,6 +6,7 @@ import Contact from "./components/Contact/Contact"
 import Projects from "./components/Projects/Projects"
 import Resume from "./components/Resume/Resume"
 import FloatingLinks from "./components/FloatingLinks"
+import ScrollToTop from "./utils/ScrollToTop";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,6 +18,7 @@ class App extends Component {
   render(){
     return (
       <Router basename={process.env.PUBLIC_URL}>
+        <ScrollToTop />
         <Nav />
         <div className="App">
           <Switch>
