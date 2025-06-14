@@ -58,6 +58,7 @@ html,body{
   */
   scroll-behavior: auto;
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 /* BootStrap */
