@@ -208,7 +208,6 @@ html,body{
   text-decoration: none;
   animation-duration: 2.5s;
   animation-direction: alternate;
-  margin-right: -8px;
   transform-origin: right;
   transform: translateX(-8px);
 }
