@@ -204,7 +204,7 @@ html,body{
   animation-duration: 2.5s;
   animation-direction: alternate;
   transform-origin: right;
-  transform: scaleX(1.1);
+  transform: translateX(-8px);
 }
 .active {
   border-bottom: black 1px solid;
