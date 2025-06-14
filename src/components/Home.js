@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import "../App.css";
 
 const rotatingSkillList = [
@@ -28,6 +29,26 @@ class Home extends Component{
         currentSkillIndex: (prev.currentSkillIndex + 1) % shuffled.length
       }));
     }, 3000);
+
+    if (this.props.location && this.props.location.hash === '#bg-bottom') {
+      const el = document.getElementById('bg-bottom');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.location &&
+      this.props.location.hash !== prevProps.location.hash &&
+      this.props.location.hash === '#bg-bottom'
+    ) {
+      const el = document.getElementById('bg-bottom');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -58,4 +79,4 @@ class Home extends Component{
   } 
 }
 
-export default Home;
+export default withRouter(Home);
