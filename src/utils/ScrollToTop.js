@@ -9,7 +9,10 @@ function ScrollToTop({ location }) {
         el.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      window.scrollTo(0, 0);
+      // Jump instantly to the top when navigating between pages so the user
+      // can immediately scroll. Explicitly set behavior to 'auto' to override
+      // the global CSS smooth scroll setting.
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
   }, [location.pathname, location.hash]);
 
