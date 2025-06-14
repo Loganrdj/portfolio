@@ -55,7 +55,7 @@ function Nav() {
           </li>
         </Link>
         <Link
-          to="/#bg-bottom"
+          to={{ pathname: "/", hash: "#bg-bottom" }}
           className="customNavLink"
           onClick={closeMenu}
           style={{ color: location.pathname === "/" ? "#00f0ed" : "white" }}
