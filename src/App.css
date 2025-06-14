@@ -51,7 +51,12 @@ body {
 html,body{
   height:100%;
   background-color: #e9ecef;
-  scroll-behavior: smooth;
+  /*
+    Disable global smooth scroll to avoid delays when navigating
+    between pages. Smooth scrolling is manually handled where
+    needed (e.g. via ScrollToTop).
+  */
+  scroll-behavior: auto;
   overflow-y: scroll;
 }
 
