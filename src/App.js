@@ -6,6 +6,7 @@ import Contact from "./components/Contact/Contact"
 import Projects from "./components/Projects/Projects"
 import Resume from "./components/Resume/Resume"
 import FloatingLinks from "./components/FloatingLinks"
+import WordleGate from "./components/WordleGate";
 import ScrollToTop from "./utils/ScrollToTop";
 import {
   BrowserRouter as Router,
@@ -15,9 +16,17 @@ import {
 
 
 class App extends Component {
+  state = { gateUnlocked: false };
+
+  handleUnlock = () => {
+    this.setState({ gateUnlocked: true });
+  };
+
   render(){
+    const { gateUnlocked } = this.state;
     return (
       <Router basename={process.env.PUBLIC_URL}>
+        {!gateUnlocked && <WordleGate onUnlock={this.handleUnlock} />}
         <ScrollToTop />
         <Nav />
         <div className="App">
