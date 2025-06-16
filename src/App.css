@@ -200,7 +200,8 @@ html,body{
   display: block;
   background-color: black;
   padding: 0.25rem 0.75rem;
-  transition: transform 0.3s, padding-left 0.3s, margin-right 0.3s;
+  transition: transform 0.4s ease-in-out, padding-left 0.4s ease-in-out,
+    margin-right 0.4s ease-in-out;
 }
 .customNavLink:hover {
   animation-name: flash;
@@ -213,7 +214,7 @@ html,body{
 
 /* Slide the text itself so the right edge stays fixed */
 .customNavLink li {
-  transition: transform 0.3s;
+  transition: transform 0.4s ease-in-out;
 }
 
 .customNavLink:hover li {
