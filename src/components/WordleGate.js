@@ -46,7 +46,7 @@ function WordleGate({ onUnlock }) {
     setUsedLetters(Array.from(new Set([...usedLetters, ...word.split('')])));
     if (word === SECRET) {
       setFading(true);
-      setTimeout(() => onUnlock(), 500);
+      setTimeout(() => onUnlock(), 1200);
     } else if (nextGuesses.length >= 6) {
       setMessage(`The word was ${SECRET}. Reload to try again.`);
     }
