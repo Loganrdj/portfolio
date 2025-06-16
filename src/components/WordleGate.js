@@ -60,11 +60,14 @@ function WordleGate({ onUnlock, onFail }) {
       setMessage('Incorrect. Deleting everything...');
       setFailed(true);
       setHideStep(0);
-      if (onFail) {
-        onFail();
-      }
     }
   };
+
+  useEffect(() => {
+    if (failed && hideStep >= 4 && onFail) {
+      onFail();
+    }
+  }, [failed, hideStep, onFail]);
 
   return (
     <div
