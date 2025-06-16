@@ -139,6 +139,13 @@ export default function Resume() {
   const [scrollOffset, setScrollOffset] = useState(0);
 
   useEffect(() => {
+    document.body.classList.add("resume-background");
+    return () => {
+      document.body.classList.remove("resume-background");
+    };
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => {
       const scrollTop =
         window.pageYOffset ||
