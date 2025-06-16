@@ -979,7 +979,7 @@ html,body{
   justify-content: center;
   color: white;
   gap: 1rem;
-  transition: opacity 0.5s;
+  transition: opacity 1.2s;
 }
 
 .wordle-grid {
