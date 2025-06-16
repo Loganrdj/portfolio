@@ -18,8 +18,11 @@ export default function Projects() {
     });
     const refCurrent = loadMoreRef.current;
     if (refCurrent) observer.observe(refCurrent);
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (refCurrent) observer.unobserve(refCurrent);
+      observer.disconnect();
+    };
+  }, [visibleCount]);
 
   return (
     <>
