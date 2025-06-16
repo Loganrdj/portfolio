@@ -534,7 +534,7 @@ body.resume-background {
   margin-top: 0;
   height: 180vh;      /* adjust scroll length */
   width: 100%;
-  background: #e9ecef;
+  background: transparent;
   overflow-x: hidden;
   transition: opacity 0.3s ease;
 }
