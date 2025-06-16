@@ -60,7 +60,29 @@ class Home extends Component{
             </div>
             <div id="bg-bottom" className="homeContent snap-section">
               <div className="jumbotron aboutMeDiv">
-
+                <div className="about-description">
+                  <h2>About Me</h2>
+                  <p>
+                    I am a developer with a passion for learning new
+                    technologies and building useful applications.
+                  </p>
+                </div>
+                <div className="skills-section">
+                  <h2>Skills</h2>
+                  <ul>
+                    {rotatingSkillList.map(skill => (
+                      <li key={skill}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="contact-section">
+                  <h2>Contact</h2>
+                  <p>
+                    Email:
+                    {' '}
+                    <a href="mailto:lrdjmoss@gmail.com">lrdjmoss@gmail.com</a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
