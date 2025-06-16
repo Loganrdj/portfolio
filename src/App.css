@@ -199,17 +199,17 @@ html,body{
   font-weight: bold;
   display: block;
   background-color: black;
-  padding: 0.25rem 0.75rem 0.25rem 1.25rem;
+  padding: 0.25rem 0.75rem 0.25rem 1rem;
   margin-right: 0;
   transition: padding-left 0.4s ease-in-out;
 }
 .customNavLink:hover {
-  animation-name: flash;
+  animation-name: none;
   animation-iteration-count: infinite;
   text-decoration: none;
   animation-duration: 2.5s;
   animation-direction: alternate;
-  padding-left: 1.75rem;
+  padding-left: 1.45rem;
 }
 
 .active {
