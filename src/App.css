@@ -61,6 +61,15 @@ html,body{
   scroll-snap-type: y mandatory;
 }
 
+body.resume-background {
+  background-image: url('../public/loganbackgroundresume.png');
+  background-color: #e9ecef;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* BootStrap */
 .jumboSpacing {
   padding-top: 0;
@@ -525,12 +534,7 @@ html,body{
   margin-top: 0;
   height: 180vh;      /* adjust scroll length */
   width: 100%;
-  background-image: url('../public/loganbackgroundresume.png');
-  background-color: #e9ecef;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: #e9ecef;
   overflow-x: hidden;
   transition: opacity 0.3s ease;
 }
