@@ -75,14 +75,9 @@ class Home extends Component{
                     ))}
                   </ul>
                 </div>
-                <div className="contact-section">
-                  <h2>Contact</h2>
-                  <p>
-                    Email:
-                    {' '}
-                    <a href="mailto:lrdjmoss@gmail.com">lrdjmoss@gmail.com</a>
-                  </p>
-                </div>
+              </div>
+              <div className="contact-link">
+                Email: <a href="mailto:lrdjmoss@gmail.com">lrdjmoss@gmail.com</a>
               </div>
             </div>
           </div>
