@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.css';
 
-function FloatingLinks() {
+function FloatingLinks({ className = '' }) {
   return (
-    <div className="floating-links">
+    <div className={`floating-links ${className}`}>
       <a
         href="https://www.linkedin.com/in/loganmoss/"
         target="_blank"
