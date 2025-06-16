@@ -58,7 +58,10 @@ html,body{
   */
   scroll-behavior: auto;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  /* Disable snap scrolling site-wide so pages like Projects can scroll
+     normally. Snap alignment is still applied to individual sections
+     via the .snap-section class. */
+  /* scroll-snap-type: y mandatory; */
 }
 
 /* BootStrap */

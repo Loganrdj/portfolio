@@ -18,6 +18,8 @@ export default function Projects({ projects = projectsData }) {
       }
     };
     window.addEventListener('scroll', handleScroll);
+    // Trigger once on mount in case the initial items don't fill the viewport
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [projects.length]);
 
