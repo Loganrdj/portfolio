@@ -238,7 +238,7 @@ export default function Resume() {
   }, [sorted]);
 
   return (
-    <>
+    <div className="resumeBackground">
     <div className="timeline-wrapper">
       <div
         className="resume-toggle"
@@ -362,7 +362,7 @@ export default function Resume() {
       </div>
     </div>
     <ExperienceModal exp={selected} onClose={() => setSelected(null)} />
-    </>
+    </div>
   );
 }
 
