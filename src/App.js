@@ -16,39 +16,51 @@ import {
 
 
 class App extends Component {
-  state = { gateUnlocked: false, gateFailed: false };
+  state = { gateUnlocked: false, gateFailed: false, hideStep: -1 };
 
   handleUnlock = () => {
     this.setState({ gateUnlocked: true });
   };
 
   handleFail = () => {
-    this.setState({ gateFailed: true });
+    this.setState({ gateFailed: true, hideStep: 0 }, () => {
+      this.hideInterval = setInterval(() => {
+        this.setState(prev => {
+          if (prev.hideStep >= 2) {
+            clearInterval(this.hideInterval);
+            return { hideStep: 3 };
+          }
+          return { hideStep: prev.hideStep + 1 };
+        });
+      }, 500);
+    });
   };
 
+  componentWillUnmount() {
+    clearInterval(this.hideInterval);
+  }
+
   render(){
-    const { gateUnlocked, gateFailed } = this.state;
+    const { gateUnlocked, hideStep } = this.state;
     return (
       <Router basename={process.env.PUBLIC_URL}>
         {!gateUnlocked && (
           <WordleGate onUnlock={this.handleUnlock} onFail={this.handleFail} />
         )}
-        {!gateFailed && (
-          <>
-            <ScrollToTop />
-            <Nav />
-            <div className="App">
-              <Switch>
-                {/* <Route path="/portfolio" component={Home}/> */}
-                <Route exact path="/" component={Home} />
-                <Route path="/resume" component={Resume} />
-                <Route path="/projects" component={Projects} />
-                <Route path="/contact" component={Contact} />
-              </Switch>
-              <FloatingLinks />
-            </div>
-          </>
-        )}
+        <div className={`site-wrapper ${hideStep >= 2 ? 'hidden' : ''}`}>
+          <ScrollToTop />
+          <Nav className={hideStep >= 0 ? 'fade-out' : ''} />
+          <div className={`App ${hideStep >= 1 ? 'fade-out' : ''}`}>
+            <Switch>
+              {/* <Route path="/portfolio" component={Home}/> */}
+              <Route exact path="/" render={() => <Home hideStep={hideStep} />} />
+              <Route path="/resume" component={Resume} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+            <FloatingLinks className={hideStep >= 0 ? 'fade-out' : ''} />
+          </div>
+        </div>
       </Router>
     );
   }

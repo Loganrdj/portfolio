@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../App.css";
 import { Link, useLocation } from 'react-router-dom';
 
-function Nav() {
+function Nav({ className = '' }) {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -10,7 +10,7 @@ function Nav() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="navAnimation customNav">
+    <nav className={`navAnimation customNav ${className}`}>
       <Link
         className="title"
         to="/"
