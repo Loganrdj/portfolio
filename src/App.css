@@ -230,13 +230,13 @@ html,body{
 }
 
 .aboutMeDiv {
-  margin-top: 4%;
+  margin: 6%;
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(5, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .about-description {
