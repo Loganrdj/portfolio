@@ -85,20 +85,6 @@ html,body{
   align-items: center;
 }
 
-/* Background for resume page */
-.resumeBackground {
-  background-image: url('../public/loganbackgroundresume.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 
 
 .introHeader {
