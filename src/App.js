@@ -16,29 +16,39 @@ import {
 
 
 class App extends Component {
-  state = { gateUnlocked: false };
+  state = { gateUnlocked: false, gateFailed: false };
 
   handleUnlock = () => {
     this.setState({ gateUnlocked: true });
   };
 
+  handleFail = () => {
+    this.setState({ gateFailed: true });
+  };
+
   render(){
-    const { gateUnlocked } = this.state;
+    const { gateUnlocked, gateFailed } = this.state;
     return (
       <Router basename={process.env.PUBLIC_URL}>
-        {!gateUnlocked && <WordleGate onUnlock={this.handleUnlock} />}
-        <ScrollToTop />
-        <Nav />
-        <div className="App">
-          <Switch>
-            {/* <Route path="/portfolio" component={Home}/> */}
-            <Route exact path="/" component={Home}/>
-            <Route path="/resume" component={Resume}/>
-            <Route path="/projects" component={Projects}/>
-            <Route path="/contact" component={Contact}/>
-          </Switch>
-          <FloatingLinks />
-        </div>
+        {!gateUnlocked && (
+          <WordleGate onUnlock={this.handleUnlock} onFail={this.handleFail} />
+        )}
+        {!gateFailed && (
+          <>
+            <ScrollToTop />
+            <Nav />
+            <div className="App">
+              <Switch>
+                {/* <Route path="/portfolio" component={Home}/> */}
+                <Route exact path="/" component={Home} />
+                <Route path="/resume" component={Resume} />
+                <Route path="/projects" component={Projects} />
+                <Route path="/contact" component={Contact} />
+              </Switch>
+              <FloatingLinks />
+            </div>
+          </>
+        )}
       </Router>
     );
   }

@@ -28,7 +28,7 @@ function evaluateGuess(guess) {
   return result;
 }
 
-function WordleGate({ onUnlock }) {
+function WordleGate({ onUnlock, onFail }) {
   const [guesses, setGuesses] = useState([]); // array of { word, result }
   const [current, setCurrent] = useState('');
   const [message, setMessage] = useState('');
@@ -60,6 +60,9 @@ function WordleGate({ onUnlock }) {
       setMessage('Incorrect. Deleting everything...');
       setFailed(true);
       setHideStep(0);
+      if (onFail) {
+        onFail();
+      }
     }
   };
 
