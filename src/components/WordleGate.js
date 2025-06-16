@@ -32,6 +32,8 @@ function WordleGate({ onUnlock }) {
   const [guesses, setGuesses] = useState([]); // array of { word, result }
   const [current, setCurrent] = useState('');
   const [message, setMessage] = useState('');
+  const [usedLetters, setUsedLetters] = useState([]);
+  const [fading, setFading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,15 +43,17 @@ function WordleGate({ onUnlock }) {
     const nextGuesses = [...guesses, { word, result }];
     setGuesses(nextGuesses);
     setCurrent('');
+    setUsedLetters(Array.from(new Set([...usedLetters, ...word.split('')])));
     if (word === SECRET) {
-      onUnlock();
+      setFading(true);
+      setTimeout(() => onUnlock(), 500);
     } else if (nextGuesses.length >= 6) {
       setMessage(`The word was ${SECRET}. Reload to try again.`);
     }
   };
 
   return (
-    <div className="wordle-gate-overlay">
+    <div className={`wordle-gate-overlay${fading ? ' fade-out' : ''}`}>
       <h2>Guess the secret 5-letter word</h2>
       <div className="wordle-grid">
         {guesses.map((g, i) => (
@@ -71,6 +75,9 @@ function WordleGate({ onUnlock }) {
           </form>
         )}
       </div>
+      {usedLetters.length > 0 && (
+        <p className="used-letters">Used letters: {usedLetters.join(' ')}</p>
+      )}
       {message && <p>{message}</p>}
     </div>
   );

@@ -979,6 +979,7 @@ html,body{
   justify-content: center;
   color: white;
   gap: 1rem;
+  transition: opacity 0.5s;
 }
 
 .wordle-grid {
@@ -1028,4 +1029,12 @@ html,body{
   border: 2px solid white;
   background: transparent;
   color: white;
+}
+
+.wordle-gate-overlay.fade-out {
+  opacity: 0;
+}
+
+.used-letters {
+  font-size: 1.2rem;
 }
