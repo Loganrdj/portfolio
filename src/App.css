@@ -229,6 +229,10 @@ html,body{
   gap: 0.5rem;
 }
 
+.aboutMeDiv {
+  margin-top: 4%;
+}
+
 .mobileMenuButton {
   display: none;
   background: none;
