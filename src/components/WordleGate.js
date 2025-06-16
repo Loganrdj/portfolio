@@ -36,6 +36,8 @@ function WordleGate({ onUnlock, onFail }) {
   const [fading, setFading] = useState(false);
   const [failed, setFailed] = useState(false);
   const [hideStep, setHideStep] = useState(-1);
+  const [showWelcome, setShowWelcome] = useState(false);
+  const [welcomeText, setWelcomeText] = useState('');
 
   useEffect(() => {
     if (failed && hideStep < 4) {
@@ -43,6 +45,23 @@ function WordleGate({ onUnlock, onFail }) {
       return () => clearTimeout(id);
     }
   }, [failed, hideStep]);
+
+  const startWelcome = () => {
+    const text = 'Welcome...';
+    setShowWelcome(true);
+    let idx = 0;
+    const interval = setInterval(() => {
+      setWelcomeText(text.slice(0, idx + 1));
+      idx += 1;
+      if (idx === text.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setFading(true);
+          setTimeout(() => onUnlock(), 2000);
+        }, 500);
+      }
+    }, 150);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,8 +73,7 @@ function WordleGate({ onUnlock, onFail }) {
     setCurrent('');
     setUsedLetters(Array.from(new Set([...usedLetters, ...word.split('')])));
     if (word === SECRET) {
-      setFading(true);
-      setTimeout(() => onUnlock(), 2000);
+      startWelcome();
     } else if (nextGuesses.length >= 6) {
       setMessage('Incorrect. Deleting everything...');
       setFailed(true);
@@ -75,8 +93,8 @@ function WordleGate({ onUnlock, onFail }) {
         hideStep >= 4 ? 'hidden' : ''
       }`}
     >
-      <h2 className={hideStep >= 1 ? 'hidden' : ''}>Guess the secret 5-letter word</h2>
-      <div className={`wordle-grid ${hideStep >= 0 ? 'hidden' : ''}`}>
+      <h2 className={hideStep >= 1 || showWelcome ? 'hidden' : ''}>Guess the secret 5-letter word</h2>
+      <div className={`wordle-grid ${hideStep >= 0 || showWelcome ? 'hidden' : ''}`}>
         {guesses.map((g, i) => (
           <div className="wordle-row" key={i}>
             {g.word.split('').map((ch, idx) => (
@@ -97,11 +115,12 @@ function WordleGate({ onUnlock, onFail }) {
         )}
       </div>
       {usedLetters.length > 0 && (
-        <p className={`used-letters ${hideStep >= 2 ? 'hidden' : ''}`}>
+        <p className={`used-letters ${hideStep >= 2 || showWelcome ? 'hidden' : ''}`}>
           Used letters: {usedLetters.join(' ')}
         </p>
       )}
-      {message && <p className={hideStep >= 3 ? 'hidden' : ''}>{message}</p>}
+      {message && <p className={hideStep >= 3 || showWelcome ? 'hidden' : ''}>{message}</p>}
+      {showWelcome && <p className="welcome-message">{welcomeText}</p>}
     </div>
   );
 }
