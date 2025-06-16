@@ -1,28 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../App.css";
-import projects from './projects.json';
+import projectsData from './projects.json';
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 import ProjectModal from './ProjectModal';
 
-export default function Projects() {
+const ITEMS_PER_BATCH = 3;
+
+export default function Projects({ projects = projectsData }) {
   const [selected, setSelected] = useState(null);
   const [visibleCount, setVisibleCount] = useState(6);
-  const loadMoreRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        setVisibleCount(prev => Math.min(prev + 3, projects.length));
+    const handleScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        setVisibleCount(prev => Math.min(prev + ITEMS_PER_BATCH, projects.length));
       }
-    });
-    const refCurrent = loadMoreRef.current;
-    if (refCurrent) observer.observe(refCurrent);
-    return () => {
-      if (refCurrent) observer.unobserve(refCurrent);
-      observer.disconnect();
     };
-  }, [visibleCount]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [projects.length]);
 
   return (
     <>
@@ -42,9 +39,6 @@ export default function Projects() {
             </ScrollAnimation>
           </div>
         ))}
-        {visibleCount < projects.length && (
-          <div ref={loadMoreRef} style={{ height: '1px' }} />
-        )}
       </div>
     </div>
     <ProjectModal project={selected} onClose={() => setSelected(null)} />
