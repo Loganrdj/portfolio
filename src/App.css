@@ -1047,3 +1047,9 @@ html,body{
 .used-letters {
   font-size: 1.2rem;
 }
+
+.welcome-message {
+  font-family: monospace;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
