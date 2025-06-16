@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../App.css";
 import projects from './projects.json';
-import "animate.css/animate.min.css";
-import ScrollAnimation from 'react-animate-on-scroll';
 import ProjectModal from './ProjectModal';
 
 export default function Projects() {
   const [selected, setSelected] = useState(null);
+
+  // Reveal project cards when they enter the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const cards = document.querySelectorAll('.cardCSS');
+    cards.forEach(card => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -14,16 +31,14 @@ export default function Projects() {
       <div className="projects-grid projectRow">
         {projects.map(project => (
           <div key={project.id} className="cardCSS">
-            <ScrollAnimation delay={300} animateIn="fadeIn">
-              <img
-                src={project.image}
-                alt={project.alt}
-                className="project-thumb paused"
-                onClick={() => setSelected(project)}
-                onMouseEnter={e => e.currentTarget.classList.remove('paused')}
-                onMouseLeave={e => e.currentTarget.classList.add('paused')}
-              />
-            </ScrollAnimation>
+            <img
+              src={project.image}
+              alt={project.alt}
+              className="project-thumb paused"
+              onClick={() => setSelected(project)}
+              onMouseEnter={e => e.currentTarget.classList.remove('paused')}
+              onMouseLeave={e => e.currentTarget.classList.add('paused')}
+            />
           </div>
         ))}
       </div>
