@@ -75,7 +75,7 @@ function WordleGate({ onUnlock, onFail }) {
     if (word === SECRET) {
       startWelcome();
     } else if (nextGuesses.length >= 6) {
-      setMessage('Incorrect. Deleting everything...');
+      setMessage('Incorrect Answer. Deleting...');
       setFailed(true);
       setHideStep(0);
     }
