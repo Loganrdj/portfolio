@@ -199,7 +199,7 @@ html,body{
   font-weight: bold;
   display: block;
   background-color: black;
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.75rem 0.25rem 1.25rem;
   transition: transform 0.4s ease-in-out, padding-left 0.4s ease-in-out,
     margin-right 0.4s ease-in-out;
 }
@@ -209,7 +209,6 @@ html,body{
   text-decoration: none;
   animation-duration: 2.5s;
   animation-direction: alternate;
-  padding-left: 1.25rem;
 }
 
 /* Slide the text itself so the right edge stays fixed */
