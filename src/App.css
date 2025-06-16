@@ -201,8 +201,7 @@ html,body{
   background-color: black;
   padding: 0.25rem 0.75rem 0.25rem 1.25rem;
   margin-right: 0;
-  transition: transform 0.4s ease-in-out, padding-left 0.4s ease-in-out,
-    margin-right 0.4s ease-in-out;
+  transition: padding-left 0.4s ease-in-out;
 }
 .customNavLink:hover {
   animation-name: flash;
@@ -211,17 +210,8 @@ html,body{
   animation-duration: 2.5s;
   animation-direction: alternate;
   padding-left: 1.75rem;
-  margin-right: -0.5rem;
 }
 
-/* Slide the text itself so the right edge stays fixed */
-.customNavLink li {
-  transition: transform 0.4s ease-in-out;
-}
-
-.customNavLink:hover li {
-  transform: translateX(-8px);
-}
 .active {
   border-bottom: black 1px solid;
 }
