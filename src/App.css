@@ -250,9 +250,14 @@ body.resume-background {
 }
 
 .about-description {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: white;
   padding: 1rem;
+
   flex: 3 1 50%;
+  color: black;
+}
+.skills-section ul {
+  list-style: none;
 }
 
 .skills-section {
@@ -277,7 +282,12 @@ body.resume-background {
 
 .contact-link {
   margin-top: auto; /* push link to bottom of page */
+  margin-bottom: 1%;
   font-size: 1rem;
+  
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: .5% 1% .5% 1%;
 }
 
 .mobileMenuButton {

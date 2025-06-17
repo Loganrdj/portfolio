@@ -111,9 +111,6 @@ class Home extends Component{
                   </ul>
                 </div>
               </div>
-              <div className="contact-link">
-                Email: <a href="mailto:lrdjmoss@gmail.com">lrdjmoss@gmail.com</a>
-              </div>
             </div>
           </div>
 
