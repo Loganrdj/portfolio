@@ -260,6 +260,10 @@ body.resume-background {
   list-style: none;
 }
 
+.skills-section h2 {
+  align-self: center;
+}
+
 .skills-section {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 1rem;
@@ -273,7 +277,10 @@ body.resume-background {
 }
 
 .skill-buttons {
+  display: flex;
   margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-buttons button {
