@@ -25,7 +25,7 @@ const skillCategories = {
     'Email Campaigns',
     'Analytics'
   ],
-  'Content Creation': [
+  Content: [
     'Writing',
     'Video Editing',
     'Graphic Design'
