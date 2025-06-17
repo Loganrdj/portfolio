@@ -14,11 +14,30 @@ const rotatingSkillList = [
   'Slack'
 ];
 
+const skillCategories = {
+  Development: [
+    'HTML',
+    'CSS',
+    'JavaScript'
+  ],
+  Marketing: [
+    'SEO',
+    'Email Campaigns',
+    'Analytics'
+  ],
+  'Content Creation': [
+    'Writing',
+    'Video Editing',
+    'Graphic Design'
+  ]
+};
+
 class Home extends Component{
 
   state = {
     rotatingSkills: [],
-    currentSkillIndex: 0
+    currentSkillIndex: 0,
+    selectedCategory: 'Development'
   }
 
   componentDidMount() {
@@ -39,13 +58,18 @@ class Home extends Component{
     clearInterval(this.interval);
   }
 
+  handleCategoryClick = (category) => {
+    this.setState({ selectedCategory: category });
+  }
+
   render(){
-    const { rotatingSkills, currentSkillIndex } = this.state;
+    const { rotatingSkills, currentSkillIndex, selectedCategory } = this.state;
     const { hideStep = -1 } = this.props;
     const currentSkill =
       rotatingSkills.length > 0
         ? rotatingSkills[currentSkillIndex]
         : rotatingSkillList[0];
+    const skills = skillCategories[selectedCategory];
     return (
         <div className="jumbotron jumbotron-fluid jumboSpacing">
           <div className={`backgroundImg ${hideStep >= 1 ? 'fade-out' : ''}`}>
@@ -70,8 +94,18 @@ class Home extends Component{
                 </div>
                 <div className="skills-section">
                   <h2>Skills</h2>
+                  <div className="skill-buttons">
+                    {Object.keys(skillCategories).map(category => (
+                      <button
+                        key={category}
+                        onClick={() => this.handleCategoryClick(category)}
+                      >
+                        {category}
+                      </button>
+                    ))}
+                  </div>
                   <ul>
-                    {rotatingSkillList.map(skill => (
+                    {skills.map(skill => (
                       <li key={skill}>{skill}</li>
                     ))}
                   </ul>
