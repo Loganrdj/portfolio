@@ -271,17 +271,23 @@ body.resume-background {
   flex: 1 1 30%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  justify-content: space-between; /* stretch content vertically */
+}
+
+.skills-container {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .skill-buttons {
   display: flex;
-  margin-bottom: 1rem;
-  align-items: center;
-  justify-content: center;
-  align-self: center; /* center the button group within the skills section */
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 0 0 120px;
+}
+
+.skills-list {
+  flex: 1;
 }
 
 .skill-buttons button {

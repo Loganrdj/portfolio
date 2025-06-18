@@ -94,21 +94,25 @@ class Home extends Component{
                 </div>
                 <div className="skills-section">
                   <h2>Skills</h2>
-                  <div className="skill-buttons">
-                    {Object.keys(skillCategories).map(category => (
-                      <button
-                        key={category}
-                        onClick={() => this.handleCategoryClick(category)}
-                      >
-                        {category}
-                      </button>
-                    ))}
+                  <div className="skills-container">
+                    <div className="skill-buttons">
+                      {Object.keys(skillCategories).map(category => (
+                        <button
+                          key={category}
+                          onClick={() => this.handleCategoryClick(category)}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="skills-list">
+                      <ul>
+                        {skills.map(skill => (
+                          <li key={skill}>{skill}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <ul>
-                    {skills.map(skill => (
-                      <li key={skill}>{skill}</li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>
