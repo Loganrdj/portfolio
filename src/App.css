@@ -1052,22 +1052,31 @@ body.resume-background {
   .firstName,
   .lastName {
     font-size: clamp(2rem, 16vw, 3rem);
+    top: 210px;
   }
 
   .aboutMeDiv {
     width: 90%;
     gap: 2rem;
   }
-
+  .see-more-link{
+    color:#f94301;
+  }
   .about-description,
   .skills-section {
     padding: 0.5rem;
     font-size: 0.9rem;
   }
+  .customNavLinks.showMobileMenu {
+    align-items: center;
+  }
 
   .skills-container {
     flex-direction: column;
     gap: 0.5rem;
+  }
+  .mobileMenuButton {
+    margin-right: 40px;
   }
 
   .skill-buttons {
