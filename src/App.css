@@ -720,6 +720,9 @@ body.resume-background {
 
 /* ─── Mobile Layout ─────────────────────────────── */
 @media (max-width: 640px) {
+  .creation-label {
+    display: none;
+  }
   .timeline {
     position: relative;
     height: auto;
@@ -732,7 +735,9 @@ body.resume-background {
   .timeline-item .connector {
     display: none;
   }
-
+  .skills-container {
+    align-items: center;
+  }
   /* Stack events vertically with margin */
   .timeline-item {
     position: static;
@@ -761,7 +766,13 @@ body.resume-background {
   }
 }
 
-
+.creation-label {
+  bottom: -18px;
+  left: 40px;
+  position: absolute;
+  font-family: 'Playfair Display';
+  opacity: 50%;
+}
 
 
 
@@ -1078,7 +1089,16 @@ body.resume-background {
   .mobileMenuButton {
     margin-right: 40px;
   }
-
+  .timeline {
+    padding-top: 10% !important;
+  }
+  .resume-toggle{
+    margin: auto;
+    padding-left: 5%;
+  }
+  .projects-container {
+    margin-top: 30%;
+  }
   .skill-buttons {
     flex-direction: row;
     flex-wrap: wrap;

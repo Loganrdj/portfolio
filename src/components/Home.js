@@ -130,7 +130,7 @@ class Home extends Component{
                   <p>I've helped teach over 100 students Fullstack Development and Data Analytics.</p>
                   
                   <p>I've livestreamed in front of over 10,000, have had the wonderful opportunity to work with brands such as, Taco Bell, AT&T, and more...</p>
-                  <p>Twitch Partner, Chess.com affiliate, Grand Champion — Rocket League</p>
+                  <p>Twitch Partner, Chess.com affiliate, PC Enthusiast, Grand Champion — Rocket League</p>
                 </div>
                 <div className="skills-section">
                   <h2>Skills</h2>
@@ -155,9 +155,9 @@ class Home extends Component{
                   </div>
                 </div>
               </div>
+              <p className="creation-label">Designed and coded by Logan Moss</p>
             </div>
           </div>
-
         </div>
     );
   } 

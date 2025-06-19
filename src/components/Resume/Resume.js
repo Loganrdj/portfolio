@@ -48,8 +48,9 @@ const experiences = [
     company: "University of San Francisco",
     logo: usflogo,
     dateLabel: "Feb 2016 – Oct 2019",
-    description: lorem,
+    description: "Resolved a wide range of software and hardware issues, including memory failures, operating system errors, and general troubleshooting across various devices. Consistently recognized for outstanding customer support, maintaining a 99% satisfaction rating or higher based on client feedback.",
     backgroundcolor: '#01543c',
+    list_skills: "Skills",
     fontColor: 'white'
   },
   {
@@ -61,6 +62,7 @@ const experiences = [
     dateLabel: "Feb 2016 – Oct 2019",
     description: lorem,
     backgroundcolor: '#01543c',
+    list_skills: "Skills",
     fontColor: 'white'
   },
   {
@@ -72,6 +74,7 @@ const experiences = [
     dateLabel: "Feb 2016 – Oct 2019",
     description: lorem,
     backgroundcolor: '#01543c',
+    list_skills: "Skills",
     fontColor: 'white'
   },
   {
@@ -83,6 +86,7 @@ const experiences = [
     dateLabel: "Sept 2019 – Dec 2019",
     description: lorem,
     backgroundcolor: '#f98d77',
+    list_skills: "Skills",
     fontColor: 'black'
   },
   {
@@ -94,6 +98,7 @@ const experiences = [
     dateLabel: "July 2020 – Oct 2021",
     description: lorem,
     backgroundcolor: '#ffffff',
+    list_skills: "Skills",
     fontColor: 'black'
   },
   {
@@ -105,6 +110,7 @@ const experiences = [
     dateLabel: "Jan 2021 – May 2021",
     description: lorem,
     backgroundcolor: '#ffffff',
+    list_skills: "Skills",
     fontColor: 'black'
   },
   {
@@ -116,6 +122,7 @@ const experiences = [
     dateLabel: "Mar 2021 – Sept 2023",
     description: lorem,
     backgroundcolor: 'lightgray',
+    list_skills: "Skills",
     fontColor: 'black'
   },
   {
@@ -127,6 +134,7 @@ const experiences = [
     dateLabel: "Sept 2023 – Jan 2025",
     description: lorem,
     backgroundcolor: '#CBC3E3',
+    list_skills: "Skills",
     fontColor: 'black'
   },
 ];
