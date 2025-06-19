@@ -267,7 +267,10 @@ export default function Resume() {
           Education
         </button>
       </div>
-      <div className={`timeline ${fading ? "fading" : ""}`}>
+      <div
+        className={`timeline ${fading ? "fading" : ""}`}
+        style={{ height: `${(sorted.length + 1) * 100}vh` }}
+      >
       {/* Spine */}
       <div className="spine" />
 
