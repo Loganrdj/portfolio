@@ -60,7 +60,7 @@ const experiences = [
     company: "University of San Francisco",
     logo: usflogo,
     dateLabel: "Feb 2016 – Oct 2019",
-    description: lorem,
+    description: "Managed Virtual Machine Software (VMWare). Configured and support routers, switches, firewalls. Monitored network health, bandwidth usage, and resolved connectivity issues. Maintained backups, disaster-recovery plans, and regularly test restore procedures.",
     backgroundcolor: '#01543c',
     list_skills: "Skills",
     fontColor: 'white'

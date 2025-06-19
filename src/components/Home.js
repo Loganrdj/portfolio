@@ -31,7 +31,9 @@ const skillCategories = {
     'MySQL',
     'SQL',
     'Database management',
-    'API Development'
+    'API Development',
+    'TCP/IP',
+    'AWS'
   ],
   Marketing: [
     'SEO',
@@ -39,7 +41,8 @@ const skillCategories = {
     'Webinar Campaigns',
     'Chatbot Direction',
     'Project Management',
-    'Analytics',
+    'Data Analytics',
+    'Google Analytics',
     'Marketo',
     'HubSpot',
     'SurveyMonkey',
