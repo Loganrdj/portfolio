@@ -31,7 +31,7 @@ const skillCategories = {
     'MySQL',
     'SQL',
     'Database management',
-    'API'
+    'API Development'
   ],
   Marketing: [
     'SEO',
@@ -47,7 +47,9 @@ const skillCategories = {
     'Salesforce',
     'Slack',
     'Zapier',
-    'Airtable'
+    'Airtable',
+    'Asana',
+    'GoToMarket'
   ],
   Content: [
     'Writing/Copywriting',
@@ -61,7 +63,8 @@ const skillCategories = {
     'Content Strategy',
     'Corporate Collaboration',
     'Sponsorship Management',
-    'Trends'
+    'Trends',
+    'OBS'
   ]
 };
 
@@ -118,11 +121,16 @@ class Home extends Component{
             <div id="bg-bottom" className="homeContent snap-section">
               <div className="jumbotron aboutMeDiv">
                 <div className="about-description">
-                  <h2>About Me</h2>
-                  <p>
-                    I am a developer with a passion for learning new
-                    technologies and building useful applications.
-                  </p>
+                  <h2>What do I do?</h2>
+                  <h4>
+                    I develop, market, create. 
+                  </h4>
+                  <br></br>
+                  <p>I have a passion for <b>optimization</b>. Process, Algorithmic, Workflow, and Generic.</p>
+                  <p>I've helped teach over 100 students Fullstack Development and Data Analytics.</p>
+                  
+                  <p>I've livestreamed in front of over 10,000, have had the wonderful opportunity to work with brands such as, Taco Bell, AT&T, and more...</p>
+                  <p>Twitch Partner, Chess.com affiliate, Grand Champion — Rocket League</p>
                 </div>
                 <div className="skills-section">
                   <h2>Skills</h2>
