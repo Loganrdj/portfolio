@@ -243,7 +243,7 @@ body.resume-background {
   margin-bottom: -4%;
   width: 70%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 4rem; /* increased spacing between About and Skills sections */
   align-items: stretch; /* allow children to span full height */
   background: transparent;
@@ -253,7 +253,7 @@ body.resume-background {
   background-color: white;
   padding: 1rem;
 
-  flex: 3 1 50%;
+  width: 100%;
   color: black;
 }
 .skills-section ul {
@@ -268,7 +268,7 @@ body.resume-background {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 1rem;
   color: white;
-  flex: 1 1 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
