@@ -265,9 +265,9 @@ body.resume-background {
 }
 
 .skills-section {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: white;
   padding: 1rem;
-  color: white;
+  color: black;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -293,9 +293,9 @@ body.resume-background {
 .skill-buttons button {
   margin: 0 0.5rem;
   padding: 0.4rem 1rem;
-  border: 2px solid #00ecec;
+  border: 2px solid black;
   background-color: transparent;
-  color: #00ecec;
+  color: black;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;

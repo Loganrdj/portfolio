@@ -18,17 +18,50 @@ const skillCategories = {
   Development: [
     'HTML',
     'CSS',
-    'JavaScript'
+    'JavaScript',
+    'Python',
+    'Jira',
+    'Unity',
+    'C',
+    'R',
+    'Tableau',
+    'MongoDB',
+    'Express',
+    'Node',
+    'MySQL',
+    'SQL',
+    'Database management',
+    'API'
   ],
   Marketing: [
     'SEO',
     'Email Campaigns',
-    'Analytics'
+    'Webinar Campaigns',
+    'Chatbot Direction',
+    'Project Management',
+    'Analytics',
+    'Marketo',
+    'HubSpot',
+    'SurveyMonkey',
+    'Google Tag Manager',
+    'Salesforce',
+    'Slack',
+    'Zapier',
+    'Airtable'
   ],
   Content: [
-    'Writing',
+    'Writing/Copywriting',
     'Video Editing',
-    'Graphic Design'
+    'Graphic Design',
+    'Adobe Suite',
+    'Photoshop',
+    'Adobe Premiere Pro/Rush',
+    'Adobe Audition',
+    'Campaign Management',
+    'Content Strategy',
+    'Corporate Collaboration',
+    'Sponsorship Management',
+    'Trends'
   ]
 };
 
