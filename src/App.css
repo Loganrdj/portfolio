@@ -1046,6 +1046,41 @@ body.resume-background {
   }
 }
 
+/* Additional tuning for very small screens */
+@media (max-width: 480px) {
+  .skill-flash-text,
+  .firstName,
+  .lastName {
+    font-size: clamp(2rem, 16vw, 3rem);
+  }
+
+  .aboutMeDiv {
+    width: 90%;
+    gap: 2rem;
+  }
+
+  .about-description,
+  .skills-section {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skill-buttons button {
+    margin: 0.25rem;
+  }
+}
+
 /* Wordle gate styles */
 .wordle-gate-overlay {
   position: fixed;
