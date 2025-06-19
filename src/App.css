@@ -258,6 +258,12 @@ body.resume-background {
 }
 .skills-section ul {
   list-style: none;
+  /* Prevent the skills list from growing excessively */
+  max-height: 250px;
+  overflow: auto;
+  /* Automatically create additional columns when needed */
+  column-width: 140px;
+  column-gap: 1rem;
 }
 
 .skills-section h2 {
