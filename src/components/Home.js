@@ -113,7 +113,7 @@ class Home extends Component{
               </div>
               <div className={`skill-flash-container ${hideStep >= 0 ? 'fade-out' : ''}`}>
                 <div className="skill-flash-text">{currentSkill}</div>
-                <a href="#bg-bottom" className="see-more-link">See more</a>
+                <a href="#bg-bottom" className="see-more-link">See more &gt;</a>
               </div>
             </div>
             <div id="bg-bottom" className={`homeContent snap-section ${hideStep >= 0 ? 'fade-out' : ''}`}>
