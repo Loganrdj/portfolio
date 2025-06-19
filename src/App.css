@@ -206,27 +206,11 @@ body.resume-background {
   color: white;
   font-family: 'Playfair Display', sans-serif;
   /* font-weight: bold; */
-  position: relative;
   display: block;
-  overflow: hidden;
-  background-color: transparent;
+  background-color: black;
   padding: 0.25rem 0.75rem 0.25rem 1.25rem;
   margin-right: 0;
-  transition: padding-left 0.4s ease-in-out, transform 0.4s ease-in-out;
-}
-.customNavLink::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background-color: black;
-  transition: width 0.4s ease-in-out;
-  z-index: -1;
-}
-.customNavLink:hover::before {
-  width: 100%;
+  transition: padding-left 0.4s ease-in-out;
 }
 .customNavLink:hover {
   animation-name: flash;
@@ -235,7 +219,6 @@ body.resume-background {
   animation-duration: 2.5s;
   animation-direction: alternate;
   padding-left: 1.75rem;
-  transform: translateX(-0.5rem);
 }
 
 .active {
