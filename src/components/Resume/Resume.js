@@ -3,7 +3,6 @@
 import React, { useMemo, useState, useLayoutEffect, useEffect } from "react";
 import "../../App.css";
 import ExperienceModal from "./ExperienceModal";
-import placeholderLogo from "../../low_contrast_linen.png";
 import autodeskLogo from "../../logos/AutodeskLogo.png";
 import trilogyLogo from "../../logos/TrilogyLogo.webp";
 import usflogo from "../../logos/USFLogo.png";

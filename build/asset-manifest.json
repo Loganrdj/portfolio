@@ -1,25 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.503e9e66.chunk.css",
-    "main.js": "/static/js/main.ea8386e3.chunk.js",
-    "main.js.map": "/static/js/main.ea8386e3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4e7c19c6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4e7c19c6.js.map",
-    "static/css/2.f2ad0615.chunk.css": "/static/css/2.f2ad0615.chunk.css",
-    "static/js/2.275290d2.chunk.js": "/static/js/2.275290d2.chunk.js",
-    "static/js/2.275290d2.chunk.js.map": "/static/js/2.275290d2.chunk.js.map",
+    "main.css": "/static/css/main.9664f4c1.css",
+    "main.js": "/static/js/main.ce7b18d7.js",
+    "static/media/loganbackgroundwpaint2.png": "/static/media/loganbackgroundwpaint2.dba303075457b516cb57.png",
+    "static/media/loganbackgroundresume.png": "/static/media/loganbackgroundresume.69ffc8796c2e6f19343e.png",
+    "static/media/BerkeleyLogo.png": "/static/media/BerkeleyLogo.b1014f9cac39a06e65b7.png",
+    "static/media/PlayfairDisplay-VariableFont_wght.ttf": "/static/media/PlayfairDisplay-VariableFont_wght.6fb1338b42a1658eb1ee.ttf",
+    "static/media/USFLogo.png": "/static/media/USFLogo.e338dfc3ff19fb8b3618.png",
+    "static/media/Urban Starblues Demo.otf": "/static/media/Urban Starblues Demo.e43b7077c9ee29d3ba7f.otf",
+    "static/media/ShabuClubLogo.png": "/static/media/ShabuClubLogo.1952d925b60c0a5afe0a.png",
+    "static/media/Digitag.ttf": "/static/media/Digitag.f220b4f78090dda4e071.ttf",
+    "static/media/low_contrast_linen.png": "/static/media/low_contrast_linen.d7213c4063e60734a4b6.png",
+    "static/media/globelogo.png": "/static/media/globelogo.4ed01cfef650ee4fdbc1.png",
+    "static/media/TrilogyLogo.webp": "/static/media/TrilogyLogo.8cc7c333b2a6dac44ab3.webp",
     "index.html": "/index.html",
-    "precache-manifest.f8d31c28ac5836da2c3602d1fcafa5f8.js": "/precache-manifest.f8d31c28ac5836da2c3602d1fcafa5f8.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.f2ad0615.chunk.css.map": "/static/css/2.f2ad0615.chunk.css.map",
-    "static/css/main.503e9e66.chunk.css.map": "/static/css/main.503e9e66.chunk.css.map",
-    "static/js/2.275290d2.chunk.js.LICENSE.txt": "/static/js/2.275290d2.chunk.js.LICENSE.txt"
+    "main.9664f4c1.css.map": "/static/css/main.9664f4c1.css.map",
+    "main.ce7b18d7.js.map": "/static/js/main.ce7b18d7.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.4e7c19c6.js",
-    "static/css/2.f2ad0615.chunk.css",
-    "static/js/2.275290d2.chunk.js",
-    "static/css/main.503e9e66.chunk.css",
-    "static/js/main.ea8386e3.chunk.js"
+    "static/css/main.9664f4c1.css",
+    "static/js/main.ce7b18d7.js"
   ]
 }
