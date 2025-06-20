@@ -5,7 +5,7 @@ function ContactCard(props) {
   return (
     <div className="card">
       <div className="card-body">
-      <img loading="lazy" className="card-img-top" src={props.image_url} alt={props.alt} height="100%" width="100%"></img>
+      <img className="card-img-top" src={props.image_url} alt={props.alt} height="100%" width="100%"></img>
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">{props.description}</p>
       </div>
