@@ -300,6 +300,13 @@ body.resume-background {
   flex: 1;
 }
 
+/* Center skill items inside the skills container */
+.skills-list ul {
+  list-style-position: inside;
+  padding: 0;
+  text-align: center;
+}
+
 .skill-buttons button {
   margin: 0 0.5rem;
   padding: 0.4rem 1rem;
@@ -342,7 +349,7 @@ body.resume-background {
   .customNavLinks {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     position: absolute;
     top: 100%;
     left: 0;
@@ -350,6 +357,13 @@ body.resume-background {
     background-color: white;
     padding: 1rem;
     gap: 0.5rem;
+  }
+  .customNavLink {
+    padding-left: 0.75rem;
+    text-align: center;
+  }
+  .skills-container {
+    align-items: center;
   }
   .customNavLinks.showMobileMenu {
     display: flex;
@@ -1085,6 +1099,7 @@ body.resume-background {
   .skills-container {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
   }
   .mobileMenuButton {
     margin-right: 40px;
