@@ -32,6 +32,7 @@ export default function Projects() {
         {projects.map(project => (
           <div key={project.id} className="cardCSS">
             <img
+              loading="lazy"
               src={project.image}
               alt={project.alt}
               className="project-thumb paused"
