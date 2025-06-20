@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9664f4c1.css",
-    "main.js": "/static/js/main.ce7b18d7.js",
+    "main.js": "/static/js/main.34c9c30f.js",
     "static/media/loganbackgroundwpaint2.png": "/static/media/loganbackgroundwpaint2.dba303075457b516cb57.png",
     "static/media/loganbackgroundresume.png": "/static/media/loganbackgroundresume.69ffc8796c2e6f19343e.png",
     "static/media/BerkeleyLogo.png": "/static/media/BerkeleyLogo.b1014f9cac39a06e65b7.png",
@@ -10,15 +10,14 @@
     "static/media/Urban Starblues Demo.otf": "/static/media/Urban Starblues Demo.e43b7077c9ee29d3ba7f.otf",
     "static/media/ShabuClubLogo.png": "/static/media/ShabuClubLogo.1952d925b60c0a5afe0a.png",
     "static/media/Digitag.ttf": "/static/media/Digitag.f220b4f78090dda4e071.ttf",
-    "static/media/low_contrast_linen.png": "/static/media/low_contrast_linen.d7213c4063e60734a4b6.png",
     "static/media/globelogo.png": "/static/media/globelogo.4ed01cfef650ee4fdbc1.png",
     "static/media/TrilogyLogo.webp": "/static/media/TrilogyLogo.8cc7c333b2a6dac44ab3.webp",
     "index.html": "/index.html",
     "main.9664f4c1.css.map": "/static/css/main.9664f4c1.css.map",
-    "main.ce7b18d7.js.map": "/static/js/main.ce7b18d7.js.map"
+    "main.34c9c30f.js.map": "/static/js/main.34c9c30f.js.map"
   },
   "entrypoints": [
     "static/css/main.9664f4c1.css",
-    "static/js/main.ce7b18d7.js"
+    "static/js/main.34c9c30f.js"
   ]
 }
