@@ -13,6 +13,12 @@ export default function ExperienceModal({ exp, onClose }) {
         <p className="company">{exp.company}</p>
         <em>{exp.dateLabel}</em>
         <p>{exp.description}</p>
+        <h5>SKILLS UTILIZED</h5>
+        <ul className="skills-list">
+            {exp.list_skills.map((skill, idx) => (
+              <li key={idx}>{skill}</li>
+            ))}
+            </ul>
       </div>
     </div>
   );
