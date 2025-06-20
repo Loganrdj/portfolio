@@ -157,7 +157,6 @@ export default function Resume() {
   const [view, setView] = useState("career");
   const [fading, setFading] = useState(false);
   const [atTop, setAtTop] = useState(true);
-  const [scrollOffset, setScrollOffset] = useState(0);
 
   useEffect(() => {
     document.body.classList.add("resume-background");
@@ -174,7 +173,6 @@ export default function Resume() {
         document.body.scrollTop ||
         0;
       setAtTop(scrollTop < 50);
-      setScrollOffset(scrollTop);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -269,8 +267,7 @@ export default function Resume() {
     <>
     <div className="timeline-wrapper">
       <div
-        className="resume-toggle"
-        style={{ transform: `translateX(${scrollOffset}px)` }}
+        className={`resume-toggle${atTop ? '' : ' slide-out'}`}
       >
         <button
           type="button"
