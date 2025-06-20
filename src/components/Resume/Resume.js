@@ -11,9 +11,8 @@ import freelancelogo from "../../logos/globelogo.png";
 import bungalowlogo from "../../logos/BungalowLogo.png";
 import twitchLogo from "../../logos/TwitchLogo.png";
 import berkeleyLogo from "../../logos/BerkeleyLogo.png";
+import ShabuClubLogo from "../../logos/ShabuClubLogo.png";
 
-const lorem =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
 const educationexp = [
   {
@@ -23,8 +22,9 @@ const educationexp = [
     company: "Fullstack Development Coding Bootcamp",
     logo: berkeleyLogo,
     dateLabel: "Feb 2020 – Oct 2021",
-    description: lorem,
+    description: "",
     backgroundcolor: 'white',
+    list_skills: ["MongoDB", "Express","ReactJS","Node","MySQL","SQL"],
     fontColor: 'black'
   },
   {
@@ -34,8 +34,9 @@ const educationexp = [
     company: "Advertising, Computer Science",
     logo: usflogo,
     dateLabel: "Aug 2015 – May 2019",
-    description: lorem,
+    description: "",
     backgroundcolor: '#01543c',
+    list_skills: ["Skills", "Testing"],
     fontColor: 'white'
   },
 ]
@@ -50,7 +51,7 @@ const experiences = [
     dateLabel: "Feb 2016 – Oct 2019",
     description: "Resolved a wide range of software and hardware issues, including memory failures, operating system errors, and general troubleshooting across various devices. Consistently recognized for outstanding customer support, maintaining a 99% satisfaction rating or higher based on client feedback.",
     backgroundcolor: '#01543c',
-    list_skills: "Skills",
+    list_skills: ["Skills", "Testing", "JAMF", "Zendesk", "Splunk", "Active Directory","Can turn things on and off again"],
     fontColor: 'white'
   },
   {
@@ -62,7 +63,19 @@ const experiences = [
     dateLabel: "Feb 2016 – Oct 2019",
     description: "Managed Virtual Machine Software (VMWare). Configured and support routers, switches, firewalls. Monitored network health, bandwidth usage, and resolved connectivity issues. Maintained backups, disaster-recovery plans, and regularly test restore procedures.",
     backgroundcolor: '#01543c',
-    list_skills: "Skills",
+    list_skills: ["VMWare","Looker","TeamViewer", "NAC", "Active Directory"],
+    fontColor: 'white'
+  },
+  {
+    start: "2018-01-28",
+    end: "2021-02-01",
+    title: "Kitchen, Server, Host",
+    company: "Shabu Club",
+    logo: ShabuClubLogo,
+    dateLabel: "Jan 2018 – Feb 2021",
+    description: "Worked across front and back-of-house roles in a fast-paced restaurant environment. Delivered attentive customer service, managed reservations and seating flow, and assisted with food prep and kitchen operations. Gained strong teamwork, multitasking, and communication skills through hands-on service experience.",
+    backgroundcolor: 'black',
+    list_skills: ["Customer Service", "Food Handling", "Can make a mean bowl of Shabu Shabu", "Can cut vegetables, sometimes"],
     fontColor: 'white'
   },
   {
@@ -72,9 +85,9 @@ const experiences = [
     company: "University of San Francisco",
     logo: usflogo,
     dateLabel: "Feb 2016 – Oct 2019",
-    description: lorem,
+    description: "Provided on-site technical support for faculty, staff, and students, resolving hardware, software, and network issues across campus. Installed and configured devices, performed system diagnostics, and maintained AV equipment in classrooms. Delivered timely, customer-focused service in a fast-paced academic environment.",
     backgroundcolor: '#01543c',
-    list_skills: "Skills",
+    list_skills: ["IP/TCP", "ServiceNow","MAC OS Repair","Windows OS Repair", "Active Directory"],
     fontColor: 'white'
   },
   {
@@ -84,9 +97,9 @@ const experiences = [
     company: "Bungalow Living",
     logo: bungalowlogo,
     dateLabel: "Sept 2019 – Dec 2019",
-    description: lorem,
+    description: "Supported data entry, cleanup, and validation tasks to help maintain accurate property and tenant records. Collaborated with the operations team to ensure data consistency across internal systems. Lead internet growth and support channels.",
     backgroundcolor: '#f98d77',
-    list_skills: "Skills",
+    list_skills: ["Python","Microsoft Excel","VBA","Tableau"],
     fontColor: 'black'
   },
   {
@@ -96,21 +109,21 @@ const experiences = [
     company: "Trilogy Ed.",
     logo: trilogyLogo,
     dateLabel: "July 2020 – Oct 2021",
-    description: lorem,
+    description: "Assisted students in mastering full stack web development and data analytics, including technologies like JavaScript, Python, SQL, and React. Led code reviews, debug sessions, and one-on-one mentoring to support learning outcomes. Collaborated with instructors to deliver hands-on labs and ensure student success across coding bootcamp cohorts.",
     backgroundcolor: '#ffffff',
-    list_skills: "Skills",
+    list_skills: ["MongoDB", "Express","ReactJS","Node","MySQL","SQL","Tableau","R","Python","DBA","Microsoft Excel","Looker","Knows how to code Hello World in multiple languages"],
     fontColor: 'black'
   },
   {
-    start: "2021-01-01",
-    end: "2021-05-01",
+    start: "2021-04-01",
+    end: "2021-08-01",
     title: "Web Developer (Contract)",
     company: "Freelance",
     logo: freelancelogo,
-    dateLabel: "Jan 2021 – May 2021",
-    description: lorem,
+    dateLabel: "April 2021 – May 2021",
+    description: "Built responsive, user-friendly websites using HTML, CSS, JavaScript, and React. Collaborated with clients to design and implement custom features, optimize site performance, and ensure cross-browser compatibility. Deployed sites using platforms like Netlify and GitHub, with a focus on clean UI/UX and mobile-first design.",
     backgroundcolor: '#ffffff',
-    list_skills: "Skills",
+    list_skills: ["GatsbyJS","ReactJS","HTML","CSS","JavaScript","API Endpoints"],
     fontColor: 'black'
   },
   {
@@ -120,9 +133,9 @@ const experiences = [
     company: "Autodesk",
     logo: autodeskLogo,
     dateLabel: "Mar 2021 – Sept 2023",
-    description: lorem,
+    description: "At Autodesk, I managed the execution and optimization of marketing automation campaigns across email, webinars, and chatbot channels. I supported demand generation by building and maintaining scalable workflows in platforms like Marketo and Salesforce combined with Zapier, ensuring data accuracy and lead flow efficiency. I collaborated cross-functionally with sales, product marketing, and design teams to streamline campaign execution, track KPIs, and refine segmentation strategies. Additionally, I played a key role in recruiting for our team, contributing to hiring decisions and fostering a collaborative team culture.",
     backgroundcolor: 'lightgray',
-    list_skills: "Skills",
+    list_skills: ["Marketo","Airtable","Zapier","Looker","Google Tags Manager","GoToMarket","Drift Chatbot/Email", "Slack", "Zoom", "Salesforce", "Looker", "Automate things to make co-workers less angry at each other"],
     fontColor: 'black'
   },
   {
@@ -132,9 +145,9 @@ const experiences = [
     company: "LoganRDJ LLC",
     logo: twitchLogo,
     dateLabel: "Sept 2023 – Jan 2025",
-    description: lorem,
+    description: "As a Twitch Partner and content strategist, I developed and executed a comprehensive growth plan for my channel and brand. This included managing a consistent streaming schedule, planning engaging content across gaming, IRL, and collaborative streams, and analyzing viewer data to optimize performance. I led the creative direction, branding, and promotion of the channel, collaborating with sponsors and managing partnerships with brands like Taco Bell and AT&T. Through targeted campaigns, audience engagement tactics, and cross-platform promotion, I grew my channels to over 100k combined followers and achieved sustained revenue growth of over $100K.",
     backgroundcolor: '#CBC3E3',
-    list_skills: "Skills",
+    list_skills: ["OBS","Adobe Photoshop","Adobe Premiere Pro","Adobe Premiere Rush", "Discord", "Event Management", "Sponsorship Strategy", "Content Strategy", "Audio Interface","Doesn't get shy in front of virtual audiences", "Can make a fool of myself in a good way"],
     fontColor: 'black'
   },
 ];
