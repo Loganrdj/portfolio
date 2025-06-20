@@ -230,7 +230,7 @@ export default function Resume() {
       }
     }
     return arr;
-  }, [minT, maxT]);
+  }, [minT, maxT, toPct]);
 
   // 5) Magnify cards on scroll and adjust connector lengths
   useLayoutEffect(() => {
