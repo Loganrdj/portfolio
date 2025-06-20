@@ -151,6 +151,10 @@ const experiences = [
   },
 ];
 
+// Helper function placed outside the component to avoid recreation on each render
+const createToPct = (minT, maxT) => (t) => ((t - minT) / (maxT - minT)) * 100;
+
+
 export default function Resume() {
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("career");
@@ -214,7 +218,8 @@ export default function Resume() {
   }, [sorted]);
 
   // 3) Helper: timestamp → % down timeline
-  const toPct = (t) => ((t - minT) / (maxT - minT)) * 100;
+  const toPct = useMemo(() => createToPct(minT, maxT), [minT, maxT]);
+
 
   // 4) Build ticks array (years + quarters)
   const ticks = useMemo(() => {
