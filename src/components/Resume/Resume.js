@@ -375,7 +375,7 @@ export default function Resume() {
               onClick={() => setSelected(exp)}
             >
               <div className="card" style={{ backgroundColor: exp.backgroundcolor, color: exp.fontColor }}>
-                <img src={exp.logo} alt={`${exp.company} logo`} className="exp-logo" />
+                <img loading="lazy" src={exp.logo} alt={`${exp.company} logo`} className="exp-logo" />
                 <h3>{exp.title}</h3>
                 <p className="company">{exp.company}</p>
                 <em>{exp.dateLabel}</em>
