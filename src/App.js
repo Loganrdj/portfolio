@@ -1,10 +1,10 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Nav from "./components/Nav"
-const Home = lazy(() => import("./components/Home"));
-const Contact = lazy(() => import("./components/Contact/Contact"));
-const Projects = lazy(() => import("./components/Projects/Projects"));
-const Resume = lazy(() => import("./components/Resume/Resume"));
+import Home from "./components/Home"
+import Contact from "./components/Contact/Contact"
+import Projects from "./components/Projects/Projects"
+import Resume from "./components/Resume/Resume"
 import FloatingLinks from "./components/FloatingLinks"
 import WordleGate from "./components/WordleGate";
 import ScrollToTop from "./utils/ScrollToTop";
@@ -31,16 +31,14 @@ class App extends Component {
           <ScrollToTop />
           <Nav />
           <div className="App">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Switch>
-                {/* <Route path="/portfolio" component={Home}/> */}
-                <Route exact path="/" component={Home} />
-                <Route path="/resume" component={Resume} />
-                <Route path="/projects" component={Projects} />
-                <Route path="/contact" component={Contact} />
-              </Switch>
-              <FloatingLinks />
-            </Suspense>
+            <Switch>
+              {/* <Route path="/portfolio" component={Home}/> */}
+              <Route exact path="/" component={Home} />
+              <Route path="/resume" component={Resume} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+            <FloatingLinks />
           </div>
         </div>
       </Router>
