@@ -165,6 +165,12 @@ export default function Resume() {
     };
   }, []);
 
+  // Ensure toggle is visible when returning to the page
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+    setAtTop(true);
+  }, []);
+
   useEffect(() => {
     const onScroll = () => {
       const scrollTop =
