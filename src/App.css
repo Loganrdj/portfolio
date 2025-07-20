@@ -368,6 +368,7 @@ body.resume-background {
   .customNavLinks.showMobileMenu {
     display: flex;
   }
+
 }
 
 .nav-links{
@@ -720,6 +721,7 @@ body.resume-background {
 .timeline-item.left .connector {
   left: 100%;
   transform-origin: right;
+  z-index: -100 !important;
 }
 /* connectors on right‐side events extend leftwards */
 .timeline-item.right .connector {

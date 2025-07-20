@@ -1,6 +1,16 @@
 [
     {
       "id": 1,
+      "name": "TacoBell Beta Tasters Campaign",
+      "image": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmVvemMzMnphajFreGdwcGQ3c3Nqandjd2Z4eWp4dXMycmM1MmJhaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KBGVwM9mMNspig3kEl/giphy.gif",
+      "description": "Taco Bell Beta Tasters Campaign, Mobile and Full Screen resolution ad to promote partners collaborating with Taco Bell. Creators created their own unique items within the Taco Bell HQ Test Kitchen.",
+      "deployed_url": "https://vimeo.com/1102955763?share=copy",
+      "github_url": "",
+      "deployed_tag": "Clip",
+      "alt": "TacoBell GIF"
+    },
+    {
+      "id": 1,
       "name": "OUR-Group",
       "image": "https://media.giphy.com/media/3QdQ9qf8oAvgHpcLWN/giphy.gif",
       "description": "GatsbyJS Freelance website WIP, paused in production due to COVID.",

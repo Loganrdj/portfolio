@@ -126,13 +126,16 @@ class Home extends Component{
                 <div className="about-description">
                   <h2>What do I do?</h2>
                   <h4>
-                    I develop, market, create. 
+                    I create, develop, market. 
                   </h4>
                   <br></br>
                   <p>I have a passion for <b>optimization</b>. Process, Algorithmic, Workflow, and Generic.</p>
-                  <p>I've helped teach over 100 students Fullstack Development and Data Analytics.</p>
                   
-                  <p>I've livestreamed in front of over 10,000, have had the wonderful opportunity to work with brands such as, Taco Bell, AT&T, and more...</p>
+                  <p>I've livestreamed in front of over 10,000 concurrent viewers.</p>
+                  <p>I've collaborated with brands such as <b>Taco Bell, AT&T, and more.</b></p>
+                  <p>I've generated over <b>$100,000</b> through consultation and brand growth.</p>
+                  <p>I've helped teach over 100 students Fullstack Development and Data Analytics.</p>
+
                   <p>Twitch Partner, Chess.com affiliate, PC Enthusiast, Grand Champion — Rocket League</p>
                 </div>
                 <div className="skills-section">

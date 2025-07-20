@@ -14,7 +14,7 @@ export default function ProjectModal({ project, onClose }) {
         <p>{project.description}</p>
         <div style={{ marginTop: "1rem" }}>
           {project.deployed_url && (
-            <a href={project.deployed_url} target="_blank" rel="noopener noreferrer" className="buttonClass">Website</a>
+            <a href={project.deployed_url} target="_blank" rel="noopener noreferrer" className="buttonClass">{project.deployed_tag}</a>
           )}
           {project.github_url && (
             <a href={project.github_url} target="_blank" rel="noopener noreferrer" className="buttonClass">Github</a>
