@@ -140,11 +140,11 @@ const experiences = [
   {
     start: "2023-09-01",
     end: "2025-01-01",
-    title: "Streamer & Content Manager",
+    title: "Streamer & Marketing Consultant",
     company: "LoganRDJ LLC",
     logo: twitchLogo,
     dateLabel: "Sept 2023 – Jan 2025",
-    description: "As a Twitch Partner and content strategist, I developed and executed a comprehensive growth plan for my channel and brand. This included managing a consistent streaming schedule, planning engaging content across gaming, IRL, and collaborative streams, and analyzing viewer data to optimize performance. I led the creative direction, branding, and promotion of the channel, collaborating with sponsors and managing partnerships with brands like Taco Bell and AT&T. Through targeted campaigns, audience engagement tactics, and cross-platform promotion, I grew my channels to over 100k combined followers and achieved sustained revenue growth of over $100K.",
+    description: "As a Twitch Partner and Marketing Consultant, I developed and executed a comprehensive growth plan for my own and other's channel and brand. This included managing a consistent streaming schedule, planning engaging content across gaming, IRL, and collaborative streams, and analyzing viewer data to optimize performance. I led the creative direction, branding, and promotion of the channel, collaborating with sponsors and managing partnerships with brands like Taco Bell and AT&T. Through targeted campaigns, audience engagement tactics, and cross-platform promotion, I grew my channels to over 100k combined followers and achieved sustained revenue growth of over $100K.",
     backgroundcolor: '#CBC3E3',
     list_skills: ["OBS","Adobe Photoshop","Adobe Premiere Pro","Adobe Premiere Rush", "Discord", "Event Management", "Sponsorship Strategy", "Content Strategy", "Audio Interface","Doesn't get shy in front of virtual audiences", "Can make a fool of myself in a good way"],
     fontColor: 'black'

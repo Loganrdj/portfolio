@@ -7,7 +7,8 @@
       "deployed_url": "https://vimeo.com/1102955763?share=copy",
       "github_url": "",
       "deployed_tag": "Clip",
-      "alt": "TacoBell GIF"
+      "alt": "TacoBell GIF",
+      "type": "Creative"
     },
     {
       "id": 1,
@@ -17,7 +18,8 @@
       "deployed_url": "https://inspiring-shockley-734c3a.netlify.app/",
       "github_url": "https://github.com/Loganrdj/OURGroup",
       "deployed_tag": "Website",
-      "alt": "OURGroup GIF"
+      "alt": "OURGroup GIF",
+      "type": "Coding"
     },
     {
       "id": 2,
@@ -26,7 +28,8 @@
       "description": "This application was made to save money in the kitchen with groceries and inventory.",
       "github_url": "https://github.com/Loganrdj/FridgeBook",
       "deployed_tag": "Website",
-      "alt": "FridgeBook GIF"
+      "alt": "FridgeBook GIF",
+      "type": "Coding"
     },
     {
       "id": 3,
@@ -36,7 +39,8 @@
       "deployed_url": "https://loganrdj.github.io/Team4/",
       "github_url": "https://github.com/Loganrdj/Team4",
       "deployed_tag": "Website",
-      "alt": "RRRoulette GIF"
+      "alt": "RRRoulette GIF",
+      "type": "Coding"
     },
     {
       "id": 4,
@@ -45,7 +49,8 @@
       "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
       "github_url": "https://github.com/K8F/project-2",
       "deployed_tag": "Game",
-      "alt": "Harry Potter RPG GIF"
+      "alt": "Harry Potter RPG GIF",
+      "type": "Coding"
     },
     {
       "id": 5,
@@ -54,7 +59,8 @@
       "description": "This application utilizes node to run queries against a mySQL database.",
       "github_url": "https://github.com/Loganrdj/Node-MySQL",
       "deployed_tag": "Github",
-      "alt": "Node mySQL Bamazon GIF"
+      "alt": "Node mySQL Bamazon GIF",
+      "type": "Coding"
     },
     {
       "id": 6,
@@ -63,7 +69,8 @@
       "description": "A small CLI script that utilizes Tweepy and Vader Sentiment Analyzer.",
       "github_url": "https://github.com/Loganrdj/popularopinion",
       "deployed_tag": "Github",
-      "alt": "Popular Opinion GIF"
+      "alt": "Popular Opinion GIF",
+      "type": "Coding"
     },
     {
       "id": 7,
@@ -73,7 +80,8 @@
       "deployed_url": "https://loganrdj.github.io/ClickyGame/",
       "github_url": "https://github.com/Loganrdj/ClickyGame",
       "deployed_tag": "Game",
-      "alt": "Pokemon Clicky Game GIF"
+      "alt": "Pokemon Clicky Game GIF",
+      "type": "Coding"
     },
     {
       "id": 8,
@@ -82,7 +90,8 @@
       "description": "This is a Node and Express application that utilizes routes to communicate to both front-end and back-end.",
       "github_url": "https://github.com/Loganrdj/FriendFinder",
       "deployed_tag": "Website",
-      "alt": "FriendFinder"
+      "alt": "FriendFinder",
+      "type": "Coding"
     },
     {
       "id": 9,
@@ -91,7 +100,8 @@
       "description": "The LIRI bot is an application that takes command line inputs to run commands against multiple APIs that provide information. ",
       "github_url": "https://github.com/Loganrdj/Liri-Bot",
       "deployed_tag": "Github",
-      "alt": "LIRI Bot GIF"
+      "alt": "LIRI Bot GIF",
+      "type": "Coding"
     },
     {
       "id": 10,
@@ -101,7 +111,8 @@
       "deployed_url": "https://loganrdj.github.io/RockyMaguire/",
       "github_url": "https://github.com/Loganrdj/RockyMaguire",
       "deployed_tag": "Website",
-      "alt": "Rocky Maguire GIF"
+      "alt": "Rocky Maguire GIF",
+      "type": "Coding"
     },
     {
       "id": 11,
@@ -111,7 +122,8 @@
       "deployed_url": "https://loganrdj.github.io/GifTastic/",
       "github_url": "https://github.com/Loganrdj/GifTastic",
       "deployed_tag": "Website",
-      "alt": "GifTastic GIF (lol)"
+      "alt": "GifTastic GIF (lol)",
+      "type": "Coding"
     },
     {
       "id": 12,
@@ -121,6 +133,7 @@
       "deployed_url": "https://loganrdj.github.io/TriviaGame/",
       "github_url": "https://github.com/Loganrdj/TriviaGame",
       "deployed_tag": "Website",
-      "alt": "Trivia Game GIF"
+      "alt": "Trivia Game GIF",
+      "type": "Coding"
     }
   ]
