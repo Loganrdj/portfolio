@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import "../../App.css";
 import projectsData from "./projects.json";
 import ProjectModal from "./ProjectModal";
+import LazyThumb from "../LazyThumb";
+
 
 export default function Projects() {
   const [selected, setSelected] = useState(null);
@@ -99,18 +101,21 @@ export default function Projects() {
         </div>
 
         <div className="projects-grid projectRow">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={project.id != null ? `id:${project.id}` : `ni:${project.name}|${project.image}`}
               className="cardCSS"
             >
-              <img
+              <LazyThumb
                 src={project.image}
                 alt={project.alt || project.name}
                 className="project-thumb paused"
                 onClick={() => setSelected(project)}
                 onMouseEnter={(e) => e.currentTarget.classList.remove("paused")}
                 onMouseLeave={(e) => e.currentTarget.classList.add("paused")}
+                loading={index < 4 ? "eager" : "lazy"}
+                decoding="async"
+                fetchpriority={index < 2 ? "high" : "auto"}
               />
             </div>
           ))}

@@ -1,13 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 import "../../App.css";
 
 export default function ProjectModal({ project, onClose }) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-
   const modalRoot = document.getElementById("modal-root");
 
-  
   const media = useMemo(() => {
     if (!project) return [];
     if (Array.isArray(project.media)) return project.media.filter(Boolean);
@@ -18,27 +15,16 @@ export default function ProjectModal({ project, onClose }) {
   const stack = useMemo(() => media.slice(1, 3), [media]);
   const rest = useMemo(() => media.slice(3), [media]);
 
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-    setLightboxSrc(null);
-  };
-
-  const openLightbox = (src) => {
-    setLightboxSrc(src);
-    setLightboxOpen(true);
-  };
-
-  // ESC closes lightbox first, then modal
+  // ESC closes modal
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === "Escape") {
-        if (lightboxOpen) closeLightbox();
-        else onClose?.();
+        onClose?.();
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [lightboxOpen, onClose]);
+  }, [onClose]);
 
   // Lock background scroll when modal is open
   useEffect(() => {
@@ -70,7 +56,6 @@ export default function ProjectModal({ project, onClose }) {
         onClick={(e) => e.stopPropagation()}
         style={{ maxWidth: "1100px", width: "92vw" }}
       >
-        
         {/* Header row */}
         <div
           className="pmHeaderRow"
@@ -85,7 +70,7 @@ export default function ProjectModal({ project, onClose }) {
             <h3 style={{ margin: 0 }}>{name}</h3>
           </div>
 
-          {/* Action buttons + close (keep your old button style) */}
+          {/* Action buttons + close */}
           <div
             className="pmActionRow"
             style={{
@@ -129,12 +114,11 @@ export default function ProjectModal({ project, onClose }) {
               </a>
             )}
 
-            {/* Keep your original X styling */}
             <div
               className="modal-close"
               onClick={onClose}
               style={{
-                position: "static", // inline with the buttons
+                position: "static",
                 marginLeft: "2px",
                 alignSelf: "center",
               }}
@@ -152,14 +136,10 @@ export default function ProjectModal({ project, onClose }) {
         {/* Gallery */}
         {media.length > 0 && (
           <div className="pmGalleryWrap">
-            {/* Top hero + right stack (this removes the big white void) */}
+            {/* Top hero + right stack */}
             {hero && (
               <div className="pmHeroSection">
-                <button
-                  type="button"
-                  className="pmThumb pmThumb--hero"
-                  onClick={() => openLightbox(hero)}
-                >
+                <div className="pmThumb pmThumb--hero" role="img" aria-label={`${name} 1`}>
                   <img
                     src={hero}
                     alt={`${name} 1`}
@@ -167,20 +147,20 @@ export default function ProjectModal({ project, onClose }) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover", // ✅ cover photos
+                      objectFit: "cover",
                       objectPosition: "center",
                       display: "block",
                     }}
                   />
-                </button>
+                </div>
 
                 <div className="pmHeroStack">
                   {stack.map((src, idx) => (
-                    <button
+                    <div
                       key={`${src}-${idx}`}
-                      type="button"
                       className="pmThumb pmThumb--stack"
-                      onClick={() => openLightbox(src)}
+                      role="img"
+                      aria-label={`${name} ${idx + 2}`}
                     >
                       <img
                         src={src}
@@ -189,12 +169,12 @@ export default function ProjectModal({ project, onClose }) {
                         style={{
                           width: "100%",
                           height: "100%",
-                          objectFit: "cover", // ✅ cover photos
+                          objectFit: "cover",
                           objectPosition: "center",
                           display: "block",
                         }}
                       />
-                    </button>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -204,11 +184,11 @@ export default function ProjectModal({ project, onClose }) {
             {rest.length > 0 && (
               <div className="pmGallery">
                 {rest.map((src, idx) => (
-                  <button
+                  <div
                     key={`${src}-${idx}`}
-                    type="button"
                     className="pmThumb"
-                    onClick={() => openLightbox(src)}
+                    role="img"
+                    aria-label={`${name} ${idx + 4}`}
                   >
                     <img
                       src={src}
@@ -217,12 +197,12 @@ export default function ProjectModal({ project, onClose }) {
                       style={{
                         width: "100%",
                         height: "100%",
-                        objectFit: "cover", // ✅ cover photos
+                        objectFit: "cover",
                         objectPosition: "center",
                         display: "block",
                       }}
                     />
-                  </button>
+                  </div>
                 ))}
               </div>
             )}
