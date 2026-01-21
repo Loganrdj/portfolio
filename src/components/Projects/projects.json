@@ -1,6 +1,124 @@
 [
+  {
+    "id": 1,
+    "name": "100Theives x Crazy Raccoon x LoganRDJ",
+    "image": "/assets/projectImages/100TCrazyRaccoon/2.jpg",
+    "description": "Merchandise shoot for 100Thieves with Tokyo-based Crazy Raccoon clothing brand.",
+    "deployed_url": "https://100thieves.com/blogs/lookbooks/crazy-raccoons-lookbook",
+    "github_url": "https://cdn.shopify.com/videos/c/o/v/815bf1848767420cbeaf06ec7e9b4ed3.mp4",
+    "github_tag": "Video",
+    "deployed_tag": "Lookbook",
+    "alt": "100Thieves Crazy Raccoon Collab Stills",
+    "type": "Creative",
+    "media": [
+    "/assets/projectImages/100TCrazyRaccoon/3.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/2.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/1.jpg",
+    
+    
+    "/assets/projectImages/100TCrazyRaccoon/4.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/5.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/6.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/7.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/8.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/9.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/10.jpg",
+    "/assets/projectImages/100TCrazyRaccoon/11.jpg"
+  ]
+  },
     {
-      "id": 1,
+      "id": 2,
+      "name": "Slander - Thrive Collection",
+      "image": "/assets/projectImages/SlanderThrive/3.jpg",
+      "description": "EDM DJ and Producer Slander, Thrive Merch line in collaboration with @supcolleen",
+      "deployed_url": "",
+      "github_url": "",
+      "deployed_tag": "",
+      "alt": "Slander Thrive Collection Still",
+      "type": "Creative",
+      "media": [
+      "/assets/projectImages/SlanderThrive/1.jpg",
+      "/assets/projectImages/SlanderThrive/2.jpg",
+      "/assets/projectImages/SlanderThrive/3.jpg",
+      "/assets/projectImages/SlanderThrive/4.jpg",
+      "/assets/projectImages/SlanderThrive/5.jpg",
+      "/assets/projectImages/SlanderThrive/6.jpg",
+      "/assets/projectImages/SlanderThrive/7.jpg",
+      "/assets/projectImages/SlanderThrive/8.jpg",
+      "/assets/projectImages/SlanderThrive/9.jpg",
+      "/assets/projectImages/SlanderThrive/10.jpg",
+      "/assets/projectImages/SlanderThrive/11.jpg",
+      "/assets/projectImages/SlanderThrive/12.jpg"
+    ]
+    },
+    {
+      "id": 3,
+      "name": "Slander - Eye Swimsuit Collection",
+      "image": "/assets/projectImages/SlanderSwim/3.jpg",
+      "description": "EDM DJ and Producer Slander, Eye Swimsuit Merch line in collaboration with @karinerino",
+      "deployed_url": "https://vimeo.com/1156863652?fl=ip&fe=ec",
+      "github_url": "",
+      "deployed_tag": "Video",
+      "alt": "Slander Eye Swimsuit Collection Still",
+      "type": "Creative",
+      "media": [
+      "/assets/projectImages/SlanderSwim/1.jpg",
+      "/assets/projectImages/SlanderSwim/2.jpg",
+      "/assets/projectImages/SlanderSwim/3.jpg",
+      "/assets/projectImages/SlanderSwim/4.jpg",
+      "/assets/projectImages/SlanderSwim/5.jpg",
+      "/assets/projectImages/SlanderSwim/6.jpg",
+      "/assets/projectImages/SlanderSwim/7.jpg",
+      "/assets/projectImages/SlanderSwim/8.jpg",
+      "/assets/projectImages/SlanderSwim/9.jpg"
+    ]
+    },
+    {
+      "id": 4,
+      "name": "Slander - Mesh Jersey Collection",
+      "image": "/assets/projectImages/SlanderJersey/3.jpg",
+      "description": "EDM DJ and Producer Slander, Thrive Merch line in collaboration with @Tiffanobi",
+      "deployed_url": "https://vimeo.com/1156863618?fl=ip&fe=ec",
+      "github_url": "",
+      "deployed_tag": "Video",
+      "alt": "Slander Mesh Jersey Collection Still",
+      "type": "Creative",
+      "media": [
+      "/assets/projectImages/SlanderJersey/1.jpg",
+      "/assets/projectImages/SlanderJersey/2.jpg",
+      "/assets/projectImages/SlanderJersey/3.jpg",
+      "/assets/projectImages/SlanderJersey/4.jpg",
+      "/assets/projectImages/SlanderJersey/5.jpg",
+      "/assets/projectImages/SlanderJersey/6.jpg",
+      "/assets/projectImages/SlanderJersey/7.jpg",
+      "/assets/projectImages/SlanderJersey/8.jpg",
+      "/assets/projectImages/SlanderJersey/9.jpg"
+    ]
+    },
+    {
+      "id": 5,
+      "name": "Slander - Dead Space Edition",
+      "image": "/assets/projectImages/SlanderSweater/3.jpg",
+      "description": "EDM DJ and Producer Slander, Thrive Merch line in collaboration with @Tiffanobi",
+      "deployed_url": "",
+      "github_url": "",
+      "deployed_tag": "",
+      "alt": "Slander Dead Space Collection Still",
+      "type": "Creative",
+      "media": [
+      "/assets/projectImages/SlanderSweater/1.jpg",
+      "/assets/projectImages/SlanderSweater/2.jpg",
+      "/assets/projectImages/SlanderSweater/3.jpg",
+      "/assets/projectImages/SlanderSweater/4.jpg",
+      "/assets/projectImages/SlanderSweater/5.jpg",
+      "/assets/projectImages/SlanderSweater/6.jpg",
+      "/assets/projectImages/SlanderSweater/7.jpg",
+      "/assets/projectImages/SlanderSweater/8.jpg",
+      "/assets/projectImages/SlanderSweater/9.jpg"
+    ]
+    },
+    {
+      "id": 6,
       "name": "TacoBell Beta Tasters Campaign",
       "image": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmVvemMzMnphajFreGdwcGQ3c3Nqandjd2Z4eWp4dXMycmM1MmJhaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KBGVwM9mMNspig3kEl/giphy.gif",
       "description": "Taco Bell Beta Tasters Campaign, Mobile and Full Screen resolution ad to promote partners collaborating with Taco Bell. Creators created their own unique items within the Taco Bell HQ Test Kitchen.",
@@ -11,7 +129,7 @@
       "type": "Creative"
     },
     {
-      "id": 1,
+      "id": 7,
       "name": "OUR-Group",
       "image": "https://media.giphy.com/media/3QdQ9qf8oAvgHpcLWN/giphy.gif",
       "description": "GatsbyJS Freelance website WIP, paused in production due to COVID.",
@@ -22,7 +140,7 @@
       "type": "Coding"
     },
     {
-      "id": 2,
+      "id": 8,
       "name": "FridgeBook",
       "image": "https://media.giphy.com/media/dBCwpDTayTDRRj6ndl/giphy.gif",
       "description": "This application was made to save money in the kitchen with groceries and inventory.",
@@ -32,7 +150,7 @@
       "type": "Coding"
     },
     {
-      "id": 3,
+      "id": 9,
       "name": "R & R Roulette",
       "image": "https://github.com/Loganrdj/Team4/blob/master/RRRoulette.gif?raw=true",
       "description": "This website takes in multiple ingredients and returns a recipe that contains them or randomly returns a restaurant from a selected cuisine. ",
@@ -43,7 +161,7 @@
       "type": "Coding"
     },
     {
-      "id": 4,
+      "id": 10,
       "name": "Harry Potter RPG Game",
       "image": "https://media.giphy.com/media/dzOxouPFjSjo65i0Oa/giphy.gif",
       "description": "This application utilizes Passport, database, front-end and back-end tools to create a simulated Harry Potter game",
@@ -53,7 +171,7 @@
       "type": "Coding"
     },
     {
-      "id": 5,
+      "id": 11,
       "name": "Node mySQL",
       "image": "https://github.com/Loganrdj/Node-MySQL/blob/master/bamazonCustomer.gif?raw=true",
       "description": "This application utilizes node to run queries against a mySQL database.",
@@ -63,7 +181,7 @@
       "type": "Coding"
     },
     {
-      "id": 6,
+      "id": 12,
       "name": "Popular Opinion",
       "image": "https://github.com/Loganrdj/popularopinion/blob/master/scrapeGIF.gif?raw=true",
       "description": "A small CLI script that utilizes Tweepy and Vader Sentiment Analyzer.",
@@ -73,7 +191,7 @@
       "type": "Coding"
     },
     {
-      "id": 7,
+      "id": 13,
       "name": "Pokemon Clicky Game",
       "image": "https://github.com/Loganrdj/ClickyGame/blob/master/clickygamegif.gif?raw=true",
       "description": "This is a reactJS front-end application that is a fun memory game.",
@@ -84,7 +202,7 @@
       "type": "Coding"
     },
     {
-      "id": 8,
+      "id": 14,
       "name": "FriendFinder",
       "image": "https://github.com/Loganrdj/FriendFinder/blob/master/Friendfinder.gif?raw=true",
       "description": "This is a Node and Express application that utilizes routes to communicate to both front-end and back-end.",
@@ -94,7 +212,7 @@
       "type": "Coding"
     },
     {
-      "id": 9,
+      "id": 15,
       "name": "LIRI Bot",
       "image": "https://github.com/Loganrdj/Liri-Bot/blob/master/HW-liriBot.gif?raw=true",
       "description": "The LIRI bot is an application that takes command line inputs to run commands against multiple APIs that provide information. ",
@@ -104,7 +222,7 @@
       "type": "Coding"
     },
     {
-      "id": 10,
+      "id": 16,
       "name": "Rocky Maguire INC Website",
       "image": "https://media.giphy.com/media/U6SoVeKecyeZeTyN7T/giphy.gif",
       "description": "This is a website that I had created for my friend's company. It was a work in progress and was stopped before completion.",
@@ -115,7 +233,7 @@
       "type": "Coding"
     },
     {
-      "id": 11,
+      "id": 17,
       "name": "GifTastic",
       "image": "https://github.com/Loganrdj/GifTastic/blob/master/GifTasticGif.gif?raw=true",
       "description": "This is a front-end web application with the purpose to educate based on Ajax as well as to create a Gif Finder.",
@@ -126,7 +244,7 @@
       "type": "Coding"
     },
     {
-      "id": 12,
+      "id": 18,
       "name": "Trivia Game",
       "image": "https://github.com/Loganrdj/TriviaGame/blob/master/TriviaGame.gif?raw=true",
       "description": "This was designed to be a quick and simple quiz for a fun activity.",

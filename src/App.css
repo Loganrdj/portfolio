@@ -409,6 +409,61 @@ body.resume-background {
   padding: 25px 0;
 }
 
+/* FORCE projects section to stack vertically */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Filter bar centered ABOVE grid */
+.projectsFilterBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0px;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
+}
+
+/* Ensure grid stays below */
+.projectRow {
+  width: 100%;
+}
+
+/* Buttons */
+.projectsFilterBtn {
+  padding: 10px 16px;
+  border-radius: 5%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.projectsFilterBtn:hover {
+  transform: translateY(-1px);
+}
+
+.projectsFilterBtn.active {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  .projectsFilterBar {
+    margin-bottom: 16px;
+    gap: 10x;
+  }
+
+  .projectsFilterBtn {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+}
+
 .projects-container {
   margin-top: 20px;
   display: flex;
@@ -425,6 +480,18 @@ body.resume-background {
   padding: 8%;
   max-width: 100%;
 }
+/* Push Projects page content below the fixed navbar */
+.projects-container {
+  padding-top: 110px; /* adjust until buttons are fully clickable */
+}
+
+/* Optional: slightly smaller offset on mobile if your nav is shorter there */
+@media (max-width: 768px) {
+  .projects-container {
+    padding-top: 90px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .projects-grid {
@@ -1216,3 +1283,392 @@ body.resume-background {
   font-size: 2rem;
   letter-spacing: 0.1rem;
 }
+
+/* =========================================================
+   Project Modal (pm*) — FINAL STABLE VERSION
+   ========================================================= */
+
+/* Modal overlay */
+.pmOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 3000;
+}
+
+/* Modal container */
+.pmModal {
+  width: min(1100px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  position: relative;
+  padding: 22px;
+  color: #1f2937;
+  pointer-events: auto;
+}
+
+/* Close button */
+/* Inline close button (lives with actions) */
+.pmCloseInline {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.pmCloseInline:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Header */
+.pmHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.pmTitle {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+}
+
+.pmSubtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Action buttons */
+.pmActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pmBtn {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.pmBtn:hover {
+  transform: translateY(-1px);
+}
+
+.pmBtnPrimary {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+.pmBtnGhost {
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+}
+
+/* Body */
+.pmBody {
+  padding-top: 6px;
+}
+
+.pmDesc {
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.55;
+  font-family: 'Montserrat', sans-serif;
+}
+/* =========================================================
+   Gallery Layout (Hero + Right Stack + Grid)
+   ========================================================= */
+
+   .pmGalleryWrap {
+    margin-top: 8px;
+  }
+  
+  /* Top section: hero left, stacked right */
+  .pmHeroSection {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: start;
+  }
+  
+  /* Right side stack */
+  .pmHeroStack {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+  }
+  
+  /* Base tile */
+  .pmThumb {
+    position: relative;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+  
+    border-radius: 12px;
+    overflow: hidden;
+  
+    aspect-ratio: 3 / 4;
+    height: auto;
+  
+    background: transparent;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  
+    pointer-events: auto;
+    z-index: 1;
+  }
+  
+  .pmThumb:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hero tile (you said 8/10 looks best) */
+  .pmThumb--hero {
+    aspect-ratio: 8 / 10;
+    width: 100%;
+  }
+  
+  /* Right stack tiles: slightly taller feel */
+  .pmThumb--stack {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+  }
+  
+  /* Image behavior — NO CROP */
+  .pmThumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* keeps full image visible */
+    display: block;
+    background: transparent;
+  }
+  
+  /* Rest of gallery (below the top section) */
+  .pmGallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  /* =========================================================
+   Project Modal — Mobile text fixes
+   ========================================================= */
+
+.pmHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* allow title block to actually take space */
+.pmHeaderRow > div:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* action row can wrap */
+.pmActionRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Title baseline */
+.pmModal h3 {
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+  margin: 0;
+  /* keep it from doing super weird breaks */
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Description baseline */
+.pmDesc {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+/* --- Mobile / small screens --- */
+@media (max-width: 560px) {
+  /* stack header so buttons stop squeezing the title */
+  .pmHeaderRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* buttons row goes below and aligns left */
+  .pmActionRow {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  /* shrink title so it looks clean on phones */
+  .pmModal h3 {
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: 0.1px;
+    /* avoid “one word per line” look */
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  .pmDesc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* make buttons smaller so they don’t dominate */
+  .buttonClass {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  /* close button stays aligned with the button row */
+  .modal-close {
+    margin-left: 0 !important;
+  }
+ /* ===== Lightbox overlay (RESTORED) ===== */
+/* Lightbox must sit above everything AND capture clicks */
+/* FULLSCREEN LIGHTBOX OVERLAY */
+.pmLightbox {
+  position: fixed;      /* ⬅️ THIS is the key */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+/* CENTERED IMAGE */
+.pmLightboxInner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.pmLightboxInner img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* CLOSE BUTTON */
+.pmLightboxClose {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+}
+
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.lightboxOverlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+
+}
+
+  /* =========================================================
+     Responsive
+     ========================================================= */
+  
+  @media (max-width: 900px) {
+    .pmHeroSection {
+      grid-template-columns: 1fr;
+    }
+  
+    .pmHeroStack {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .pmGallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .pmThumb--hero {
+      aspect-ratio: 16 / 9;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    /* Pin buttons + X to top-right */
+    .pmActionRow {
+      width: auto;
+      pointer-events: auto;
+    }
+  
+    /* Give title breathing room so it doesn't hide behind buttons */
+    .pmModal h3 {
+      padding-right: 96px;
+    }
+  }
+  
