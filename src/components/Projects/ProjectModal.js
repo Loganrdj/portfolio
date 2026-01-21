@@ -4,7 +4,6 @@ import "../../App.css";
 
 export default function ProjectModal({ project, onClose }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxSrc, setLightboxSrc] = useState(null);
 
   const modalRoot = document.getElementById("modal-root");
 

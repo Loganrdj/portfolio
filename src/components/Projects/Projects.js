@@ -6,7 +6,6 @@ import ProjectModal from "./ProjectModal";
 export default function Projects() {
   const [selected, setSelected] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All"); // All | Coding | Creative
-  const [lightboxSrc, setLightboxSrc] = useState(null);
 
   // 1) DEDUPE: if JSON has repeats, we only keep the first occurrence.
   // Choose a key that should be unique per project. id is best; fallback to name+image.
@@ -70,12 +69,6 @@ export default function Projects() {
     return () => observer.disconnect();
   }, [filteredProjects]);
 
-  {lightboxSrc && (
-    <div className="lightboxOverlay" onClick={() => setLightboxSrc(null)}>
-      <img src={lightboxSrc} alt="" />
-    </div>
-  )}
-  
   return (
     <>
       <div className="projects-container">
@@ -124,8 +117,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <ProjectModal onImageClick={setLightboxSrc} project={selected} onClose={() => setSelected(null)} />
+      <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </>
   );
 }
-
