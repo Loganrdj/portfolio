@@ -11,6 +11,7 @@ import bungalowlogo from "../../logos/BungalowLogo.png";
 import twitchLogo from "../../logos/TwitchLogo.png";
 import berkeleyLogo from "../../logos/BerkeleyLogo.png";
 import ShabuClubLogo from "../../logos/ShabuClubLogo.png";
+import AEGPLogo from "../../logos/AEGPLogo.jpeg";
 
 
 const educationexp = [
@@ -147,6 +148,18 @@ const experiences = [
     description: "As a Twitch Partner and Marketing Consultant, I developed and executed a comprehensive growth plan for my own and other's channel and brand. This included managing a consistent streaming schedule, planning engaging content across gaming, IRL, and collaborative streams, and analyzing viewer data to optimize performance. I led the creative direction, branding, and promotion of the channel, collaborating with sponsors and managing partnerships with brands like Taco Bell and AT&T. Through targeted campaigns, audience engagement tactics, and cross-platform promotion, I grew my channels to over 100k combined followers and achieved sustained revenue growth of over $100K.",
     backgroundcolor: '#CBC3E3',
     list_skills: ["OBS","Adobe Photoshop","Adobe Premiere Pro","Adobe Premiere Rush", "Discord", "Event Management", "Sponsorship Strategy", "Content Strategy", "Audio Interface","Doesn't get shy in front of virtual audiences", "Can make a fool of myself in a good way"],
+    fontColor: 'black'
+  },
+  {
+    start: "2026-03-01",
+    end: "2026-04-29",
+    title: "Audio/Visual & Service Tech",
+    company: "AEG Presents",
+    logo: AEGPLogo,
+    dateLabel: "Mar 2026 – Present",
+    description: "Audio and Visual Tech for Festivals such as Coachella, Head in the clouds, and more events put on by Goldenvoice.",
+    backgroundcolor: '#CBC3E3',
+    list_skills: ["IP/TCP", "ServiceNow","MAC OS Repair","Windows OS Repair", "Active Directory", "JAMF", "JAMF Certification", "Jira", "Confluence", "SaaS Administrative controls","Blackmagic", "VMIX"],
     fontColor: 'black'
   },
 ];
