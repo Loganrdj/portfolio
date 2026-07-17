@@ -1,5 +1,4 @@
 import React from 'react';
-// import ContactCard from './ContactCard';
 import FadeIn from "react-fade-in";
 
 function Contact() {
@@ -20,7 +19,7 @@ function Contact() {
               <div className="col-md-2">
                <FadeIn delay={500} transitionDuration={4000}>
                   <div className="card contactCard skillsAnimate">
-                  <img className="contactImage card-img-top" src='https://s.yimg.com/ny/api/res/1.2/Z0IeexnHzGkEnU9Ddu4gYQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/50d83eba70e8a76ea48f9ec234332c0c' alt="Email"></img>
+                  <div className="contactImage" aria-hidden="true"><i className="fas fa-envelope"></i></div>
                     <h5 className="card-title">
                       Email
                     </h5>
@@ -33,7 +32,7 @@ function Contact() {
               <div className="col-md-2">
                 <FadeIn delay={500} transitionDuration={4000}>
                   <div className="card contactCard skillsAnimate">
-                      <img className="contactImage card-img-top" src='https://avatars0.githubusercontent.com/u/9919?s=280&v=4' alt="Github"></img>
+                      <div className="contactImage" aria-hidden="true"><i className="fab fa-github"></i></div>
                       <h5 className="card-title">
                         Github
                       </h5>
@@ -46,7 +45,7 @@ function Contact() {
               <div className="col-md-2">
                 <FadeIn delay={500} transitionDuration={4000}>
                   <div className="card contactCard skillsAnimate">
-                    <img className="contactImage card-img-top" src='https://ya-webdesign.com/transparent250_/linkedin-png-icon-4.png' alt="linkedin"></img>
+                    <div className="contactImage" aria-hidden="true"><i className="fab fa-linkedin"></i></div>
                     <h5 className="card-title">
                       LinkedIn
                     </h5>

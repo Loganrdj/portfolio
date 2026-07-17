@@ -36,21 +36,6 @@ export default function Projects() {
     });
   }, [activeFilter, uniqueProjects]);
 
-  // 3) DEBUG LOGS (this will tell us immediately what's wrong)
-  useEffect(() => {
-    const counts = uniqueProjects.reduce((acc, p) => {
-      const t = (p.type || "MISSING").trim();
-      acc[t] = (acc[t] || 0) + 1;
-      return acc;
-    }, {});
-    // eslint-disable-next-line no-console
-    console.log("Projects total (unique):", uniqueProjects.length);
-    // eslint-disable-next-line no-console
-    console.log("Counts by type:", counts);
-    // eslint-disable-next-line no-console
-    console.log("Active filter:", activeFilter, "| Showing:", filteredProjects.length);
-  }, [activeFilter, filteredProjects.length, uniqueProjects]);
-
   // Reveal cards when they enter the viewport (re-run on filter change)
   useEffect(() => {
     const observer = new IntersectionObserver(

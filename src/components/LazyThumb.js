@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import placeholders from "./Projects/placeholders.json";
 
 export default function LazyThumb({
   src,
   alt,
-  className,
+  className = "",
   onClick,
   onMouseEnter,
   onMouseLeave,
@@ -12,6 +13,7 @@ export default function LazyThumb({
   const [loaded, setLoaded] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(eager);
   const wrapperRef = useRef(null);
+  const blurPlaceholder = placeholders[src];
 
   // Start loading BEFORE it enters view (this is the "smooth" part)
   useEffect(() => {
@@ -60,7 +62,15 @@ export default function LazyThumb({
 
   return (
     <div ref={wrapperRef} className="lazyWrap">
-      <div className={`lazySkeleton ${loaded ? "isLoaded" : ""}`} aria-hidden="true" />
+      {blurPlaceholder ? (
+        <div
+          className={`lazyBlur ${loaded ? "isLoaded" : ""}`}
+          style={{ backgroundImage: `url(${blurPlaceholder})` }}
+          aria-hidden="true"
+        />
+      ) : (
+        <div className={`lazySkeleton ${loaded ? "isLoaded" : ""}`} aria-hidden="true" />
+      )}
 
       {shouldLoad && (
         <img

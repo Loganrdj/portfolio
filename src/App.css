@@ -105,11 +105,69 @@ body.resume-background {
   position: relative; /* allow absolutely positioned hero text */
 }
 
+/* Cinematic hero treatment: color grade + grain, composited over the existing
+   background art. Fades out toward the bottom of the hero (mask-image) so it
+   blends into the unedited continuation of the same background image in the
+   section below, instead of cutting off in a visible line at the 100vh mark. */
+.hero-atmosphere {
+  position: absolute;
+  inset: -6%;
+  z-index: 0;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0) scale(1.06);
+  transition: transform 0.4s ease-out;
+  will-change: transform;
+  mask-image: linear-gradient(to bottom, black 65%, transparent 96%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 96%);
+}
+
+.hero-grade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 138, 61, 0.32) 0%,
+    rgba(255, 138, 61, 0.08) 35%,
+    rgba(0, 20, 40, 0.1) 60%,
+    rgba(0, 60, 90, 0.4) 100%
+  );
+  mix-blend-mode: overlay;
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='200'%20height='200'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='matrix'%20values='0%200%200%200%201%20%200%200%200%200%201%20%200%200%200%200%201%20%200%200%200%200.5%200'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  animation: grainShift 0.6s steps(4) infinite;
+}
+
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(1%, -2%); }
+  75% { transform: translate(-1%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-atmosphere {
+    transition: none;
+  }
+
+  .hero-grain {
+    animation: none;
+  }
+}
+
 .centerTextDiv {
   /* Pull the hero text out of the normal flow but let it scroll */
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 
   /* size it to exactly the top-left quarter */
   width: 40%;
@@ -584,11 +642,17 @@ body.resume-background {
 }
 
 .contactImage {
-  margin: auto;
+  margin: 12px auto;
   width: 75px;
   height: 75px;
   border-radius: 50%;
   border: solid 1px black;
+  background-color: black;
+  color: #00F0EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .contactBox {
@@ -827,12 +891,14 @@ body.resume-background {
     position: static;
     width: auto;
     transform: none;
-    margin: 1rem;
+    margin: 0 1rem 1.25rem;
   }
 
   .timeline-item .card {
     width: 100%;
     margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
   }
 
   .exp-logo {
@@ -1148,6 +1214,23 @@ body.resume-background {
   .lastName {
     font-size: clamp(2rem, 16vw, 3rem);
     top: 210px;
+  }
+
+  /* Skill text + "See more" were colliding at this width */
+  .skill-flash-container {
+    bottom: 16%;
+    right: 6%;
+    gap: 0.9rem;
+  }
+  .skill-flash-text {
+    font-size: clamp(1.1rem, 7vw, 1.5rem);
+    line-height: 1.15;
+    padding: 2px 6px;
+  }
+  .see-more-link {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.3rem 0.75rem;
   }
 
   .aboutMeDiv {
@@ -1479,6 +1562,13 @@ body.resume-background {
     display: block;
     background: transparent;
   }
+
+  /* LazyThumb-rendered gallery images previously forced object-fit: cover via inline
+     style, overriding the rule above — preserved here so the visual crop stays the same. */
+  .pmThumb .lazyImg {
+    object-fit: cover;
+    object-position: center;
+  }
   
   /* Rest of gallery (below the top section) */
   .pmGallery {
@@ -1709,13 +1799,29 @@ body.resume-background {
     opacity: 0;
     animation: none;
   }
-  
+
   @keyframes lazyShimmer {
     100% {
       transform: translateX(120%);
     }
   }
-  
+
+  .lazyBlur {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(16px);
+    transform: scale(1.15);
+    opacity: 1;
+    transition: opacity 300ms ease;
+  }
+
+  .lazyBlur.isLoaded {
+    opacity: 0;
+  }
+
   .lazyImg {
     opacity: 0;
     transition: opacity 250ms ease;

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 import "../../App.css";
+import LazyThumb from "../LazyThumb";
 
 export default function ProjectModal({ project, onClose }) {
   const modalRoot = document.getElementById("modal-root");
@@ -140,18 +141,7 @@ export default function ProjectModal({ project, onClose }) {
             {hero && (
               <div className="pmHeroSection">
                 <div className="pmThumb pmThumb--hero" role="img" aria-label={`${name} 1`}>
-                  <img
-                    src={hero}
-                    alt={`${name} 1`}
-                    loading="lazy"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      objectPosition: "center",
-                      display: "block",
-                    }}
-                  />
+                  <LazyThumb src={hero} alt={`${name} 1`} />
                 </div>
 
                 <div className="pmHeroStack">
@@ -162,18 +152,7 @@ export default function ProjectModal({ project, onClose }) {
                       role="img"
                       aria-label={`${name} ${idx + 2}`}
                     >
-                      <img
-                        src={src}
-                        alt={`${name} ${idx + 2}`}
-                        loading="lazy"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          objectPosition: "center",
-                          display: "block",
-                        }}
-                      />
+                      <LazyThumb src={src} alt={`${name} ${idx + 2}`} />
                     </div>
                   ))}
                 </div>
@@ -190,18 +169,7 @@ export default function ProjectModal({ project, onClose }) {
                     role="img"
                     aria-label={`${name} ${idx + 4}`}
                   >
-                    <img
-                      src={src}
-                      alt={`${name} ${idx + 4}`}
-                      loading="lazy"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                        display: "block",
-                      }}
-                    />
+                    <LazyThumb src={src} alt={`${name} ${idx + 4}`} />
                   </div>
                 ))}
               </div>

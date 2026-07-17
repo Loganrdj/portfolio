@@ -79,6 +79,27 @@ class Home extends Component{
     selectedCategory: 'Development'
   }
 
+  reducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  atmosphereRef = React.createRef();
+
+  handleHeroPointerMove = (e) => {
+    if (this.reducedMotion || !this.atmosphereRef.current) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = (e.clientX - rect.left) / rect.width - 0.5;
+    const relY = (e.clientY - rect.top) / rect.height - 0.5;
+    this.atmosphereRef.current.style.transform =
+      `translate3d(${relX * -16}px, ${relY * -12}px, 0) scale(1.06)`;
+  };
+
+  handleHeroPointerLeave = () => {
+    if (!this.atmosphereRef.current) return;
+    this.atmosphereRef.current.style.transform = 'translate3d(0, 0, 0) scale(1.06)';
+  };
+
   componentDidMount() {
     const shuffled = [...rotatingSkillList].sort(() => Math.random() - 0.5);
     this.setState({ rotatingSkills: shuffled });
@@ -111,7 +132,15 @@ class Home extends Component{
     return (
         <div className="jumbotron jumbotron-fluid jumboSpacing">
           <div className="backgroundImg">
-            <div className="introHeader snap-section">
+            <div
+              className="introHeader snap-section"
+              onMouseMove={this.handleHeroPointerMove}
+              onMouseLeave={this.handleHeroPointerLeave}
+            >
+              <div className="hero-atmosphere" ref={this.atmosphereRef}>
+                <div className="hero-grade" />
+                <div className="hero-grain" />
+              </div>
               <div className="centerTextDiv">
                 <p className="firstName">Logan</p>
                 <p className="lastName">Moss</p>
