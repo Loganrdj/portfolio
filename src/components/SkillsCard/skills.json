@@ -4,37 +4,67 @@
       "icon": "far fa-file-code fa-5x",
       "category": "Languages",
       "skills": [
-        "Python (2.7 and 3)",
-        "Java",
+        "Python",
+        "SQL",
         "JavaScript",
-        "JavaScript (ES6)",
-        "C",
-        "Node"
+        "Java",
+        "Swift"
       ]
     },
     {
       "id": 2,
-      "icon": "fas fa-server fa-5x",
-      "category": "Backend Infrastructure",
+      "icon": "fas fa-laptop-code fa-5x",
+      "category": "Frontend",
       "skills": [
-        "MySQL",
-        "MongoDB",
-        "Firebase",
-        "Express",
-        "Git"
+        "React",
+        "React Native",
+        "GatsbyJS",
+        "HTML5",
+        "CSS3",
+        "Material UI",
+        "Bootstrap"
       ]
     },
     {
       "id": 3,
-      "icon": "fas fa-laptop-code fa-5x",
-      "category": "Web Development",
+      "icon": "fas fa-server fa-5x",
+      "category": "Backend",
       "skills": [
-        "jQuery",
-        "HTML5",
-        "ReactJS",
-        "CSS",
-        "Web Scraping (CheerioJS)",
-        "Bootstrap"
+        "Node.js",
+        "Express.js",
+        "Flask",
+        "GraphQL",
+        "REST APIs"
+      ]
+    },
+    {
+      "id": 4,
+      "icon": "fas fa-tools fa-5x",
+      "category": "Developer Tools",
+      "skills": [
+        "Git",
+        "GitHub",
+        "Docker",
+        "Vite",
+        "Jupyter Notebook",
+        "Postman",
+        "Claude",
+        "GPT",
+        "GitHub Copilot"
+      ]
+    },
+    {
+      "id": 5,
+      "icon": "fas fa-cogs fa-5x",
+      "category": "Platforms & Automation",
+      "skills": [
+        "Salesforce",
+        "Marketo",
+        "HubSpot",
+        "Zapier",
+        "Airtable",
+        "Google Analytics",
+        "Tableau"
       ]
     }
 ]

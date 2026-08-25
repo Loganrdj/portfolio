@@ -8,17 +8,27 @@ export default function ExperienceModal({ exp, onClose }) {
   const modalContent = (
     <div className="modal-overlay" onClick={onClose}>
       <div className="experience-modal" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-close" onClick={onClose}>&times;</div>
-        <h3>{exp.title}</h3>
-        <p className="company">{exp.company}</p>
-        <em>{exp.dateLabel}</em>
-        <p>{exp.description}</p>
-        <h5>SKILLS UTILIZED</h5>
-        <ul className="skills-list">
+        <div
+          className="exp-modal-header"
+          style={{ backgroundColor: exp.backgroundcolor, color: exp.fontColor }}
+        >
+          <div className="modal-close" onClick={onClose}>&times;</div>
+          {exp.logo && (
+            <img src={exp.logo} alt={`${exp.company} logo`} className="modal-logo" />
+          )}
+          <h3>{exp.title}</h3>
+          <p className="company">{exp.company}</p>
+          <em>{exp.dateLabel}</em>
+        </div>
+        <div className="exp-modal-body">
+          <p>{exp.description}</p>
+          <h5>Skills Utilized</h5>
+          <ul className="skills-chip-list">
             {exp.list_skills.map((skill, idx) => (
-              <li key={idx}>{skill}</li>
+              <li key={idx} className="skill-chip">{skill}</li>
             ))}
-            </ul>
+          </ul>
+        </div>
       </div>
     </div>
   );

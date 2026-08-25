@@ -1054,29 +1054,111 @@ body.resume-background {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
+  animation: modalOverlayFadeIn 0.2s ease-out;
 }
 
 .experience-modal {
   background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   max-width: 500px;
   width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
   color: #1f2937;
   position: relative;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  animation: modalPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-modal-header {
+  font-family: 'Playfair Display', serif;
+  padding: 1.5rem 1.25rem 1.25rem;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+}
+
+.exp-modal-header h3 {
+  margin: 0.25rem 0 0.15rem;
+}
+
+.exp-modal-header .company {
+  font-weight: bold;
+  margin: 0;
 }
 
 .modal-close {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  right: 0.75rem;
   cursor: pointer;
   font-size: 1.5rem;
   line-height: 1;
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.exp-modal-body {
+  padding: 1.25rem;
+}
+
+.exp-modal-body h5 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.04em;
+  margin-top: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.skills-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-chip {
+  background: #f3f4f6;
+  color: #1f2937;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  border: 1px solid #e5e7eb;
+}
+
+@keyframes modalOverlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* Floating experience label on Resume page */
