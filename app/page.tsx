@@ -1,15 +1,51 @@
-import Image from "next/image";
 import Link from "next/link";
-import { KineticHero } from "@/components/kinetic/KineticHero";
+import Image from "next/image";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { KineticHero } from "@/components/kinetic/KineticHero";
+import { Proof } from "@/components/Proof";
 import { skillGroups } from "@/data/skills";
-import { projects } from "@/data/projects";
+import { codingProjects, creativeProjects, toSlug } from "@/data/projects";
+import { getAllPosts } from "@/lib/posts";
 
-// Phase 1 substrate: real content, real routes, real HTML in the export.
-// The pipeline spine, paint blooms and cold-start sequence land in Phase 2.
+function WorkRail({
+  title,
+  blurb,
+  items,
+}: {
+  title: string;
+  blurb: string;
+  items: ReturnType<typeof codingProjects.slice>;
+}) {
+  return (
+    <div className="rail">
+      <div className="rail-head">
+        <h3 className="rail-title">{title}</h3>
+        <p className="rail-blurb">{blurb}</p>
+      </div>
+      <ul className="rail-items">
+        {items.map((p) => (
+          <li key={p.id} className="rail-card">
+            <div className="rail-thumb">
+              <Image
+                src={p.image}
+                alt={p.alt}
+                fill
+                sizes="(max-width: 700px) 92vw, 30vw"
+                className="object-cover"
+              />
+            </div>
+            <h4 className="rail-card-title">{p.name}</h4>
+            <p className="rail-card-desc">{p.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function HomePage() {
-  const featured = projects.slice(0, 3);
+  const posts = getAllPosts().slice(0, 2);
 
   return (
     <>
@@ -17,47 +53,86 @@ export default function HomePage() {
       <main id="main">
         <KineticHero />
 
-        <section className="border-t border-hairline">
-          <div className="mx-auto max-w-[1180px] px-5 py-16">
-            <h2 className="font-mono text-[0.72rem] tracking-[0.2em] text-grey-600 uppercase">
-              Selected work
+        {/* Two disciplines, kept visibly separate rather than blended into
+            one grid — the engineering and the creative work are different
+            kinds of evidence. */}
+        <section className="sec" aria-labelledby="work-heading">
+          <div className="sec-inner">
+            <p className="sec-kicker">Selected work</p>
+            <h2 id="work-heading" className="sec-title">
+              Two disciplines,
+              <br />
+              one operator.
             </h2>
-            <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((p) => (
-                <li key={p.id}>
-                  <h3 className="font-display text-2xl font-bold">{p.name}</h3>
-                  <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-grey-900">
-                    {p.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/projects/"
-              className="font-mono mt-10 inline-block text-sm underline underline-offset-4"
-            >
-              all projects &rarr;
+
+            <WorkRail
+              title="Software &amp; Automation"
+              blurb="Systems that keep running when nobody is watching them."
+              items={codingProjects.slice(0, 3)}
+            />
+            <WorkRail
+              title="Creative Direction"
+              blurb="Campaigns and shoots for brands people already know."
+              items={creativeProjects.slice(0, 3)}
+            />
+
+            <Link href="/projects/" className="sec-link">
+              all {codingProjects.length + creativeProjects.length} projects &rarr;
             </Link>
           </div>
         </section>
 
-        <section className="border-t border-hairline">
-          <div className="mx-auto max-w-[1180px] px-5 py-16">
-            <h2 className="font-mono text-[0.72rem] tracking-[0.2em] text-grey-600 uppercase">
-              Stack
+        <section className="sec sec-alt" aria-labelledby="stack-heading">
+          <div className="sec-inner">
+            <p className="sec-kicker">Stack</p>
+            <h2 id="stack-heading" className="sec-title">
+              What I build with.
             </h2>
-            <dl className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <dl className="stack-grid">
               {skillGroups.map((g) => (
                 <div key={g.key}>
-                  <dt className="font-display text-xl font-bold">{g.label}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-grey-600">
-                    {g.skills.join(" · ")}
+                  <dt className="stack-label">{g.label}</dt>
+                  <dd className="stack-skills">
+                    {g.skills.map((s) => (
+                      <span key={s} className="chip">
+                        {s}
+                      </span>
+                    ))}
                   </dd>
                 </div>
               ))}
             </dl>
           </div>
         </section>
+
+        <Proof />
+
+        {posts.length > 0 && (
+          <section className="sec" aria-labelledby="notes-heading">
+            <div className="sec-inner">
+              <p className="sec-kicker">Build notes</p>
+              <h2 id="notes-heading" className="sec-title">
+                Working in the open.
+              </h2>
+              <ul className="notes-list">
+                {posts.map((p) => (
+                  <li key={p.slug} className="note-item">
+                    <p className="note-meta">
+                      <time dateTime={p.date}>{p.dateLabel}</time> · {p.readingTime}
+                    </p>
+                    <h3 className="note-title">
+                      <Link href={`/blog/${p.slug}/`}>{p.title}</Link>
+                    </h3>
+                    {p.summary && <p className="note-summary">{p.summary}</p>}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/blog/" className="sec-link">
+                all posts &rarr;
+              </Link>
+            </div>
+          </section>
+        )}
       </main>
       <SiteFooter />
     </>

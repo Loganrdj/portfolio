@@ -1,51 +1,105 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Notes on automation, engineering and creative work in progress.",
+  description:
+    "Build notes on automation, multi-agent tooling and creative systems by Logan Moss.",
 };
 
 export default function BlogIndex() {
   const posts = getAllPosts();
+  const [lead, ...rest] = posts;
+  const tags = [...new Set(posts.flatMap((p) => p.tags))].sort();
 
   return (
     <>
       <SiteHeader />
-      <main id="main" className="mx-auto max-w-[760px] px-5 py-16">
-        <h1 className="font-display text-[clamp(2.25rem,5vw,3.5rem)] leading-tight font-bold">
-          Blog
-        </h1>
-        <p className="mt-4 text-lg text-grey-900">
-          Build notes from whatever I&rsquo;m shipping.
-        </p>
+      <main id="main">
+        <section className="sec">
+          <div className="sec-inner">
+            <p className="sec-kicker">Build notes</p>
+            <h2 className="sec-title">
+              Working
+              <br />
+              in the open.
+            </h2>
+            <p className="resume-lede">
+              What I&rsquo;m building, what broke, and what I&rsquo;d do
+              differently. Mostly automation and the tooling around it.
+            </p>
+
+            {tags.length > 0 && (
+              <ul className="blog-tags" aria-label="Topics covered">
+                {tags.map((t) => (
+                  <li key={t} className="chip">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
 
         {posts.length === 0 ? (
-          <p className="font-mono mt-12 text-sm text-grey-600">
-            No posts yet.
-          </p>
+          <section className="sec">
+            <div className="sec-inner">
+              <p className="resume-lede">No posts yet.</p>
+            </div>
+          </section>
         ) : (
-          <ul className="mt-12">
-            {posts.map((p) => (
-              <li key={p.slug} className="border-hairline border-t py-8">
-                <p className="font-mono text-xs text-grey-600">
-                  <time dateTime={p.date}>{p.dateLabel}</time>
-                  {p.readingTime ? ` · ${p.readingTime}` : ""}
+          <section className="sec" aria-label="Posts">
+            <div className="sec-inner">
+              {/* Lead module: the newest post gets the room. */}
+              <Link href={`/blog/${lead.slug}/`} className="bmod bmod-lead">
+                <p className="bmod-meta">
+                  <span className="bmod-new">Latest</span>
+                  <time dateTime={lead.date}>{lead.dateLabel}</time>
+                  <span>{lead.readingTime}</span>
                 </p>
-                <h2 className="font-display mt-2 text-2xl font-bold">
-                  <Link href={`/blog/${p.slug}/`}>{p.title}</Link>
-                </h2>
-                {p.summary && (
-                  <p className="mt-2 text-sm leading-relaxed text-grey-900">
-                    {p.summary}
-                  </p>
-                )}
-              </li>
-            ))}
-          </ul>
+                <h3 className="bmod-title bmod-title-lead">{lead.title}</h3>
+                {lead.summary && <p className="bmod-summary">{lead.summary}</p>}
+                <ul className="bmod-tags">
+                  {lead.tags.map((t) => (
+                    <li key={t} className="chip">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+                <span className="bmod-cta">Read &rarr;</span>
+              </Link>
+
+              {rest.length > 0 && (
+                <ul className="bmod-grid">
+                  {rest.map((p) => (
+                    <li key={p.slug}>
+                      <Link href={`/blog/${p.slug}/`} className="bmod">
+                        <p className="bmod-meta">
+                          <time dateTime={p.date}>{p.dateLabel}</time>
+                          <span>{p.readingTime}</span>
+                        </p>
+                        <h3 className="bmod-title">{p.title}</h3>
+                        {p.summary && (
+                          <p className="bmod-summary">{p.summary}</p>
+                        )}
+                        <ul className="bmod-tags">
+                          {p.tags.map((t) => (
+                            <li key={t} className="chip">
+                              {t}
+                            </li>
+                          ))}
+                        </ul>
+                        <span className="bmod-cta">Read &rarr;</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </section>
         )}
       </main>
       <SiteFooter />

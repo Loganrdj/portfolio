@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { PaintTrail } from "./PaintTrail";
 import { useScrollVelocity } from "./useScrollVelocity";
-import { metrics } from "@/data/telemetry";
+import { AutomationRun } from "./AutomationRun";
 
 export function KineticHero() {
   const titleRef = useScrollVelocity<HTMLHeadingElement>();
@@ -39,19 +39,9 @@ export function KineticHero() {
           </Link>
         </div>
 
-        <p className="khero-hint" aria-hidden="true">
-          move your cursor
-        </p>
       </div>
 
-      <dl className="khero-metrics">
-        {metrics.map((m) => (
-          <div key={m.label}>
-            <dt>{m.value}</dt>
-            <dd>{m.label}</dd>
-          </div>
-        ))}
-      </dl>
+      <AutomationRun />
     </section>
   );
 }
