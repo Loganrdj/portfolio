@@ -35,7 +35,7 @@ export function KineticHero() {
 
         <h1 className="khero-title" ref={titleRef}>
           <span className="khero-line">LOGAN</span>
-          <span className="khero-line khero-line-alt">Moss</span>
+          <span className="khero-line khero-line-alt">MOSS</span>
         </h1>
 
         <p className="khero-lede">

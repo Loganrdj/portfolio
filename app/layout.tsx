@@ -13,14 +13,6 @@ const playfair = localFont({
   weight: "300 900",
 });
 
-// Logan's brand display face, used for "Moss" on the old homepage. Kept for
-// continuity — it is the one letterform on the site that is unmistakably his.
-const starblues = localFont({
-  src: "../public/assets/fonts/Urban Starblues Demo.otf",
-  variable: "--font-brand",
-  display: "swap",
-});
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -69,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${starblues.variable} ${inter.variable} ${monoCode.variable}`}
+      className={`${playfair.variable} ${inter.variable} ${monoCode.variable}`}
     >
       <body>
         <a href="#main" className="skip-link">
