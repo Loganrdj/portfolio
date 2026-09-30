@@ -1,5 +1,17 @@
 [
   {
+    "id": 19,
+    "name": "Homebound",
+    "image": "/assets/projectImages/Homebound/thumb.webp",
+    "description": "AI-powered lead prioritization and outreach assistant for real estate agents — built to surface who to call next instead of burying it in a spreadsheet. Syncs leads from Follow Up Boss and ranks them with a hybrid rules + LLM scoring engine that explains every verdict in plain language, then matches an agent's own listings against each lead's stated criteria. FastAPI, PostgreSQL, SQLAlchemy and the OpenAI API on the backend; Next.js, TypeScript and Tailwind on the front; plus an offline-capable PWA for taking notes in the field.",
+    "deployed_url": "https://homebound.net",
+    "github_url": "https://github.com/Loganrdj/Homebound",
+    "github_tag": "Private Repo",
+    "deployed_tag": "Website",
+    "alt": "Homebound webp",
+    "type": "Coding"
+  },
+  {
     "id": 1,
     "name": "100Thieves x Crazy Raccoon x LoganRDJ",
     "image": "/assets/projectImages/100TCrazyRaccoon/2.thumb.webp",
@@ -138,6 +150,16 @@
     "type": "Coding"
   },
   {
+    "id": 12,
+    "name": "Popular Opinion",
+    "image": "/assets/projectImages/PopularOpinion/thumb.webp",
+    "description": "A small CLI script that utilizes Tweepy and Vader Sentiment Analyzer.",
+    "github_url": "https://github.com/Loganrdj/popularopinion",
+    "deployed_tag": "Github",
+    "alt": "Popular Opinion GIF",
+    "type": "Coding"
+  },
+  {
     "id": 8,
     "name": "FridgeBook",
     "image": "/assets/projectImages/FridgeBook/thumb.webp",
@@ -148,14 +170,24 @@
     "type": "Coding"
   },
   {
-    "id": 9,
-    "name": "R & R Roulette",
-    "image": "/assets/projectImages/RRRoulette/thumb.webp",
-    "description": "This website takes in multiple ingredients and returns a recipe that contains them or randomly returns a restaurant from a selected cuisine. ",
-    "deployed_url": "https://loganrdj.github.io/Team4/",
-    "github_url": "https://github.com/Loganrdj/Team4",
+    "id": 13,
+    "name": "Pokemon Clicky Game",
+    "image": "/assets/projectImages/PokemonClickyGame/thumb.webp",
+    "description": "This is a reactJS front-end application that is a fun memory game.",
+    "deployed_url": "https://loganrdj.github.io/ClickyGame/",
+    "github_url": "https://github.com/Loganrdj/ClickyGame",
+    "deployed_tag": "Game",
+    "alt": "Pokemon Clicky Game GIF",
+    "type": "Coding"
+  },
+  {
+    "id": 14,
+    "name": "FriendFinder",
+    "image": "/assets/projectImages/FriendFinder/thumb.webp",
+    "description": "This is a Node and Express application that utilizes routes to communicate to both front-end and back-end.",
+    "github_url": "https://github.com/Loganrdj/FriendFinder",
     "deployed_tag": "Website",
-    "alt": "RRRoulette GIF",
+    "alt": "FriendFinder",
     "type": "Coding"
   },
   {
@@ -179,34 +211,14 @@
     "type": "Coding"
   },
   {
-    "id": 12,
-    "name": "Popular Opinion",
-    "image": "/assets/projectImages/PopularOpinion/thumb.webp",
-    "description": "A small CLI script that utilizes Tweepy and Vader Sentiment Analyzer.",
-    "github_url": "https://github.com/Loganrdj/popularopinion",
-    "deployed_tag": "Github",
-    "alt": "Popular Opinion GIF",
-    "type": "Coding"
-  },
-  {
-    "id": 13,
-    "name": "Pokemon Clicky Game",
-    "image": "/assets/projectImages/PokemonClickyGame/thumb.webp",
-    "description": "This is a reactJS front-end application that is a fun memory game.",
-    "deployed_url": "https://loganrdj.github.io/ClickyGame/",
-    "github_url": "https://github.com/Loganrdj/ClickyGame",
-    "deployed_tag": "Game",
-    "alt": "Pokemon Clicky Game GIF",
-    "type": "Coding"
-  },
-  {
-    "id": 14,
-    "name": "FriendFinder",
-    "image": "/assets/projectImages/FriendFinder/thumb.webp",
-    "description": "This is a Node and Express application that utilizes routes to communicate to both front-end and back-end.",
-    "github_url": "https://github.com/Loganrdj/FriendFinder",
+    "id": 9,
+    "name": "R & R Roulette",
+    "image": "/assets/projectImages/RRRoulette/thumb.webp",
+    "description": "This website takes in multiple ingredients and returns a recipe that contains them or randomly returns a restaurant from a selected cuisine. ",
+    "deployed_url": "https://loganrdj.github.io/Team4/",
+    "github_url": "https://github.com/Loganrdj/Team4",
     "deployed_tag": "Website",
-    "alt": "FriendFinder",
+    "alt": "RRRoulette GIF",
     "type": "Coding"
   },
   {

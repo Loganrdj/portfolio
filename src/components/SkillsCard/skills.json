@@ -7,6 +7,7 @@
         "Python",
         "SQL",
         "JavaScript",
+        "TypeScript",
         "Java",
         "Swift"
       ]
@@ -17,12 +18,16 @@
       "category": "Frontend",
       "skills": [
         "React",
+        "Next.js",
         "React Native",
         "GatsbyJS",
         "HTML5",
         "CSS3",
+        "Tailwind CSS",
         "Material UI",
-        "Bootstrap"
+        "Bootstrap",
+        "Mapbox GL",
+        "PWA"
       ]
     },
     {
@@ -32,9 +37,16 @@
       "skills": [
         "Node.js",
         "Express.js",
+        "FastAPI",
         "Flask",
         "GraphQL",
-        "REST APIs"
+        "REST APIs",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Alembic",
+        "Pydantic",
+        "OAuth 2.0",
+        "JWT Auth"
       ]
     },
     {
@@ -46,8 +58,11 @@
         "GitHub",
         "Docker",
         "Vite",
+        "pytest",
         "Jupyter Notebook",
         "Postman",
+        "Netlify",
+        "Render",
         "Claude",
         "GPT",
         "GitHub Copilot"
@@ -58,6 +73,8 @@
       "icon": "fas fa-cogs fa-5x",
       "category": "Platforms & Automation",
       "skills": [
+        "OpenAI API",
+        "Gmail API",
         "Salesforce",
         "Marketo",
         "HubSpot",
