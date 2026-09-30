@@ -44,13 +44,11 @@ export const metadata: Metadata = {
     siteName: "Logan Moss",
     title: "Logan Moss — GTM Engineer & Creative Technologist",
     description: DESCRIPTION,
-    images: [{ url: "/assets/og-image.png", width: 1200, height: 655 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Logan Moss — GTM Engineer & Creative Technologist",
     description: DESCRIPTION,
-    images: ["/assets/og-image.png"],
   },
   icons: { icon: "/favicon.ico" },
 };

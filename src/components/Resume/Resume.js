@@ -140,7 +140,7 @@ const experiences = [
   },
   {
     start: "2023-09-01",
-    end: "2025-01-01",
+    end: "2026-09-30",
     title: "Founder, Brand Strategy And Marketing Operations",
     company: "LoganRDJ LLC",
     logo: twitchLogo,
@@ -152,7 +152,7 @@ const experiences = [
   },
   {
     start: "2026-03-01",
-    end: "2026-04-29",
+    end: "2026-09-30",
     title: "Audio/Visual Technician",
     company: "AEG Presents",
     logo: AEGPLogo,

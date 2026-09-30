@@ -95,6 +95,7 @@ async function main() {
   }
 
   await posters();
+  await ogBackdrop();
 
   for (const sw of SWATCHES) {
     const { data } = await sharp(SRC)
@@ -169,6 +170,53 @@ async function posters() {
   console.log(
     `  ${count} posters, ~${(saved / 1024 / 1024).toFixed(1)}MB saved on first paint`
   );
+}
+
+// 5. Backdrop for the link-preview card.
+//    Satori (which renders the OG card) cannot decode WebP, so the paint is
+//    composited into a single PNG here and the card just lays text over it.
+async function ogBackdrop() {
+  const W = 1200;
+  const H = 630;
+  const dir = "public/assets/og";
+  await fs.mkdir(dir, { recursive: true });
+
+  const wash = async (name, width, opacity) =>
+    sharp(path.join(OUT_BRUSH, `${name}.webp`))
+      .resize({ width, height: width, fit: "cover" })
+      .ensureAlpha()
+      .composite([
+        {
+          input: Buffer.from([255, 255, 255, Math.round(opacity * 255)]),
+          raw: { width: 1, height: 1, channels: 4 },
+          tile: true,
+          blend: "dest-in",
+        },
+      ])
+      .png()
+      .toBuffer();
+
+  // sharp requires composites to sit fully inside the canvas, so these are
+  // sized and placed to land flush against the right edge rather than bleeding
+  // past it.
+  const [red, orange] = await Promise.all([
+    wash("red", 600, 0.6),
+    wash("orange", 380, 0.48),
+  ]);
+
+  const file = path.join(dir, "backdrop.png");
+  await sharp({
+    create: { width: W, height: H, channels: 4, background: "#0a0a0b" },
+  })
+    .composite([
+      { input: red, left: W - 600, top: 0 },
+      { input: orange, left: W - 380, top: H - 380 },
+    ])
+    .png({ quality: 90 })
+    .toFile(file);
+
+  const { size } = await fs.stat(file);
+  console.log(`  og backdrop — ${(size / 1024).toFixed(0)}KB`);
 }
 
 main().catch((e) => {
