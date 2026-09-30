@@ -17,6 +17,7 @@ import path from "node:path";
 const SRC = "public/loganbackgroundwpaint2.png";
 const OUT_HERO = "public/assets/hero";
 const OUT_PAINT = "public/assets/paint";
+const OUT_BRUSH = "public/assets/brush";
 
 // Regions of the 1920x2160 artwork that are pure paint (no portrait), picked
 // so each swatch is dominated by one palette color.
@@ -32,6 +33,7 @@ const SWATCHES = [
 async function main() {
   await fs.mkdir(OUT_HERO, { recursive: true });
   await fs.mkdir(OUT_PAINT, { recursive: true });
+  await fs.mkdir(OUT_BRUSH, { recursive: true });
 
   const meta = await sharp(SRC).metadata();
   console.log(`source ${SRC} — ${meta.width}x${meta.height}`);
@@ -59,6 +61,68 @@ async function main() {
       .toFile(file);
     const { size } = await fs.stat(file);
     console.log(`  paint ${s.name.padEnd(7)} — ${(size / 1024).toFixed(0)}KB`);
+  }
+
+  // 3. Brush stamps for the cursor trail.
+  //
+  //    The raw crops contain white paper and neighbouring colours, which
+  //    turned the trail into a muddy rainbow where marks overlapped. Instead
+  //    the crop is used only for its TEXTURE: per-pixel alpha is derived from
+  //    how much ink is present (distance from white), and the RGB is replaced
+  //    with a flat palette colour. Result: crisp single-colour brush marks
+  //    that still carry the real grain of Logan's strokes.
+  const R = 256;
+  const PALETTE = {
+    orange: [248, 67, 1],
+    yellow: [239, 249, 3],
+    blue: [24, 41, 159],
+    green: [1, 174, 70],
+    red: [233, 20, 22],
+    ink: [19, 19, 19],
+  };
+
+  // Soft elliptical feather so marks have no hard edge.
+  const feather = new Float32Array(R * R);
+  for (let y = 0; y < R; y++) {
+    for (let x = 0; x < R; x++) {
+      const nx = (x - R / 2) / (R / 2);
+      const ny = (y - R / 2) / (R / 2.5);
+      const d = Math.hypot(nx, ny);
+      // Solid through the body, falling away only near the rim, so the mark
+      // keeps a brush edge instead of dissolving into a glow.
+      feather[y * R + x] = d >= 1 ? 0 : Math.min(1, Math.pow(1 - d, 0.42) * 1.6);
+    }
+  }
+
+  for (const sw of SWATCHES) {
+    const { data } = await sharp(SRC)
+      .extract({ left: sw.left, top: sw.top, width: sw.width, height: sw.height })
+      .resize({ width: R, height: R, fit: "cover" })
+      .removeAlpha()
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+
+    const [pr, pg, pb] = PALETTE[sw.name];
+    const out = Buffer.alloc(R * R * 4);
+    for (let i = 0, px = 0; px < R * R; px++, i += 3) {
+      // "How much ink is here" — white paper reads as 0, saturated or dark
+      // paint reads as 1.
+      const ink = 1 - Math.min(data[i], data[i + 1], data[i + 2]) / 255;
+      // No boost: keeping the raw range preserves the dry-brush streaks.
+      // Gamma <1 lifts midtones so the grain stays legible when scaled down.
+      const a = Math.pow(ink, 0.82) * feather[px];
+      out[px * 4] = pr;
+      out[px * 4 + 1] = pg;
+      out[px * 4 + 2] = pb;
+      out[px * 4 + 3] = Math.round(a * 255);
+    }
+
+    const file = path.join(OUT_BRUSH, `${sw.name}.webp`);
+    await sharp(out, { raw: { width: R, height: R, channels: 4 } })
+      .webp({ quality: 84, alphaQuality: 95 })
+      .toFile(file);
+    const { size } = await fs.stat(file);
+    console.log(`  brush ${sw.name.padEnd(7)} — ${(size / 1024).toFixed(0)}KB`);
   }
 }
 

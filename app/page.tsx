@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { KineticHero } from "@/components/kinetic/KineticHero";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { skillGroups } from "@/data/skills";
@@ -14,49 +15,7 @@ export default function HomePage() {
     <>
       <SiteHeader />
       <main id="main">
-        <section className="mx-auto grid max-w-[1180px] items-center gap-10 px-5 pt-16 pb-20 md:grid-cols-[1.1fr_0.9fr] md:pt-24">
-          <div>
-            <p className="font-mono text-[0.72rem] tracking-[0.2em] text-grey-600 uppercase">
-              Automation &times; Creative
-            </p>
-            <h1 className="font-display mt-5 text-[clamp(2.75rem,7vw,5rem)] leading-[0.95] font-bold tracking-[-0.02em]">
-              I build the
-              <br />
-              machine that
-              <br />
-              ships the work.
-            </h1>
-            <p className="mt-6 max-w-[46ch] text-lg leading-relaxed text-grey-900">
-              Lead-scoring pipelines, marketing ops and brand campaigns — the
-              engineering behind creative work that reached 10,000+ concurrent
-              viewers and partners including Taco Bell and AT&amp;T.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link
-                href="/projects/"
-                className="bg-ink text-paper font-mono text-sm px-6 py-3 transition-transform duration-200 hover:-translate-y-0.5"
-              >
-                see the work
-              </Link>
-              <Link
-                href="/resume/"
-                className="border-ink font-mono text-sm border px-6 py-3 transition-transform duration-200 hover:-translate-y-0.5"
-              >
-                resume
-              </Link>
-            </div>
-          </div>
-          <div className="relative">
-            <Image
-              src="/loganbackgroundwpaint2.png"
-              alt="Logan Moss surrounded by bold paint strokes"
-              width={960}
-              height={1080}
-              priority
-              className="h-auto w-full"
-            />
-          </div>
-        </section>
+        <KineticHero />
 
         <section className="border-t border-hairline">
           <div className="mx-auto max-w-[1180px] px-5 py-16">

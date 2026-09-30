@@ -111,3 +111,183 @@ body {
 .skip-link:focus {
   left: 0;
 }
+
+/* ===========================================================================
+   KINETIC HERO
+   Near-black stage so Logan's paint reads at full saturation, oversized type,
+   and a cursor-driven paint trail rendered to canvas behind the content.
+   =========================================================================== */
+
+.khero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0a0a0b;
+  color: var(--color-paper);
+  overflow: clip;
+  isolation: isolate;
+}
+
+.khero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.khero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: clamp(5rem, 14vh, 9rem) 1.25rem clamp(2rem, 6vh, 4rem);
+}
+
+@media (min-width: 900px) {
+  .khero-inner { padding-inline: 3.5rem; }
+}
+
+.khero-kicker {
+  display: flex;
+  gap: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-grey-400);
+}
+.khero-slash { color: var(--color-paint-red); }
+
+/* --- the name ------------------------------------------------------------ */
+
+.khero-title {
+  --vel: 0;
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.82;
+  letter-spacing: -0.035em;
+  font-size: clamp(4rem, 17vw, 14rem);
+  text-transform: uppercase;
+}
+
+.khero-line {
+  display: block;
+  transform-origin: left center;
+  /* Leans into the scroll: skews and stretches with velocity, settles at rest. */
+  transform:
+    skewY(calc(var(--vel) * -1.1deg))
+    scaleX(calc(1 + var(--vel) * 0.035))
+    translateX(calc(var(--vel) * 0.7rem));
+  transition: transform 220ms var(--ease-organic);
+  will-change: transform;
+}
+
+/* Second line outlined rather than filled, so the paint behind shows through
+   the letterforms. */
+.khero-line-alt {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-paper);
+  padding-left: 0.08em;
+}
+
+@media (min-width: 900px) {
+  .khero-line-alt { -webkit-text-stroke-width: 2.5px; }
+}
+
+.khero-lede {
+  margin-top: 2rem;
+  max-width: 46ch;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.65;
+  color: #c9c9d1;
+}
+
+.khero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.25rem;
+}
+
+.kbtn {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  padding: 0.9rem 1.7rem;
+  transition: transform 200ms var(--ease-mechanical),
+              background-color 200ms var(--ease-mechanical),
+              color 200ms var(--ease-mechanical);
+}
+.kbtn:hover { transform: translateY(-2px); }
+
+.kbtn-solid { background: var(--color-paper); color: #0a0a0b; }
+.kbtn-solid:hover { background: var(--color-paint-red); color: var(--color-paper); }
+
+.kbtn-ghost { border: 1px solid #4a4a52; color: var(--color-paper); }
+.kbtn-ghost:hover { border-color: var(--color-paper); }
+
+.khero-hint {
+  margin-top: 2.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #55555f;
+  animation: hint-pulse 2.8s ease-in-out infinite;
+}
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.9; }
+}
+
+/* There is no cursor to move on a touch device — the ambient drift paints by
+   itself there, so the prompt would just be wrong. */
+@media (pointer: coarse) {
+  .khero-hint { display: none; }
+}
+
+/* --- metrics rail -------------------------------------------------------- */
+
+.khero-metrics {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #23232a;
+}
+@media (min-width: 760px) {
+  .khero-metrics { grid-template-columns: repeat(4, 1fr); }
+}
+
+.khero-metrics > div {
+  padding: 1.4rem clamp(1.25rem, 3vw, 2.25rem);
+  border-right: 1px solid #23232a;
+}
+.khero-metrics > div:last-child { border-right: 0; }
+
+.khero-metrics dt {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.khero-metrics dd {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7c7c87;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .khero-line { transform: none; }
+  .khero-hint { animation: none; opacity: 0.6; }
+}
