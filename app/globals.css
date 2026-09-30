@@ -777,16 +777,28 @@ body {
 
 /* --- duration bar: the honest part --------------------------------------- */
 
+.tl {
+  --lane-w: 9px;
+}
+
 .tl-bar {
   position: absolute;
-  left: -2px;
+  /* Concurrent roles are pushed into their own lane, so two things running at
+     once read as two parallel bars rather than one hiding the other. */
+  left: calc(-2px + var(--lane, 0) * var(--lane-w));
   width: 5px;
   border-radius: 3px;
   background: linear-gradient(to bottom, var(--color-signal), var(--color-paint-blue));
   opacity: 0.85;
 }
 @media (min-width: 1000px) {
-  .tl-bar { left: calc(50% - 2px); }
+  .tl-bar { left: calc(50% - 2px + var(--lane, 0) * var(--lane-w)); }
+}
+
+/* A bar that shares its span with another is outlined, so overlap is not
+   signalled by position alone. */
+.tl-bar[data-overlapping] {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-paper) 45%, transparent);
 }
 
 .tl-bar[data-ongoing] {
@@ -1466,4 +1478,47 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .xmodal-overlay, .xmodal { animation: none; }
+}
+
+/* Concurrency, stated in words on the card and in the modal — colour and
+   position alone would not carry it for everyone. */
+.tl-overlap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: var(--color-paint-orange);
+}
+
+.tl-overlap-mark {
+  flex: none;
+  width: 13px;
+  height: 7px;
+  border-radius: 2px;
+  background:
+    linear-gradient(to right,
+      var(--color-signal) 0 5px,
+      transparent 5px 8px,
+      var(--color-paint-orange) 8px 13px);
+}
+
+.xmodal-overlap {
+  margin-top: 0.9rem;
+  font-size: 0.68rem;
+}
+
+/* An in-progress role runs to the foot of the chart. No height is set on it;
+   pinning top and bottom means it always reaches the floor, however tall the
+   track grows to fit the cards. */
+.tl-bar[data-ongoing] {
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--color-paint-red),
+    var(--color-paint-orange) 60%,
+    color-mix(in srgb, var(--color-paint-orange) 25%, transparent)
+  );
 }

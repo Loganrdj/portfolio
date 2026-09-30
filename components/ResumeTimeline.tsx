@@ -17,8 +17,17 @@ import type { Timeline } from "@/lib/timeline";
  * effect is now a scroll-driven CSS animation — no JS, nothing running when
  * the page is idle — and browsers without support simply get static cards.
  */
+/** "A", "A and B", "A, B and C" */
+function formatList(names: string[]): string {
+  if (names.length === 1) return names[0];
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
+
 export function ResumeTimeline({ timeline }: { timeline: Timeline }) {
   const [selected, setSelected] = useState<Experience | null>(null);
+  const selectedOverlap =
+    timeline.items.find((i) => i.exp === selected)?.concurrentWith ?? [];
   const lastFocused = useRef<HTMLElement | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -50,7 +59,13 @@ export function ResumeTimeline({ timeline }: { timeline: Timeline }) {
 
   return (
     <>
-      <div className="tl" style={{ ["--tl-h" as string]: `${timeline.height}px` }}>
+      <div
+        className="tl"
+        style={{
+          ["--tl-h" as string]: `${timeline.height}px`,
+          ["--tl-lanes" as string]: String(timeline.laneCount),
+        }}
+      >
         <div className="tl-axis" aria-hidden="true">
           {timeline.ticks.map((t) => (
             <div key={t.year} className="tl-tick" style={{ top: `${t.pct}%` }}>
@@ -64,7 +79,12 @@ export function ResumeTimeline({ timeline }: { timeline: Timeline }) {
             <div
               className="tl-bar"
               data-ongoing={it.ongoing || undefined}
-              style={{ top: `${it.barTop}px`, height: `${it.barHeight}px` }}
+              data-overlapping={it.concurrentWith.length > 0 || undefined}
+              style={{
+                top: `${it.barTop}px`,
+                ...(it.ongoing ? {} : { height: `${it.barHeight}px` }),
+                ["--lane" as string]: String(it.lane),
+              }}
               aria-hidden="true"
             />
             <div
@@ -106,6 +126,13 @@ export function ResumeTimeline({ timeline }: { timeline: Timeline }) {
               </h2>
 
               <p className="tl-company">{it.exp.company}</p>
+
+              {it.concurrentWith.length > 0 && (
+                <p className="tl-overlap">
+                  <span className="tl-overlap-mark" aria-hidden="true" />
+                  Ran alongside {formatList(it.concurrentWith)}
+                </p>
+              )}
               {it.exp.description && <p className="tl-desc">{it.exp.description}</p>}
 
               {it.exp.list_skills.length > 0 && (
@@ -161,6 +188,13 @@ export function ResumeTimeline({ timeline }: { timeline: Timeline }) {
               {selected.title}
             </h2>
             <p className="xmodal-company">{selected.company}</p>
+
+            {selectedOverlap.length > 0 && (
+              <p className="tl-overlap xmodal-overlap">
+                <span className="tl-overlap-mark" aria-hidden="true" />
+                Ran alongside {formatList(selectedOverlap)}
+              </p>
+            )}
 
             {selected.description && (
               <p className="xmodal-desc">{selected.description}</p>

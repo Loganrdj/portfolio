@@ -12,12 +12,21 @@ export type TimelineItem = {
   barHeight: number;
   side: "left" | "right";
   ongoing: boolean;
+  /**
+   * Horizontal lane for the bar. Concurrent roles get different lanes so the
+   * overlap is visible instead of one bar hiding behind another.
+   */
+  lane: number;
+  /** Companies whose roles ran at the same time as this one. */
+  concurrentWith: string[];
 };
 
 export type Timeline = {
   items: TimelineItem[];
   ticks: { year: number; pct: number }[];
   height: number;
+  /** Widest lane index in use, so the CSS knows how much gutter to reserve. */
+  laneCount: number;
 };
 
 // Tallest rendered card is ~361px (measured); this clears it with margin so
@@ -27,19 +36,31 @@ const MIN_CARD_GAP = 400;
 const CARD_ALLOWANCE = 430;
 
 /**
+ * A role is current if its end is blank or the word "Present" — so the data
+ * can say what a résumé says, rather than needing a placeholder date.
+ */
+export function isPresent(end: string | undefined | null): boolean {
+  if (!end) return true;
+  return end.trim().toLowerCase() === "present";
+}
+
+/**
  * Lays out a proportional timeline at build time — no runtime measurement.
  *
- * Bars keep their true dates so the chart stays honest about how long each
- * role ran and where roles overlapped. Cards are nudged apart only as far as
- * needed to stay readable, and a connector links each card back to its bar.
+ * Bars keep their true dates so the chart stays honest about how long each role
+ * ran. Where roles genuinely overlapped, the bars are placed in separate lanes
+ * so you can see two things running at once. Cards are nudged apart only as far
+ * as needed to stay readable, with a connector back to the true position.
  */
 export function buildTimeline(list: Experience[], height = 3200): Timeline {
+  const now = Date.now();
+
   const parsed = list
     .map((exp) => {
       const start = Date.parse(exp.start);
-      const ongoing = !exp.end;
-      const end = ongoing ? Date.now() : Date.parse(exp.end);
-      return { exp, start, end, ongoing };
+      const ongoing = isPresent(exp.end);
+      const end = ongoing ? now : Date.parse(exp.end);
+      return { exp, start, end: Number.isNaN(end) ? now : end, ongoing };
     })
     .sort((a, b) => a.start - b.start);
 
@@ -50,12 +71,30 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
   const hi = max + pad;
   const pct = (t: number) => ((t - lo) / (hi - lo)) * 100;
 
+  // --- lanes: concurrent roles must not share one ---------------------------
+  // Walk in start order and take the first lane whose last occupant has
+  // finished. Anything that cannot reuse a lane was genuinely running at the
+  // same time as something else, which is exactly what we want to show.
+  const laneEnds: number[] = [];
+  const lanes = parsed.map((p) => {
+    let lane = laneEnds.findIndex((endsAt) => endsAt <= p.start);
+    if (lane === -1) {
+      lane = laneEnds.length;
+      laneEnds.push(p.end);
+    } else {
+      laneEnds[lane] = p.end;
+    }
+    return lane;
+  });
+
   let lastLeft = -Infinity;
   let lastRight = -Infinity;
 
   const items: TimelineItem[] = parsed.map((p, i) => {
     const startPct = pct(p.start);
-    const endPct = pct(p.end);
+    // A current role runs to the end of the chart, so its bar reaches the
+    // bottom rather than stopping at today's tick.
+    const endPct = p.ongoing ? 100 : pct(p.end);
     const barTop = (startPct / 100) * height;
     const barHeight = Math.max(8, ((endPct - startPct) / 100) * height);
     const side: "left" | "right" = i % 2 === 0 ? "right" : "left";
@@ -67,6 +106,13 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
     if (side === "left") lastLeft = cardTop;
     else lastRight = cardTop;
 
+    // Who else was running during this role?
+    const concurrentWith = parsed
+      .filter(
+        (q, j) => j !== i && q.start < p.end && p.start < q.end
+      )
+      .map((q) => q.exp.company);
+
     return {
       exp: p.exp,
       startPct,
@@ -76,6 +122,8 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
       cardTop,
       side,
       ongoing: p.ongoing,
+      lane: lanes[i],
+      concurrentWith: [...new Set(concurrentWith)],
     };
   });
 
@@ -99,5 +147,10 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
   );
   const trackHeight = Math.max(height, Math.ceil(contentBottom) + 24);
 
-  return { items, ticks, height: trackHeight };
+  return {
+    items,
+    ticks,
+    height: trackHeight,
+    laneCount: Math.max(1, laneEnds.length),
+  };
 }

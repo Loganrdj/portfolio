@@ -7,7 +7,7 @@
 
 export type Experience = {
   start: string;
-  /** Empty string means "present". */
+  /** A date, or "Present" (or blank) for a role that is still running. */
   end: string;
   title: string;
   company: string;
@@ -178,11 +178,11 @@ export const experiences: Experience[] = [
   },
   {
     "start": "2023-09-01",
-    "end": "2025-01-01",
+    "end": "Present",
     "title": "Founder, Brand Strategy And Marketing Operations",
     "company": "LoganRDJ LLC",
     "logo": "/assets/logos/TwitchLogo.png",
-    "dateLabel": "Sept 2023 – Jan 2025",
+    "dateLabel": "Sept 2023 – Present",
     "description": "Founded a brand strategy consultancy generating $100K+ in revenue through data-driven campaigns with partners including Taco Bell and AT&T. Advised clients on content and platform strategy, producing livestreamed content for audiences of 10,000+ concurrent viewers.",
     "backgroundcolor": "#CBC3E3",
     "list_skills": [
@@ -197,7 +197,7 @@ export const experiences: Experience[] = [
   },
   {
     "start": "2026-03-01",
-    "end": "2026-04-29",
+    "end": "Present",
     "title": "Audio/Visual Technician",
     "company": "AEG Presents",
     "logo": "/assets/logos/AEGPLogo.jpeg",
