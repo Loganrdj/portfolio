@@ -1,0 +1,29 @@
+---
+title: "Building Homebound: scoring real estate leads with rules and an LLM"
+date: "2026-09-20"
+summary: "Why a hybrid rules + LLM engine beat either approach alone, and how every score ended up explaining itself in plain language."
+tags: ["automation", "python", "llm"]
+---
+
+Most lead-scoring tools give you a number and no reason. That is fine until an
+agent asks "why is this a 91?" and the honest answer is "the model said so."
+
+Homebound scores every lead twice. A deterministic rules pass handles the things
+that are genuinely rules — source, pipeline stage, recency, budget fit,
+first-touch urgency. Then an LLM pass reads the lead's actual history and
+returns a qualitative verdict. The two get blended.
+
+## Why not just the LLM
+
+Because it cannot be trusted with arithmetic it does not need to do, and because
+the whole thing has to keep working when there is no API key. If `OPENAI_API_KEY`
+is missing, Homebound falls back to rules-only and says so, rather than failing
+closed.
+
+## Why not just the rules
+
+Rules cannot read "we're pre-approved now, calling Sunday" sitting in a note from
+three weeks ago. That is exactly the signal an agent wants surfaced.
+
+The output an agent sees is never a bare number: it is a score, a summary, a
+plain-language reason, and a recommended next action.

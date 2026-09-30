@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for the "Automation Pipeline" system.
+
+  Two visual languages in tension:
+    · the MACHINE — near-black, hairlines, monospace, mechanical motion
+    · the PAINT   — colors sampled directly from Logan's own brand artwork
+                    (public/loganbackgroundwpaint2.png), organic motion
+
+  The paint values below are measured from that image, not invented, so the
+  palette and the photography are guaranteed to agree.
+*/
+@theme {
+  /* --- machine --- */
+  --color-ink: #131313;
+  --color-ink-soft: #1d1d1f;
+  --color-paper: #faf9f6;
+  --color-paper-dim: #efede7;
+  --color-grey-900: #2a2a2e;
+  --color-grey-600: #6b6b73;
+  --color-grey-400: #9b9ba3;
+  --color-grey-200: #d7d6d1;
+  --color-hairline: #00000014;
+
+  /* --- paint (sampled from the artwork) --- */
+  --color-paint-red: #e91416;
+  --color-paint-orange: #f84301;
+  --color-paint-yellow: #eff903;
+  --color-paint-green: #01ae46;
+  --color-paint-blue: #18299f;
+
+  /* Pipeline "live" signal: his blue, brightened for contrast on ink. */
+  --color-signal: #2f4bff;
+
+  /* --- type --- */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-mono-code), ui-monospace, "SF Mono", monospace;
+
+  /* --- motion ---
+     mechanical = snappy and linear-ish (the machine)
+     organic    = slow settle (the paint) */
+  --ease-mechanical: cubic-bezier(0.2, 0, 0, 1);
+  --ease-organic: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  color-scheme: light;
+  /* Scroll progress 0..1, written by the pipeline controller. */
+  --pipeline-progress: 0;
+}
+
+/*
+  ONE scroll container only.
+  The previous site set height:100% + overflow + scroll-snap on BOTH html and
+  body, which made body a nested scrollport and froze scrolling. Never again.
+*/
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Decorative overlays are clipped so they can never widen the document
+     and create phantom sideways scrolling. */
+  overflow-x: clip;
+}
+
+/* Everything motion-driven degrades to a static, fully legible page. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible focus for keyboard users on both light and dark sections. */
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-paint-yellow);
+  color: var(--color-ink);
+}
+
+/* Keyboard users land here first; visually hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.skip-link:focus {
+  left: 0;
+}
