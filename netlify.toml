@@ -1,0 +1,29 @@
+# Netlify build config, kept in the repo rather than the dashboard so the
+# branch that changes the output directory also carries the setting.
+#
+# The old CRA site published `build/`. The Next static export publishes `out/`,
+# so a cutover without this would deploy the wrong directory.
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  # Next 16 requires Node 20+.
+  NODE_VERSION = "22"
+
+# NOTE: the old site shipped a public/_redirects catch-all sending every path
+# to /index.html, which a client-rendered SPA needed. This site prerenders a
+# real HTML file per route, so that rule is deliberately NOT restored — it
+# would shadow every deep link with the homepage. Netlify serves out/404.html
+# for genuine misses automatically.
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    cache-control = "public, max-age=604800"
