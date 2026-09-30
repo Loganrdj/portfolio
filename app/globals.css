@@ -265,34 +265,19 @@ body {
   z-index: 1;
 }
 
-.arun-svg {
+.arun-canvas {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  overflow: visible;
   pointer-events: none;
   /* above the sticky header so the final hop is visible */
   z-index: 60;
 }
 
-.arun-route {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.72;
-  /* 7px-ish soft edge (stdDeviation 3.5), so it reads as a light trail
-     rather than a one-pixel rule. */
-  filter: url(#arun-blur);
-}
 
-.arun-dot {
-  fill: var(--color-paper);
-  filter: drop-shadow(0 0 10px var(--color-signal));
-  transition: opacity 400ms var(--ease-mechanical);
-}
+
+
 
 /* --- trigger -------------------------------------------------------------- */
 
