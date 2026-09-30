@@ -159,10 +159,12 @@ body {
 
 .khero-kicker {
   display: flex;
-  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.32em;
+  font-size: clamp(0.6rem, 1.05vw, 0.72rem);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-grey-400);
 }
@@ -203,6 +205,12 @@ body {
 
 @media (min-width: 900px) {
   .khero-line-alt { -webkit-text-stroke-width: 2.5px; }
+}
+
+.khero-lede-quip {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--color-mute);
 }
 
 .khero-lede {
@@ -300,8 +308,9 @@ body {
 
 .arun-metrics > div {
   position: relative;
-  padding: 1.5rem clamp(1.25rem, 3vw, 2.25rem);
+  padding: 1.5rem clamp(1rem, 3vw, 2.25rem);
   border-right: 1px solid #23232a;
+  text-align: center;
 }
 .arun-metrics > div:last-child { border-right: 0; }
 
@@ -350,6 +359,7 @@ body {
   position: absolute;
   top: 14px;
   left: 50%;
+  /* centred on the cell, matching the centred figures */
   width: 16px;
   height: 16px;
   margin: -8px 0 0 -8px;
@@ -902,45 +912,15 @@ body {
    PROJECTS — the two disciplines get their own headed sections
    =========================================================================== */
 
-.disc-head {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: start;
-  gap: 1.25rem;
-  padding-bottom: 1.25rem;
-  margin-top: 2rem;
-  border-bottom: 1px solid var(--color-rule);
-}
 
-.disc-index {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  color: var(--color-signal);
-  padding-top: 0.3rem;
-}
-.disc-index-warm { color: var(--color-paint-orange); }
 
-.disc-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.6vw, 2rem);
-  font-weight: 700;
-  line-height: 1.1;
-}
 
-.disc-blurb {
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
-  color: var(--color-mute);
-  max-width: 48ch;
-}
 
-.disc-count {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-mute);
-  padding-top: 0.4rem;
-}
+
+
+
+
+
 
 .pgrid {
   display: grid;
@@ -1097,4 +1077,90 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .nav-bounce { animation: none; }
+}
+
+/* ===========================================================================
+   WORK TABS — the two disciplines side by side, switching in place
+   =========================================================================== */
+
+.wtabs { margin-top: 2.75rem; }
+
+.wtabs-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--color-rule);
+}
+
+.wtab {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem clamp(0.9rem, 2.2vw, 1.5rem);
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--color-rule);
+  color: var(--color-mute);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 240ms var(--ease-mechanical),
+              color 240ms var(--ease-mechanical);
+}
+.wtab:last-child { border-right: 0; }
+.wtab:hover { color: var(--color-paper); background: #14141a; }
+
+.wtab[data-active] {
+  color: var(--color-paper);
+  background: color-mix(in srgb, var(--color-signal) 10%, transparent);
+  box-shadow: inset 0 -2px 0 0 var(--color-signal);
+}
+
+.wtab-index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-signal);
+}
+
+.wtab-label {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.wtab-count {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-mute);
+}
+
+.wtabs-blurb {
+  margin-top: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--color-mute);
+  max-width: 56ch;
+}
+
+/* Remounted on tab change, so the entry animation replays each time. */
+.wtabs-panel { animation: wtabs-in 420ms var(--ease-organic) both; }
+
+@keyframes wtabs-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Cards stagger in behind the panel fade for a bit of life on switch. */
+.wtabs-panel .pcard {
+  animation: wtabs-card 460ms var(--ease-organic) both;
+  animation-delay: calc(var(--i, 0) * 38ms);
+}
+
+@keyframes wtabs-card {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wtabs-panel, .wtabs-panel .pcard { animation: none; }
 }

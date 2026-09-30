@@ -26,9 +26,11 @@ export function KineticHero() {
 
       <div className="khero-inner">
         <p className="khero-kicker">
-          <span>automation</span>
-          <span className="khero-slash">/</span>
-          <span>creative</span>
+          <span>GTM Engineer</span>
+          <span className="khero-slash">|</span>
+          <span>Content &amp; Brand Strategist</span>
+          <span className="khero-slash">|</span>
+          <span>Automation &amp; Software Engineer</span>
         </p>
 
         <h1 className="khero-title" ref={titleRef}>
@@ -37,9 +39,9 @@ export function KineticHero() {
         </h1>
 
         <p className="khero-lede">
-          I build the pipelines behind the work — lead scoring, marketing
-          systems and brand campaigns for partners including Taco&nbsp;Bell and
-          AT&amp;T.
+          Marketing &amp; machine logic, powered by caffeine, automation, APIs,
+          and a whole lot of Airtable tabs too.
+          <span className="khero-lede-quip">Side quest enthusiast.</span>
         </p>
 
         <div className="khero-actions">

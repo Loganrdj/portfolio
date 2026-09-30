@@ -28,12 +28,12 @@ const monoCode = JetBrains_Mono({
 
 const SITE = "https://logan-m.com";
 const DESCRIPTION =
-  "Logan Moss builds automation that ships creative work — lead-scoring pipelines, marketing ops, and brand campaigns for partners including Taco Bell and AT&T.";
+  "Logan Moss — GTM Engineer, Content & Brand Strategist, Automation & Software Engineer. Marketing and machine logic: automation, APIs, and a whole lot of Airtable tabs.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Logan Moss — Automation & Creative",
+    default: "Logan Moss — GTM Engineer & Creative Technologist",
     template: "%s — Logan Moss",
   },
   description: DESCRIPTION,
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE,
     siteName: "Logan Moss",
-    title: "Logan Moss — Automation & Creative",
+    title: "Logan Moss — GTM Engineer & Creative Technologist",
     description: DESCRIPTION,
     images: [{ url: "/assets/og-image.png", width: 1200, height: 655 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Logan Moss — Automation & Creative",
+    title: "Logan Moss — GTM Engineer & Creative Technologist",
     description: DESCRIPTION,
     images: ["/assets/og-image.png"],
   },

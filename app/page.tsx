@@ -60,9 +60,9 @@ export default function HomePage() {
           <div className="sec-inner">
             <p className="sec-kicker">Selected work</p>
             <h2 id="work-heading" className="sec-title">
-              Two disciplines,
+              I make the thing.
               <br />
-              one operator.
+              Then I make it run itself.
             </h2>
 
             <WorkRail
