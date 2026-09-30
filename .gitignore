@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+.DS_Store
+
+# Netlify CLI local state
+.netlify/

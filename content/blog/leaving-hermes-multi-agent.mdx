@@ -1,0 +1,107 @@
+---
+title: "Why I left Hermes: multi-agent is a protocol problem, not a model problem"
+date: "2026-09-26"
+summary: "Hermes gave every agent a great brain and no reliable way to talk to the others. Here's what broke, what I evaluated instead, and why I still haven't fully committed."
+tags: ["automation", "multi-agent", "llm", "tooling"]
+---
+
+I spent a good stretch of this year trying to make a multi-agent workflow behave
+itself on [Hermes Agent](https://github.com/NousResearch/hermes-agent). I've
+moved off it. Not because it's a bad project — it isn't — but because I was
+asking it for the one thing it hadn't actually built yet.
+
+## What I was trying to do
+
+A boring, useful pipeline. One agent watches for new work, one does research,
+one drafts, one reviews and pushes back, and something at the top decides who
+runs next and when to stop. Nothing exotic. The value is entirely in the
+handoffs: what gets passed, what gets remembered, and who decides.
+
+## Why Hermes looked right
+
+On paper it was exactly my kind of tool. Self-hosted, so nothing leaves my
+machine. Model-agnostic across a long list of backends, so I'm not married to
+one provider. Persistent memory instead of stateless task-by-task execution.
+A profiles system where each agent gets its own config, identity, memory store
+and cron definitions.
+
+That last part is what sold me. "Profiles are isolated agents that can be
+configured to collaborate" reads like multi-agent orchestration.
+
+## Where it came apart
+
+Isolated was doing more work in that sentence than collaborate.
+
+Each profile really is its own little world — which is great for keeping agents
+from stepping on each other, and exactly wrong when the whole point is that
+they need shared context. My agents each had an excellent private brain and no
+dependable way to reach the others. Handoffs were something I hand-rolled on
+top, and every one of them was a place where state quietly went missing.
+
+The clarifying moment was reading
+[issue #344](https://github.com/NousResearch/hermes-agent/issues/344) in their
+own tracker — the multi-agent architecture feature request. An LLM-based
+coordinator for auto-assignment. Shared memory pools for inter-agent context.
+Acceptance criteria with independent judges. Agent pooling.
+
+Every single thing I had been trying to build by hand was on that list. As a
+roadmap. I wasn't holding it wrong; I was using a single-agent framework for a
+multi-agent job and blaming the framework for a feature it had never claimed to
+have shipped.
+
+That's on me. But it cost me weeks, so: if you need agents to coordinate today,
+that coordination has to be the framework's core abstraction, not an open issue.
+
+## What I looked at next
+
+I gave each of the obvious candidates a real afternoon.
+
+**[LangGraph](https://www.langchain.com/resources/ai-agent-frameworks)** is the
+serious answer. A directed graph with conditional edges, real checkpointing,
+and state as a first-class concern — which is precisely the thing Hermes left
+me to improvise. It has also adopted the Agent Protocol, so an agent can talk
+across framework lines. My hesitation is weight: the graph model wants you to
+think about your whole workflow as a state machine up front, and for a pipeline
+I'm still figuring out, that's a lot of ceremony before I've learned what the
+shape even is.
+
+**[CrewAI](https://pickaxe.co/post/crewai-vs-langgraph-vs-autogen)** is the
+fastest to something running. Role-based, twenty lines to a working crew, and
+it thinks in exactly the vocabulary I already use — roles, goals, delegation.
+The problem is the ceiling. Roles and tasks are a lovely way to describe a
+workflow and a thin way to control one. The common trajectory people describe —
+prototype in CrewAI, migrate to LangGraph when state gets real — is a migration
+I'd rather not schedule in advance.
+
+**AutoGen / AG2** models agents as a conversation, with a selector deciding who
+speaks next. Genuinely elegant for debate-shaped problems. It's also
+expensive in a way that's structural rather than incidental: every turn in a
+group chat is a full call carrying the accumulated history, and a four-agent,
+five-round exchange runs something like five to six times the token cost of the
+equivalent LangGraph workflow. My pipeline runs on a schedule, unattended. I'm
+not signing up for that per-run.
+
+## Where I actually landed
+
+Nowhere clean, which is the honest answer.
+
+What changed is what I'm shopping for. I went in looking for the best agent
+framework. I came out convinced that's the wrong axis — the models are all
+fine, and the differentiator is the plumbing: how state is passed, who arbitrates,
+what happens when a handoff fails, and whether any of it survives a process
+restart.
+
+Which is why the thing I'm actually watching isn't a framework at all. It's
+[A2A](https://www.turing.com/resources/ai-agent-frameworks) — the agent-to-agent
+protocol Google started and handed to the Linux Foundation, now with a
+few hundred organisations behind it. If agent-to-agent communication becomes a
+protocol rather than a framework feature, then "which framework" stops being a
+one-way door, and picking wrong stops costing weeks.
+
+For now I'm building the coordination layer explicitly and keeping the agents
+dumb and replaceable. It's less magical and I can debug it at 2am, which counts
+for more than it sounds like.
+
+If you're picking today: LangGraph if the workflow is known and state matters,
+CrewAI if you're still learning the shape and can accept rewriting it later. And
+whatever you choose, confirm the coordination you need is shipped — not filed.
