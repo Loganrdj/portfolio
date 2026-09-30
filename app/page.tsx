@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { ProjectThumb } from "@/components/ProjectThumb";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { KineticHero } from "@/components/kinetic/KineticHero";
@@ -27,13 +27,7 @@ function WorkRail({
         {items.map((p) => (
           <li key={p.id} className="rail-card">
             <div className="rail-thumb">
-              <Image
-                src={p.image}
-                alt={p.alt}
-                fill
-                sizes="(max-width: 700px) 92vw, 30vw"
-                className="object-cover"
-              />
+              <ProjectThumb src={p.image} alt={p.alt} />
             </div>
             <h4 className="rail-card-title">{p.name}</h4>
             <p className="rail-card-desc">{p.description}</p>

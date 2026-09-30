@@ -22,11 +22,11 @@ export default function BlogIndex() {
         <section className="sec">
           <div className="sec-inner">
             <p className="sec-kicker">Build notes</p>
-            <h2 className="sec-title">
+            <h1 className="sec-title">
               Working
               <br />
               in the open.
-            </h2>
+            </h1>
             <p className="resume-lede">
               What I&rsquo;m building, what broke, and what I&rsquo;d do
               differently. Mostly automation and the tooling around it.
@@ -60,7 +60,7 @@ export default function BlogIndex() {
                   <time dateTime={lead.date}>{lead.dateLabel}</time>
                   <span>{lead.readingTime}</span>
                 </p>
-                <h3 className="bmod-title bmod-title-lead">{lead.title}</h3>
+                <h2 className="bmod-title bmod-title-lead">{lead.title}</h2>
                 {lead.summary && <p className="bmod-summary">{lead.summary}</p>}
                 <ul className="bmod-tags">
                   {lead.tags.map((t) => (
@@ -81,7 +81,7 @@ export default function BlogIndex() {
                           <time dateTime={p.date}>{p.dateLabel}</time>
                           <span>{p.readingTime}</span>
                         </p>
-                        <h3 className="bmod-title">{p.title}</h3>
+                        <h2 className="bmod-title">{p.title}</h2>
                         {p.summary && (
                           <p className="bmod-summary">{p.summary}</p>
                         )}

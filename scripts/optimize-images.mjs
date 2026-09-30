@@ -14,7 +14,7 @@ import sharp from "sharp";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const SRC = "public/loganbackgroundwpaint2.png";
+const SRC = "source-assets/loganbackgroundwpaint2.png";
 const OUT_HERO = "public/assets/hero";
 const OUT_PAINT = "public/assets/paint";
 const OUT_BRUSH = "public/assets/brush";
@@ -94,6 +94,8 @@ async function main() {
     }
   }
 
+  await posters();
+
   for (const sw of SWATCHES) {
     const { data } = await sharp(SRC)
       .extract({ left: sw.left, top: sw.top, width: sw.width, height: sw.height })
@@ -124,6 +126,49 @@ async function main() {
     const { size } = await fs.stat(file);
     console.log(`  brush ${sw.name.padEnd(7)} — ${(size / 1024).toFixed(0)}KB`);
   }
+}
+
+// 4. Static posters for project thumbnails.
+//    Several thumbnails are animated WebP demos over 1MB each. Chrome's
+//    lazy-load threshold is generous enough that the whole grid downloaded on
+//    load (~13MB). The grid now shows a lightweight still frame, and the
+//    animation is fetched only when a card is hovered or focused.
+async function posters() {
+  const root = "public/assets/projectImages";
+  const dirs = await fs.readdir(root, { withFileTypes: true });
+  let saved = 0;
+  let count = 0;
+
+  for (const d of dirs) {
+    if (!d.isDirectory()) continue;
+    const dir = path.join(root, d.name);
+    const files = await fs.readdir(dir);
+
+    // Thumbnails are named either `thumb.webp` or `<n>.thumb.webp` depending on
+    // whether the project has a gallery, so match both.
+    for (const file of files.filter((f) => /thumb\.webp$/.test(f))) {
+      const src = path.join(dir, file);
+      const out = path.join(dir, file.replace(/thumb\.webp$/, "poster.webp"));
+      // `animated` defaults to false, so this reads frame one only.
+      await sharp(src)
+        .resize({ width: 800, withoutEnlargement: true })
+        .webp({ quality: 72 })
+        .toFile(out);
+
+      const before = (await fs.stat(src)).size;
+      const after = (await fs.stat(out)).size;
+      saved += Math.max(0, before - after);
+      count++;
+      if (before > 400_000) {
+        console.log(
+          `  poster ${d.name.padEnd(22)} ${(before / 1024 / 1024).toFixed(1)}MB -> ${(after / 1024).toFixed(0)}KB`
+        );
+      }
+    }
+  }
+  console.log(
+    `  ${count} posters, ~${(saved / 1024 / 1024).toFixed(1)}MB saved on first paint`
+  );
 }
 
 main().catch((e) => {

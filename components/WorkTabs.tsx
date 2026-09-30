@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { ProjectThumb } from "@/components/ProjectThumb";
 import type { Project } from "@/data/projects";
 
 type Discipline = {
@@ -60,16 +60,9 @@ export function WorkTabs({ disciplines }: { disciplines: Discipline[] }) {
               style={{ ["--i" as string]: String(Math.min(i, 11)) }}
             >
               <div className="pcard-thumb">
-                <Image
-                  src={p.image}
-                  alt={p.alt}
-                  fill
-                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 30vw"
-                  priority={i < 3}
-                  className="object-cover"
-                />
+                <ProjectThumb src={p.image} alt={p.alt} eager={i === 0} />
               </div>
-              <h3 className="pcard-title">{p.name}</h3>
+              <h2 className="pcard-title">{p.name}</h2>
               <p className="pcard-desc">{p.description}</p>
               <div className="pcard-links">
                 {p.deployed_url && (

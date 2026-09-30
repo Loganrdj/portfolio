@@ -18,11 +18,11 @@ export default function ProjectsPage() {
         <section className="sec">
           <div className="sec-inner">
             <p className="sec-kicker">Work</p>
-            <h2 className="sec-title">
+            <h1 className="sec-title">
               I make the thing.
               <br />
               Then I make it run itself.
-            </h2>
+            </h1>
             <p className="resume-lede">
               {codingProjects.length} software projects and{" "}
               {creativeProjects.length} creative ones. Different kinds of

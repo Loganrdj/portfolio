@@ -6,7 +6,7 @@
   Two visual languages in tension:
     · the MACHINE — near-black, hairlines, monospace, mechanical motion
     · the PAINT   — colors sampled directly from Logan's own brand artwork
-                    (public/loganbackgroundwpaint2.png), organic motion
+                    (source-assets/loganbackgroundwpaint2.png), organic motion
 
   The paint values below are measured from that image, not invented, so the
   palette and the photography are guaranteed to agree.
@@ -1189,3 +1189,21 @@ body {
   .kbtn { padding-block: 0.7rem; }
   .arun-metrics > div { padding-block: 1rem; }
 }
+
+/* Poster-first project thumbnails; the animated demo layers over on intent. */
+.pthumb {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.pthumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-organic);
+}
+.pthumb-anim { z-index: 1; }
+.pcard:hover .pthumb img,
+.rail-card:hover .pthumb img { transform: scale(1.05); }

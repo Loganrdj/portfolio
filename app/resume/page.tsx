@@ -22,11 +22,11 @@ export default function ResumePage() {
         <section className="sec">
           <div className="sec-inner">
             <p className="sec-kicker">Resume</p>
-            <h2 className="sec-title">
+            <h1 className="sec-title">
               Ten years,
               <br />
               two disciplines.
-            </h2>
+            </h1>
             <p className="resume-lede">
               Every role below is drawn to scale — bar length is time served, and
               overlapping bars are roles that genuinely ran at once.
@@ -84,7 +84,7 @@ export default function ResumePage() {
                         {it.ongoing && <span className="tl-live">live</span>}
                       </p>
                     </div>
-                    <h3 className="tl-role">{it.exp.title}</h3>
+                    <h2 className="tl-role">{it.exp.title}</h2>
                     <p className="tl-company">{it.exp.company}</p>
                     {it.exp.description && (
                       <p className="tl-desc">{it.exp.description}</p>
