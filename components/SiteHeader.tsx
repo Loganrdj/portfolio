@@ -17,7 +17,9 @@ export function SiteHeader() {
         <ul className="site-links">
           {NAV.map((item) => (
             <li key={item.href}>
-              <Link href={item.href}>{item.label}</Link>
+              <Link href={item.href} data-nav={item.label}>
+                {item.label}
+              </Link>
             </li>
           ))}
         </ul>
