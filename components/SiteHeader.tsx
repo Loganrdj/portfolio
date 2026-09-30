@@ -16,7 +16,7 @@ export function SiteHeader() {
       >
         <Link
           href="/"
-          className="font-display text-lg leading-none font-bold tracking-tight"
+          className="font-display text-lg leading-none font-bold tracking-tight whitespace-nowrap"
         >
           Logan Moss
         </Link>
