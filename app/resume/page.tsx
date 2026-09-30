@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { experiences, education, byRecency } from "@/data/experience";
+import { ResumeTimeline } from "@/components/ResumeTimeline";
 import { buildTimeline } from "@/lib/timeline";
 import { skillGroups } from "@/data/skills";
 
@@ -38,70 +39,7 @@ export default function ResumePage() {
             nudged apart only enough to stay readable. */}
         <section className="sec" aria-label="Career timeline">
           <div className="sec-inner">
-            <div
-              className="tl"
-              style={{ ["--tl-h" as string]: `${timeline.height}px` }}
-            >
-              <div className="tl-axis" aria-hidden="true">
-                {timeline.ticks.map((t) => (
-                  <div key={t.year} className="tl-tick" style={{ top: `${t.pct}%` }}>
-                    <span>{t.year}</span>
-                  </div>
-                ))}
-              </div>
-
-              {timeline.items.map((it) => (
-                <div key={`${it.exp.company}-${it.exp.title}`}>
-                  {/* the honest bar */}
-                  <div
-                    className="tl-bar"
-                    data-ongoing={it.ongoing || undefined}
-                    style={{ top: `${it.barTop}px`, height: `${it.barHeight}px` }}
-                    aria-hidden="true"
-                  />
-                  {/* connector from bar to card */}
-                  <div
-                    className="tl-connector"
-                    data-side={it.side}
-                    style={{ top: `${it.cardTop + 26}px` }}
-                    aria-hidden="true"
-                  />
-                  <article
-                    className="tl-card"
-                    data-side={it.side}
-                    style={{ top: `${it.cardTop}px` }}
-                  >
-                    <div className="tl-card-head">
-                      <Image
-                        src={it.exp.logo}
-                        alt=""
-                        width={32}
-                        height={32}
-                        className="tl-logo"
-                      />
-                      <p className="tl-dates">
-                        {it.exp.dateLabel}
-                        {it.ongoing && <span className="tl-live">live</span>}
-                      </p>
-                    </div>
-                    <h2 className="tl-role">{it.exp.title}</h2>
-                    <p className="tl-company">{it.exp.company}</p>
-                    {it.exp.description && (
-                      <p className="tl-desc">{it.exp.description}</p>
-                    )}
-                    {it.exp.list_skills.length > 0 && (
-                      <ul className="tl-skills">
-                        {it.exp.list_skills.slice(0, 6).map((s) => (
-                          <li key={s} className="chip">
-                            {s}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </article>
-                </div>
-              ))}
-            </div>
+            <ResumeTimeline timeline={timeline} />
           </div>
         </section>
 

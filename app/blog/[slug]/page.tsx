@@ -47,7 +47,7 @@ export default async function PostPage({
   return (
     <>
       <SiteHeader />
-      <main id="main" className="mx-auto max-w-[720px] px-5 py-16">
+      <main id="main" className="mx-auto max-w-[760px] px-5 py-16">
         <Link
           href="/blog/"
           className="font-mono text-xs text-grey-600 underline underline-offset-4"

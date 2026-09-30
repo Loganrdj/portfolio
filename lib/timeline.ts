@@ -23,6 +23,8 @@ export type Timeline = {
 // Tallest rendered card is ~361px (measured); this clears it with margin so
 // two cards on the same side can never collide.
 const MIN_CARD_GAP = 400;
+/** Generous allowance for the tallest rendered card, used to size the track. */
+const CARD_ALLOWANCE = 430;
 
 /**
  * Lays out a proportional timeline at build time — no runtime measurement.
@@ -85,5 +87,17 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
     if (t >= lo && t <= hi) ticks.push({ year: y, pct: pct(t) });
   }
 
-  return { items, ticks, height };
+  // The track was a fixed height while cards get nudged downward to avoid
+  // colliding. With enough overlapping roles the last cards ran past the
+  // bottom of the container and collided with the section beneath. The track
+  // now grows to whatever the layout actually needs, so it stays correct as
+  // roles are added.
+  const contentBottom = items.reduce(
+    (lowest, it) =>
+      Math.max(lowest, it.cardTop + CARD_ALLOWANCE, it.barTop + it.barHeight),
+    0
+  );
+  const trackHeight = Math.max(height, Math.ceil(contentBottom) + 24);
+
+  return { items, ticks, height: trackHeight };
 }
