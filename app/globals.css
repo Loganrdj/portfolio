@@ -1190,7 +1190,9 @@ body {
   .arun-metrics > div { padding-block: 1rem; }
 }
 
-/* Poster-first project thumbnails; the animated demo layers over on intent. */
+/* Poster-first project thumbnails; the animated demo layers over on intent.
+   Desaturated at rest and full colour on hover, carrying over the old site's
+   grayscale(80%) treatment — so hovering now brings both colour and motion. */
 .pthumb {
   position: absolute;
   inset: 0;
@@ -1202,8 +1204,26 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 700ms var(--ease-organic);
+  filter: grayscale(80%);
+  transition:
+    transform 700ms var(--ease-organic),
+    filter 420ms var(--ease-mechanical);
 }
 .pthumb-anim { z-index: 1; }
+
 .pcard:hover .pthumb img,
-.rail-card:hover .pthumb img { transform: scale(1.05); }
+.pcard:focus-within .pthumb img,
+.rail-card:hover .pthumb img,
+.rail-card:focus-within .pthumb img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard:hover .pthumb img,
+  .pcard:focus-within .pthumb img,
+  .rail-card:hover .pthumb img,
+  .rail-card:focus-within .pthumb img {
+    transform: none;
+  }
+}
