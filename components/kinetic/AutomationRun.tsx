@@ -76,6 +76,36 @@ export const AutomationRun = forwardRef<AutomationRunHandle>(
       if (runningRef.current || doneRef.current) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+      // The hero's copy can push the data rail past the fold on shorter
+      // laptops, and revealing figures the viewer cannot see is pointless.
+      // Bring it fully into view first, let the scroll settle, then run — all
+      // positions are measured afterwards, so nothing drifts.
+      const rail = wrap.querySelector(".arun-metrics");
+      const railRect = rail?.getBoundingClientRect();
+      if (railRect && railRect.bottom > window.innerHeight - 8) {
+        rail?.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+          inline: "nearest",
+        });
+        runningRef.current = true;
+        const settle = window.setTimeout(() => {
+          runningRef.current = false;
+          start();
+        }, 520);
+        timersRef.current.push(settle);
+        return;
+      }
+
+      start();
+    }, []);
+
+    const start = useCallback(() => {
+      const wrap = wrapRef.current;
+      const canvas = canvasRef.current;
+      if (!wrap || !canvas) return;
+      if (runningRef.current || doneRef.current) return;
+
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
