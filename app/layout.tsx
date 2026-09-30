@@ -26,7 +26,7 @@ const monoCode = JetBrains_Mono({
   display: "swap",
 });
 
-const SITE = "https://logan-m.com";
+const SITE = "https://www.logan-m.com";
 const DESCRIPTION =
   "Logan Moss — GTM Engineer, Content & Brand Strategist, Automation & Software Engineer. Marketing and machine logic: automation, APIs, and a whole lot of Airtable tabs.";
 

@@ -5,7 +5,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 import { getAllPosts } from "@/lib/posts";
 
-const SITE = "https://logan-m.com";
+const SITE = "https://www.logan-m.com";
 
 /** Emitted as a static sitemap.xml at build time by `output: export`. */
 export default function sitemap(): MetadataRoute.Sitemap {
