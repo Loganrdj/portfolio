@@ -47,6 +47,9 @@ export function isPresent(end: string | undefined | null): boolean {
 /**
  * Lays out a proportional timeline at build time — no runtime measurement.
  *
+ * Reads newest-first: the axis runs from today at the top to the earliest role
+ * at the bottom, so the most relevant work is what you see on arrival.
+ *
  * Bars keep their true dates so the chart stays honest about how long each role
  * ran. Where roles genuinely overlapped, the bars are placed in separate lanes
  * so you can see two things running at once. Cards are nudged apart only as far
@@ -62,27 +65,30 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
       const end = ongoing ? now : Date.parse(exp.end);
       return { exp, start, end: Number.isNaN(end) ? now : end, ongoing };
     })
-    .sort((a, b) => a.start - b.start);
+    .sort((a, b) => b.start - a.start);
 
   const min = Math.min(...parsed.map((p) => p.start));
   const max = Math.max(...parsed.map((p) => p.end));
   const pad = (max - min) * 0.04;
   const lo = min - pad;
   const hi = max + pad;
-  const pct = (t: number) => ((t - lo) / (hi - lo)) * 100;
+  // Inverted on purpose: the newest date sits at the top of the chart.
+  const pct = (t: number) => ((hi - t) / (hi - lo)) * 100;
 
   // --- lanes: concurrent roles must not share one ---------------------------
   // Walk in start order and take the first lane whose last occupant has
   // finished. Anything that cannot reuse a lane was genuinely running at the
   // same time as something else, which is exactly what we want to show.
-  const laneEnds: number[] = [];
+  const laneStarts: number[] = [];
   const lanes = parsed.map((p) => {
-    let lane = laneEnds.findIndex((endsAt) => endsAt <= p.start);
+    // Walking newest-first, a lane is reusable when its current occupant
+    // started after this role finished — i.e. they never ran together.
+    let lane = laneStarts.findIndex((startsAt) => startsAt >= p.end);
     if (lane === -1) {
-      lane = laneEnds.length;
-      laneEnds.push(p.end);
+      lane = laneStarts.length;
+      laneStarts.push(p.start);
     } else {
-      laneEnds[lane] = p.end;
+      laneStarts[lane] = p.start;
     }
     return lane;
   });
@@ -92,11 +98,11 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
 
   const items: TimelineItem[] = parsed.map((p, i) => {
     const startPct = pct(p.start);
-    // A current role runs to the end of the chart, so its bar reaches the
-    // bottom rather than stopping at today's tick.
-    const endPct = p.ongoing ? 100 : pct(p.end);
-    const barTop = (startPct / 100) * height;
-    const barHeight = Math.max(8, ((endPct - startPct) / 100) * height);
+    // With the axis inverted the end date is the higher edge. A current role
+    // runs clean off the top of the chart rather than stopping at today's tick.
+    const endPct = p.ongoing ? 0 : pct(p.end);
+    const barTop = (endPct / 100) * height;
+    const barHeight = Math.max(8, ((startPct - endPct) / 100) * height);
     const side: "left" | "right" = i % 2 === 0 ? "right" : "left";
 
     // Nudge down only if this card would collide with the previous one on the
@@ -151,6 +157,6 @@ export function buildTimeline(list: Experience[], height = 3200): Timeline {
     items,
     ticks,
     height: trackHeight,
-    laneCount: Math.max(1, laneEnds.length),
+    laneCount: Math.max(1, laneStarts.length),
   };
 }

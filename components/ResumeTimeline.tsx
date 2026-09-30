@@ -82,7 +82,7 @@ export function ResumeTimeline({ timeline }: { timeline: Timeline }) {
               data-overlapping={it.concurrentWith.length > 0 || undefined}
               style={{
                 top: `${it.barTop}px`,
-                ...(it.ongoing ? {} : { height: `${it.barHeight}px` }),
+                height: `${it.barHeight}px`,
                 ["--lane" as string]: String(it.lane),
               }}
               aria-hidden="true"

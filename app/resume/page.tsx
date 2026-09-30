@@ -29,8 +29,8 @@ export default function ResumePage() {
               two disciplines.
             </h1>
             <p className="resume-lede">
-              Every role below is drawn to scale — bar length is time served, and
-              overlapping bars are roles that genuinely ran at once.
+              Newest first. Every role is drawn to scale — bar length is time
+              served, and overlapping bars are roles that genuinely ran at once.
             </p>
           </div>
         </section>

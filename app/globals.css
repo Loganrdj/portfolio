@@ -788,7 +788,7 @@ body {
   left: calc(-2px + var(--lane, 0) * var(--lane-w));
   width: 5px;
   border-radius: 3px;
-  background: linear-gradient(to bottom, var(--color-signal), var(--color-paint-blue));
+  background: linear-gradient(to top, var(--color-signal), var(--color-paint-blue));
   opacity: 0.85;
 }
 @media (min-width: 1000px) {
@@ -1510,13 +1510,11 @@ body {
   font-size: 0.68rem;
 }
 
-/* An in-progress role runs to the foot of the chart. No height is set on it;
-   pinning top and bottom means it always reaches the floor, however tall the
-   track grows to fit the cards. */
+/* The axis reads newest-first, so an in-progress role runs off the TOP of the
+   chart rather than the bottom. Its gradient fades upward accordingly. */
 .tl-bar[data-ongoing] {
-  bottom: 0;
   background: linear-gradient(
-    to bottom,
+    to top,
     var(--color-paint-red),
     var(--color-paint-orange) 60%,
     color-mix(in srgb, var(--color-paint-orange) 25%, transparent)
