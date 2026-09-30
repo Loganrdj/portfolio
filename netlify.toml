@@ -27,3 +27,18 @@
   for = "/assets/*"
   [headers.values]
     cache-control = "public, max-age=604800"
+
+# Next emits the generated link-preview cards as extensionless files
+# (out/opengraph-image), so Netlify falls back to text/plain and preview bots
+# that check Content-Type reject them. Name the type explicitly.
+[[headers]]
+  for = "/opengraph-image"
+  [headers.values]
+    content-type = "image/png"
+    cache-control = "public, max-age=3600"
+
+[[headers]]
+  for = "/blog/:slug/opengraph-image"
+  [headers.values]
+    content-type = "image/png"
+    cache-control = "public, max-age=3600"
