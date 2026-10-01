@@ -950,6 +950,7 @@ body {
 .pcard { display: flex; flex-direction: column; }
 
 .pcard-thumb {
+  display: block;
   position: relative;
   aspect-ratio: 1;
   overflow: hidden;
@@ -959,6 +960,7 @@ body {
 .pcard:hover .pcard-thumb img { transform: scale(1.05); }
 
 .pcard-title {
+  display: block;
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
@@ -1519,4 +1521,106 @@ body {
     var(--color-paint-orange) 60%,
     color-mix(in srgb, var(--color-paint-orange) 25%, transparent)
   );
+}
+
+/* ===========================================================================
+   PROJECT CARD → MODAL
+   =========================================================================== */
+
+/* The whole thumbnail + title is the control that opens the detail modal. */
+.pcard-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Signals the card is openable, and says what is behind it. */
+.pcard-cue {
+  position: absolute;
+  left: 0.6rem;
+  bottom: 0.6rem;
+  z-index: 2;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, #0a0a0b 76%, transparent);
+  backdrop-filter: blur(4px);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 240ms var(--ease-mechanical),
+              transform 240ms var(--ease-mechanical);
+}
+.pcard:hover .pcard-cue,
+.pcard-open:focus-visible .pcard-cue { opacity: 1; transform: none; }
+
+.pcard-open:hover .pcard-title { color: var(--color-signal); }
+.pcard-title { transition: color 200ms var(--ease-mechanical); }
+
+/* --- modal ---------------------------------------------------------------- */
+
+.pmodal { width: min(980px, 100%); }
+
+.pmodal-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+.pmodal-gallery {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 720px) {
+  .pmodal-gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+.pmodal-shot {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--color-rule);
+  background: #17171c;
+  cursor: zoom-in;
+  overflow: hidden;
+  transition: border-color 220ms var(--ease-mechanical);
+}
+.pmodal-shot:hover { border-color: #4a4a58; }
+
+.pmodal-shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-organic);
+}
+.pmodal-shot:hover img { transform: scale(1.04); }
+
+/* Click-to-enlarge, layered above the modal. */
+.pmodal-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(4, 4, 6, 0.9);
+  cursor: zoom-out;
+  animation: xmodal-fade 180ms var(--ease-mechanical);
+}
+.pmodal-zoom img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard-cue { opacity: 1; transform: none; }
+  .pmodal-zoom { animation: none; }
 }

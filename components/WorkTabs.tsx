@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ProjectModal } from "@/components/ProjectModal";
 import { ProjectThumb } from "@/components/ProjectThumb";
 import type { Project } from "@/data/projects";
 
@@ -19,6 +20,7 @@ type Discipline = {
  */
 export function WorkTabs({ disciplines }: { disciplines: Discipline[] }) {
   const [active, setActive] = useState(0);
+  const [selected, setSelected] = useState<Project | null>(null);
   const current = disciplines[active];
 
   return (
@@ -59,10 +61,20 @@ export function WorkTabs({ disciplines }: { disciplines: Discipline[] }) {
               className="pcard"
               style={{ ["--i" as string]: String(Math.min(i, 11)) }}
             >
-              <div className="pcard-thumb">
-                <ProjectThumb src={p.image} alt={p.alt} eager={i === 0} />
-              </div>
-              <h2 className="pcard-title">{p.name}</h2>
+              <button
+                type="button"
+                className="pcard-open"
+                onClick={() => setSelected(p)}
+                aria-label={`Open details for ${p.name}`}
+              >
+                <span className="pcard-thumb">
+                  <ProjectThumb src={p.image} alt={p.alt} eager={i === 0} />
+                  <span className="pcard-cue" aria-hidden="true">
+                    {p.media?.length ? `${p.media.length} images` : "Details"}
+                  </span>
+                </span>
+                <span className="pcard-title">{p.name}</span>
+              </button>
               <p className="pcard-desc">{p.description}</p>
               <div className="pcard-links">
                 {p.deployed_url && (
@@ -85,6 +97,8 @@ export function WorkTabs({ disciplines }: { disciplines: Discipline[] }) {
           ))}
         </ul>
       </div>
+
+      <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </div>
   );
 }
