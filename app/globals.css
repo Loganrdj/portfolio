@@ -1624,3 +1624,77 @@ body {
   .pcard-cue { opacity: 1; transform: none; }
   .pmodal-zoom { animation: none; }
 }
+
+/* ===========================================================================
+   EARLIER WORK
+   Early projects kept on the record as line items rather than cards, so the
+   grid shows current work instead of averaging it down.
+   =========================================================================== */
+
+.earlier {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-rule);
+}
+
+.earlier-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+.earlier-head span {
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  color: #55555f;
+}
+
+.earlier-list {
+  display: grid;
+  gap: 0.1rem;
+  margin-top: 1rem;
+}
+@media (min-width: 720px) {
+  .earlier-list { grid-template-columns: repeat(2, 1fr); column-gap: 2.5rem; }
+}
+@media (min-width: 1100px) {
+  .earlier-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+.earlier-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-rule) 55%, transparent);
+}
+
+.earlier-name {
+  flex: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--color-mute);
+  cursor: pointer;
+  transition: color 180ms var(--ease-mechanical);
+}
+.earlier-name:hover { color: var(--color-paper); }
+
+.earlier-link {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: #55555f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 180ms var(--ease-mechanical);
+}
+.earlier-link:hover { color: var(--color-signal); }

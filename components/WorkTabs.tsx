@@ -10,6 +10,8 @@ type Discipline = {
   label: string;
   blurb: string;
   items: Project[];
+  /** Early work listed by name rather than given a card. */
+  earlier?: Project[];
 };
 
 /**
@@ -97,6 +99,48 @@ export function WorkTabs({ disciplines }: { disciplines: Discipline[] }) {
           ))}
         </ul>
       </div>
+
+      {current.earlier && current.earlier.length > 0 && (
+        <div className="earlier">
+          <h3 className="earlier-head">
+            Earlier work
+            <span>{current.earlier.length} projects, 2020–21</span>
+          </h3>
+          <ul className="earlier-list">
+            {current.earlier.map((p) => (
+              <li key={p.id}>
+                <button
+                  type="button"
+                  className="earlier-name"
+                  onClick={() => setSelected(p)}
+                >
+                  {p.name}
+                </button>
+                {p.github_url && (
+                  <a
+                    href={p.github_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="earlier-link"
+                  >
+                    code
+                  </a>
+                )}
+                {p.deployed_url && (
+                  <a
+                    href={p.deployed_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="earlier-link"
+                  >
+                    live
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </div>

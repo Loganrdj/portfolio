@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WorkTabs } from "@/components/WorkTabs";
-import { codingProjects, creativeProjects } from "@/data/projects";
+import {
+  codingProjects,
+  creativeProjects,
+  archivedProjects,
+} from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -26,7 +30,8 @@ export default function ProjectsPage() {
             <p className="resume-lede">
               {codingProjects.length} software projects and{" "}
               {creativeProjects.length} creative ones. Different kinds of
-              evidence, so they get their own shelves.
+              evidence, so they get their own shelves. Earlier work is listed
+              below each.
             </p>
 
             <WorkTabs
@@ -37,6 +42,7 @@ export default function ProjectsPage() {
                   blurb:
                     "Full-stack applications, scoring engines and the pipelines behind them.",
                   items: codingProjects,
+                  earlier: archivedProjects,
                 },
                 {
                   key: "creative",

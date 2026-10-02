@@ -14,6 +14,12 @@ export type Project = {
   type: "Coding" | "Creative";
   /** Full-size gallery images, if the project has a photo set. */
   media?: string[];
+  /**
+   * Early work kept for the record but not given a card — it is listed as a
+   * line item instead, so the grid shows current work rather than averaging it
+   * down with bootcamp exercises.
+   */
+  archived?: boolean;
 };
 
 /**
@@ -23,7 +29,13 @@ export type Project = {
  */
 export const projects = raw as Project[];
 
-export const codingProjects = projects.filter((p) => p.type === "Coding");
+export const codingProjects = projects.filter(
+  (p) => p.type === "Coding" && !p.archived
+);
+/** Early software work, shown as a compact list rather than cards. */
+export const archivedProjects = projects.filter(
+  (p) => p.type === "Coding" && p.archived
+);
 export const creativeProjects = projects.filter((p) => p.type === "Creative");
 
 export function projectBySlug(slug: string): Project | undefined {
