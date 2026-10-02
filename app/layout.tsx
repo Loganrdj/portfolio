@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
+    images: [{ url: "/assets/og/home-still.png", width: 1200, height: 630 }],
     url: SITE,
     siteName: "Logan Moss",
     title: "Logan Moss — GTM Engineer & Creative Technologist",
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/assets/og/home-still.png"],
     title: "Logan Moss — GTM Engineer & Creative Technologist",
     description: DESCRIPTION,
   },

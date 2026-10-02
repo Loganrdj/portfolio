@@ -15,7 +15,7 @@
     "id": 8,
     "name": "FridgeBook",
     "image": "/assets/projectImages/FridgeBook/thumb.webp",
-    "description": "Kitchen inventory app that tracks what's in your fridge and pantry, flags what's about to expire, and keeps a shopping list that puts groceries straight into your kitchen once they're bought. A ground-up rebuild of my original bootcamp project: Google sign-in with per-user data, an Express and Sequelize API on PostgreSQL with versioned migrations, a React front end behind an animated open-fridge landing page, and 100+ automated tests running in GitHub Actions on every push.",
+    "description": "Kitchen inventory app that tracks what's in your fridge and pantry, flags what's about to expire, and keeps a shopping list that puts groceries straight into your kitchen once they're bought. A ground-up rebuild of my original bootcamp project. React, React Router and FullCalendar on the front end behind an animated open-fridge landing page; an Express and Sequelize API over PostgreSQL with Umzug-versioned migrations; Google sign-in through Passport OAuth 2.0 with per-user data and Postgres-backed sessions; 100+ automated tests running in GitHub Actions on every push. API on Render, front end on Netlify.",
     "deployed_url": "https://fridge-book.com",
     "github_url": "https://github.com/Loganrdj/FridgeBook-App",
     "deployed_tag": "Website",
