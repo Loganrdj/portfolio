@@ -1,7 +1,7 @@
 const LINKS = [
   { href: "https://www.linkedin.com/in/loganmoss/", label: "LinkedIn" },
   { href: "https://github.com/Loganrdj", label: "GitHub" },
-  { href: "mailto:lrdjmoss@gmail.com", label: "Email" },
+  { href: "mailto:loganrdjm@gmail.com", label: "Email" },
 ];
 
 export function SiteFooter() {

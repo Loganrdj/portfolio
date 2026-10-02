@@ -28,6 +28,7 @@ export const skillGroups: SkillGroup[] = [
       "React",
       "Next.js",
       "React Native",
+      "SwiftUI",
       "GatsbyJS",
       "HTML5",
       "CSS3",
