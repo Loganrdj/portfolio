@@ -191,8 +191,7 @@
     "github_url": "https://github.com/Loganrdj/ClickyGame",
     "deployed_tag": "Game",
     "alt": "Pokemon Clicky Game GIF",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 14,
@@ -202,8 +201,7 @@
     "github_url": "https://github.com/Loganrdj/FriendFinder",
     "deployed_tag": "Website",
     "alt": "FriendFinder",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 10,
@@ -213,8 +211,7 @@
     "github_url": "https://github.com/K8F/project-2",
     "deployed_tag": "Game",
     "alt": "Harry Potter RPG GIF",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 11,
@@ -224,8 +221,7 @@
     "github_url": "https://github.com/Loganrdj/Node-MySQL",
     "deployed_tag": "Github",
     "alt": "Node mySQL Bamazon GIF",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 9,
@@ -236,8 +232,7 @@
     "github_url": "https://github.com/Loganrdj/Team4",
     "deployed_tag": "Website",
     "alt": "RRRoulette GIF",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 15,
@@ -247,8 +242,7 @@
     "github_url": "https://github.com/Loganrdj/Liri-Bot",
     "deployed_tag": "Github",
     "alt": "LIRI Bot GIF",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 16,
@@ -259,8 +253,7 @@
     "github_url": "https://github.com/Loganrdj/RockyMaguire",
     "deployed_tag": "Website",
     "alt": "Rocky Maguire GIF",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 17,
@@ -271,8 +264,7 @@
     "github_url": "https://github.com/Loganrdj/GifTastic",
     "deployed_tag": "Website",
     "alt": "GifTastic GIF (lol)",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   },
   {
     "id": 18,
@@ -283,7 +275,6 @@
     "github_url": "https://github.com/Loganrdj/TriviaGame",
     "deployed_tag": "Website",
     "alt": "Trivia Game GIF",
-    "type": "Coding",
-    "archived": true
+    "type": "Coding"
   }
 ]

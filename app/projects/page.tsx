@@ -30,8 +30,7 @@ export default function ProjectsPage() {
             <p className="resume-lede">
               {codingProjects.length} software projects and{" "}
               {creativeProjects.length} creative ones. Different kinds of
-              evidence, so they get their own shelves. Earlier work is listed
-              below each.
+              evidence, so they get their own shelves.
             </p>
 
             <WorkTabs
